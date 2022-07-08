@@ -40,7 +40,6 @@ export const IntroductionSection = styled.section`
   min-height: 64vh;
   background: -webkit-linear-gradient(-41deg, rgb(5, 5, 5), rgb(31, 31, 31));
   background: linear-gradient(-41deg, rgb(5, 5, 5), rgb(31, 31, 31));
-
 `;
 
 export const IntroductionSectionContainer = styled.div`
@@ -122,37 +121,36 @@ export const IntroductionSectionImageContainer = styled.div`
   }
 `;
 
-export const MetricsSection = styled.section`
+export const PortfolioSection = styled.section`
   display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 64vh;
+/*   background: -webkit-linear-gradient(-41deg, rgb(5, 5, 5), rgb(31, 31, 31));
+  background: linear-gradient(-41deg, rgb(5, 5, 5), rgb(31, 31, 31)); */
 `;
 
-export const TestimonialsSection = styled.section`
+export const PortfolioSectionContainer = styled.div`
   display: flex;
-`;
+  flex-direction: column;
+  align-items: center;
+  width: 1900px;
+  margin: 0 auto;
+  padding: 40px 0;
+  & h1 {
+    color: ${({ theme }) => theme.colors.white100};
+    margin: 0 auto;
+    font-weight: 800;
+  }
+  & h3 {
+    color: ${({ theme }) => theme.colors.white100};
+    margin: 40px auto 16px;
+  }
+`
 
-export const FaqSection = styled.section`
+export const CardsContainer = styled.div`
   display: flex;
-`;
-
-export const PurchaseSection = styled.section`
-  display: flex;
-`;
-
-
-
-
-export const MetricsSectionContainer = styled.div`
-  display: flex;
-`;
-
-export const TestimonialSectionContainer = styled.div`
-  display: flex;
-`;
-
-export const FaqSectionSectionContainer = styled.div`
-  display: flex;
-`;
-
-export const PurchaseSectionSectionContainer = styled.div`
-  display: flex;
-`;
+  justify-content: center;
+  max-width: 1440px;
+  flex-wrap: wrap;
+`

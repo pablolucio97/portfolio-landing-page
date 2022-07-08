@@ -4,14 +4,19 @@ import { SubTitle } from '../components/Typography/SubTitle'
 import { Title } from '../components/Typography/Title'
 import { Text } from '../components/Typography/Text'
 import {
+  CardsContainer,
   Container,
   IntroductionSection,
   IntroductionSectionContainer,
   IntroductionSectionContentContainer,
   IntroductionSectionContentInfoContainer,
-  IntroductionSectionImageContainer
+  IntroductionSectionImageContainer,
+  PortfolioSection,
+  PortfolioSectionContainer
 } from '../styles'
 import { NextImage } from '../components/Next/NextImage'
+import { landingPages, webSites } from '../data/data'
+import { PortfolioCard } from '../components/Cards/PortfolioCard'
 
 const Home: NextPage = () => {
 
@@ -26,7 +31,7 @@ const Home: NextPage = () => {
         <meta name='author' content='Pablo Silva' />
       </Head>
       <IntroductionSection>
-        <IntroductionSectionContainer>
+        <IntroductionSectionContainer id='whoami'>
           <Title
             content='Quem sou eu'
           />
@@ -49,6 +54,43 @@ const Home: NextPage = () => {
           </IntroductionSectionContentContainer>
         </IntroductionSectionContainer>
       </IntroductionSection>
+      <PortfolioSection>
+        <PortfolioSectionContainer id='portfolio'>
+          <Title
+            content='Portfólio'
+          />
+          <SubTitle
+            content='Landing Pages'
+          />
+          <CardsContainer>
+            {landingPages.map(landing => (
+              <PortfolioCard
+                key={landing.name}
+                imageUrl={landing.image}
+                imgWidth={560}
+                imgHeight={420}
+                title={landing.name}
+                pageUrl={landing.url}
+              />
+            ))}
+          </CardsContainer>
+          <SubTitle
+            content='Websites'
+          />
+          <CardsContainer>
+            {webSites.map(webSite => (
+              <PortfolioCard
+                key={webSite.name}
+                imageUrl={webSite.image}
+                imgWidth={560}
+                imgHeight={420}
+                title={webSite.name}
+                pageUrl={webSite.url}
+              />
+            ))}
+          </CardsContainer>
+        </PortfolioSectionContainer>
+      </PortfolioSection>
     </Container>
   )
 }
