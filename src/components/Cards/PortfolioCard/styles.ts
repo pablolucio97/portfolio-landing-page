@@ -10,21 +10,25 @@ right: 0;
 left: 0;
 bottom: 0;
 overflow: hidden;
-opacity: .96;
+opacity: .8;
 height: 8px;
-background-color: ${({ theme }) => theme.colors.secondary};
+background-color: ${({ theme }) => theme.colors.black300};
 transition: all .3s ease;
 `
 
 export const Button = styled.button`
   display: none;
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
   justify-content: center;
   align-items: center;
   padding: 4px 12px;
   min-width: 120px;
   height: 40px;
   opacity: 1;
-  background-color: ${({ theme }) => theme.colors.primary};
+  background-color: ${({ theme }) => theme.colors.secondary};
   border-radius: 4px;
   color: ${({ theme }) => theme.colors.black400};
   font-size: ${({ theme }) => theme.sizes.medium};
@@ -57,6 +61,9 @@ cursor: pointer;
         display: flex;
         opacity: 1;
         z-index: 2;
+        width: 170px;
+        height: 40px;
+        margin: 0 auto 16%;
     }
 }
 

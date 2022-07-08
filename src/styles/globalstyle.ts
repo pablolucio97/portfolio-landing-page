@@ -182,7 +182,7 @@ export const GlobalStyle = createGlobalStyle`
       height: 2px;
       cursor: pointer;
       display: inline-block;
-      margin: 0 8px; 
+      margin: 40px 4px 0; 
   } 
 
   //REACT-SLICK-CUSTOM -DOTS

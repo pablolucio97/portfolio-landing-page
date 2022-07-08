@@ -12,11 +12,18 @@ import {
   IntroductionSectionContentInfoContainer,
   IntroductionSectionImageContainer,
   PortfolioSection,
-  PortfolioSectionContainer
+  PortfolioSectionContainer,
+  SkillsSection,
+  SkillsSectionContainer
 } from '../styles'
 import { NextImage } from '../components/Next/NextImage'
-import { landingPages, webSites } from '../data/data'
+import { landingPages, skills, webSites } from '../data/data'
 import { PortfolioCard } from '../components/Cards/PortfolioCard'
+import { SkillCard } from '../components/Cards/SkillCard'
+import { ImageSlider } from '../components/Elements/ImageSlider'
+import { SliderList } from '../components/Elements/SliderList'
+
+const skillsImages = skills.map(skill => skill.image)
 
 const Home: NextPage = () => {
 
@@ -91,6 +98,25 @@ const Home: NextPage = () => {
           </CardsContainer>
         </PortfolioSectionContainer>
       </PortfolioSection>
+      <SkillsSection>
+        <SkillsSectionContainer>
+          <Title
+            content='Conhecimentos'
+          />
+                    <CardsContainer>
+            {skills.map(skill => (
+              <SkillCard
+                key={skill.image}
+                imageUrl={skill.image}
+                imgHeight={160}
+                imgWidth={160}
+                content={skill.content}
+              />
+            ))}
+          </CardsContainer>
+        </SkillsSectionContainer>
+
+      </SkillsSection>
     </Container>
   )
 }

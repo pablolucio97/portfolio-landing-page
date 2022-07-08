@@ -4,6 +4,8 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  background: -webkit-linear-gradient(-41deg, rgb(5, 5, 5), rgb(31, 31, 31));
+  background: linear-gradient(-41deg, rgb(5, 5, 5), rgb(31, 31, 31));
 `
 /* BANNER WITH BACKGROUND IMAGE USAGE */
 
@@ -36,17 +38,17 @@ export const BannerSectionContainer = styled.div`
 export const IntroductionSection = styled.section`
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
   min-height: 64vh;
-  background: -webkit-linear-gradient(-41deg, rgb(5, 5, 5), rgb(31, 31, 31));
-  background: linear-gradient(-41deg, rgb(5, 5, 5), rgb(31, 31, 31));
+
 `;
 
 export const IntroductionSectionContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 1900px;
+  width: 1440px;
   margin: 0 auto;
   padding: 40px;
   & h1 {
@@ -57,7 +59,7 @@ export const IntroductionSectionContainer = styled.div`
 `
 export const IntroductionSectionContentContainer = styled.div`
   display: flex;
- 
+  justify-content: center;
   align-items: center;
   width: 100%;
   margin: 0 auto;
@@ -76,7 +78,7 @@ export const IntroductionSectionContentInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 60%;
+  width: 50%;
 
   & h3 {
     color: ${({ theme }) => theme.colors.white100};
@@ -116,9 +118,10 @@ export const IntroductionSectionImageContainer = styled.div`
   justify-content: center;
   width: 40%;
   padding: 40px;
-  @media (max-width: 1080px) {
+  @media (max-width: 720px){
     width: 80%;
   }
+
 `;
 
 export const PortfolioSection = styled.section`
@@ -126,15 +129,13 @@ export const PortfolioSection = styled.section`
   justify-content: center;
   width: 100%;
   min-height: 64vh;
-/*   background: -webkit-linear-gradient(-41deg, rgb(5, 5, 5), rgb(31, 31, 31));
-  background: linear-gradient(-41deg, rgb(5, 5, 5), rgb(31, 31, 31)); */
 `;
 
 export const PortfolioSectionContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 1900px;
+  width: 1440px;
   margin: 0 auto;
   padding: 40px 0;
   & h1 {
@@ -153,4 +154,30 @@ export const CardsContainer = styled.div`
   justify-content: center;
   max-width: 1440px;
   flex-wrap: wrap;
+`
+
+export const SkillsSection = styled.section`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 64vh;
+  background-color: ${({ theme }) => theme.colors.black400};
+`;
+
+export const SkillsSectionContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1440px;
+  margin: 0 auto;
+  padding: 40px 0;
+  & h1 {
+    color: ${({ theme }) => theme.colors.white100};
+    margin: 0 auto;
+    font-weight: 800;
+  }
+  & h3 {
+    color: ${({ theme }) => theme.colors.white100};
+    margin: 40px auto 16px;
+  }
 `
