@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.a`
-  font-size: ${({ theme }) => theme.sizes.large};
+  font-size: ${({ theme }) => theme.sizes.medium};
   font-weight: 500;
   color: ${({ theme }) => theme.colors.white100};
   width: 92%;
@@ -13,6 +13,6 @@ export const Container = styled.a`
     margin: 4px auto;
     width: 100%;
     text-align: center;
-    font-size: ${({ theme }) => theme.sizes.medium};
+    font-size: ${({ theme }) => theme.sizes.small};
   }
 `;

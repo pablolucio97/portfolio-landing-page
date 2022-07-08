@@ -22,8 +22,9 @@ import { TopScrollButton } from '../components/Elements/TopScrollButton';
 import { Text } from '../components/Typography/Text';
 import { Container } from './styles';
 
-import {NextProgressComponent} from '../components/Next/NextProgress'
+import { NextProgressComponent } from '../components/Next/NextProgress'
 import { WhatsappButton } from '../components/Elements/WhatsappButton';
+import { FooterThirdSection } from '../components/Elements/Footer/FooterThirdSection';
 
 interface LayoutProps {
     children: ReactNode;
@@ -101,18 +102,28 @@ export default function Layout({ children }: LayoutProps) {
                         }}
                     >
                         <HeaderLink
-                            content='Home'
-                            url='/'
+                            content='Quem sou eu'
+                            url='#whoami'
                             onClick={handleToggleDrawer}
                         />
                         <HeaderLink
-                            content='Equipe'
-                            url='/equipe'
+                            content='Portfólio'
+                            url='#portfolio'
+                            onClick={handleToggleDrawer}
+                        />
+                        <HeaderLink
+                            content='Conhecimentos'
+                            url='#skills'
+                            onClick={handleToggleDrawer}
+                        />
+                        <HeaderLink
+                            content='Implementações'
+                            url='#implementations'
                             onClick={handleToggleDrawer}
                         />
                         <HeaderLink
                             content='Contato'
-                            url='/contato'
+                            url='#contact'
                             onClick={handleToggleDrawer}
                         />
                     </Drawer>
@@ -128,16 +139,29 @@ export default function Layout({ children }: LayoutProps) {
                 </HeaderLogoContainer>
                 <HeaderLinksContainer>
                     <HeaderLink
-                        content='Home'
-                        url='/'
+                        content='Quem sou eu'
+                        url='#whoami'
+                        onClick={handleToggleDrawer}
                     />
                     <HeaderLink
-                        content='Equipe'
-                        url='/equipe'
+                        content='Portfólio'
+                        url='#portfolio'
+                        onClick={handleToggleDrawer}
+                    />
+                    <HeaderLink
+                        content='Conhecimentos'
+                        url='#skills'
+                        onClick={handleToggleDrawer}
+                    />
+                    <HeaderLink
+                        content='Implementações'
+                        url='#implementations'
+                        onClick={handleToggleDrawer}
                     />
                     <HeaderLink
                         content='Contato'
-                        url='/contato'
+                        url='#contact'
+                        onClick={handleToggleDrawer}
                     />
                 </HeaderLinksContainer>
             </Header>
@@ -149,18 +173,43 @@ export default function Layout({ children }: LayoutProps) {
             >
                 <FooterFirstSection>
                     <FooterTitle
-                        content='Sobre nós'
+                        content='Acesso rápido'
                     />
                     <FooterLink
-                        content='Equipe'
-                        url='/equipe'
+                        content='Quem sou eu'
+                        url='#whoami'
                     />
                     <FooterLink
-                        content='Contato'
-                        url='/contato'
+                        content='Portfólio'
+                        url='#portfolio'
+                    />
+                    <FooterLink
+                        content='Conhecimentos'
+                        url='#skills'
+                    />
+                    <FooterLink
+                        content='Implementações'
+                        url='#implementations'
                     />
                 </FooterFirstSection>
                 <FooterSecondSection>
+                    <FooterTitle
+                        content='Portfólio'
+                    />
+                    <FooterLink
+                        content='Landing Pages'
+                        url='/#landingpages'
+                    />
+                    <FooterLink
+                        content='WebSites'
+                        url='#websites'
+                    />
+                    <FooterLink
+                        content='Aplicações e plataformas'
+                        url='#applications'
+                    />
+                </FooterSecondSection>
+                <FooterThirdSection>
                     <FooterTitle
                         content='Redes sociais'
                     />
@@ -171,7 +220,7 @@ export default function Layout({ children }: LayoutProps) {
                         iconsSize='small'
                         iconsStyle={{ color: theme.colors.white500 }}
                     />
-                </FooterSecondSection>
+                </FooterThirdSection>
             </Footer>
             <FooterAttach
                 style={{

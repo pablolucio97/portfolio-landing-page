@@ -6,7 +6,7 @@ export const Container = styled.div`
   flex-direction: row;
   margin: 0 auto;
   justify-content: center;
-  @media (max-width: 720px) {
+  @media (max-width: 1080px) {
     display: none;
   }
 `;
