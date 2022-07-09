@@ -43,14 +43,13 @@ export const Button = styled.button`
   }
 `;
 
-export const Container = styled.div`
+export const ImageContainer = styled.div`
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-width: 560px;
+width: 100%;
 height: 420px;
-margin: 12px;
 position: relative;
 cursor: pointer;
 &:hover{
@@ -70,7 +69,16 @@ cursor: pointer;
 @media (max-width: 720px) {
     width: 80%;
   }
+`
 
+export const Container = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: 560px;
+
+margin: 12px;
 `
 
 export const Title = styled.h3`
@@ -85,6 +93,29 @@ export const Title = styled.h3`
   }
 `;
 
+export const Text = styled.p`
+  font-size: ${({ theme }) => theme.sizes.medium};
+  font-weight: 300;
+  text-align: justify;
+  margin: 4px 0;
+  color: ${({ theme }) => theme.colors.white400};
+  @media (max-width: 720px) {
+    font-size: ${({ theme }) => theme.sizes.normal};
+  }
+`;
+
+export const TechsContainer = styled.div`
+width: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+`
+
+export const TechsImageContainer = styled.div`
+width: 100%;
+display: flex;
+justify-content: center;
+`
 
 
 

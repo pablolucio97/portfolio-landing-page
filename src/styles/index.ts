@@ -5,33 +5,6 @@ export const Container = styled.div`
   flex-direction: column;
   width: 100%;
 `
-/* BANNER WITH BACKGROUND IMAGE USAGE */
-
-/* export const BannerSection = styled.section`
-  display: flex;
-  width: 100%;
-  min-height: 120vh;
-
-  @media(max-width: 1440px){
-     min-height: 90vh;
-    background-color: red;
-  } 
-  @media(max-width: 1080px){
-    min-height: 56vh;
-  }
-  @media(max-width: 720px){
-    min-height: 40vh;
-  }
-`;
-
-export const BannerSectionContainer = styled.div`
-  width: 100%;
-  margin: 0 auto;
-  background-image: url("/images/banner-contact.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-`; */
-
 
 export const IntroductionSection = styled.section`
   display: flex;
@@ -94,21 +67,6 @@ export const IntroductionSectionContentInfoContainer = styled.div`
     align-items: center;
     width: 100%;
   }
-
-  /* @media (max-width: 1080px) {
-    width: 100%;
-    padding: 16px;
-    & h1 {
-      text-align: center;
-    }
-  }
-  @media (max-width: 480px) {
-    width: 100%;
-    padding: 0;
-    & h1 {
-      text-align: center;
-    }
-  } */
 `;
 
 export const IntroductionSectionImageContainer = styled.div`

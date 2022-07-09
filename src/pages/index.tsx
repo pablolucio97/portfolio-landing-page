@@ -20,15 +20,15 @@ import {
   SocialContactContainer
 } from '../styles'
 
-import { landingPages, skills, webSites } from '../data/data'
+import { MdEmail, MdPhone } from 'react-icons/md'
+import { ContactCard } from '../components/Cards/ContactCard'
 import { PortfolioCard } from '../components/Cards/PortfolioCard'
 import { SkillCard } from '../components/Cards/SkillCard'
-import { ContactCard } from '../components/Cards/ContactCard'
-import { MdEmail, MdPhone, } from 'react-icons/md'
 import { SocialIcons } from '../components/Elements/SocialIcons'
 import { SubTitle } from '../components/Typography/SubTitle'
-import { Title } from '../components/Typography/Title'
 import { Text } from '../components/Typography/Text'
+import { Title } from '../components/Typography/Title'
+import { landingPages, skills, webSites } from '../data/data'
 const Home: NextPage = () => {
 
 
@@ -37,7 +37,7 @@ const Home: NextPage = () => {
   return (
     <Container style={{ marginBottom: 120 }}>
       <Head>
-        <title> PabloSilvaDev | Portfólio</title>
+        <title> PabloSilvaDev | Portfólio </title>
         {/* @ts-ignore */}
         <meta charset="UTF-8" />
         <meta name="description" content="Landing pages de alta conversão e sites institucionais para o seu negócio." />
@@ -51,8 +51,9 @@ const Home: NextPage = () => {
           />
           <SubTitle
             content='Landing Pages'
+
           />
-          <CardsContainer>
+          <CardsContainer id='landingpages'>
             {landingPages.map(landing => (
               <PortfolioCard
                 key={landing.name}
@@ -61,13 +62,14 @@ const Home: NextPage = () => {
                 imgHeight={420}
                 title={landing.name}
                 pageUrl={landing.url}
+                techs={landing.techs.map(tech => tech.substring(0).concat('.png'))}
               />
             ))}
           </CardsContainer>
           <SubTitle
             content='Websites'
           />
-          <CardsContainer>
+          <CardsContainer id='websites'>
             {webSites.map(webSite => (
               <PortfolioCard
                 key={webSite.name}
@@ -76,6 +78,7 @@ const Home: NextPage = () => {
                 imgHeight={420}
                 title={webSite.name}
                 pageUrl={webSite.url}
+                techs={webSite.techs.map(tech => tech.substring(0).concat('.png'))}
               />
             ))}
           </CardsContainer>
@@ -130,7 +133,7 @@ const Home: NextPage = () => {
             content='Contato'
           />
           <ContactCard
-          cardTitle='Se você ou sua empresa precisa desenvolver um website, uma plataforma, ou aplicação web, não hesite em me contatar. Será um prazer ajudá-lo.'
+            cardTitle='Se você ou sua empresa precisa desenvolver um website, uma plataforma, ou aplicação web, não hesite em me contatar. Será um prazer ajudá-lo.'
             email='pablolucio_@hotmail.com'
             emailIcon={
               <MdEmail
