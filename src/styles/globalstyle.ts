@@ -169,6 +169,7 @@ export const GlobalStyle = createGlobalStyle`
   .contactCard{
     width: 720px;
     background: ${({ theme }) => theme.colors.black100};
+    margin-bottom: 40px;
     @media(max-width: 720px){
       width: 80%;
     }

@@ -33,7 +33,7 @@ export const Container = styled.div<DrawerProps>`
       direction === "top" ? menuAnimationVertical : menuAnimationHorizontal}
     0.32s;
   -webkit-animation-fill-mode: forwards;
-  background-color: ${({ theme }) => theme.colors.primary};
+  background-color: ${({ theme }) => theme.colors.black100};
   overflow: auto;
 `;
 

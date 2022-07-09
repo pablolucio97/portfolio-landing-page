@@ -4,8 +4,6 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  background: -webkit-linear-gradient(-41deg, rgb(5, 5, 5), rgb(31, 31, 31));
-  background: linear-gradient(-41deg, rgb(5, 5, 5), rgb(31, 31, 31));
 `
 /* BANNER WITH BACKGROUND IMAGE USAGE */
 
@@ -129,6 +127,8 @@ export const PortfolioSection = styled.section`
   justify-content: center;
   width: 100%;
   min-height: 64vh;
+  background: -webkit-linear-gradient(-41deg, rgb(5, 5, 5), rgb(31, 31, 31));
+  background: linear-gradient(-41deg, rgb(5, 5, 5), rgb(31, 31, 31));
 `;
 
 export const PortfolioSectionContainer = styled.div`
@@ -187,6 +187,7 @@ export const ContactSection = styled.section`
   justify-content: center;
   width: 100%;
   min-height: 64vh;
+  margin-bottom: -120px;
   background: -webkit-linear-gradient(-41deg, rgb(5, 5, 5), rgb(31, 31, 31));
     background: linear-gradient(-41deg, rgb(5, 5, 5), rgb(31, 31, 31));
 `;

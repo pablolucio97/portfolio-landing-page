@@ -106,7 +106,7 @@ const Home: NextPage = () => {
         </IntroductionSectionContainer>
       </IntroductionSection>
       <SkillsSection>
-        <SkillsSectionContainer>
+        <SkillsSectionContainer id='skills'>
           <Title
             content='Conhecimentos'
           />
@@ -125,7 +125,7 @@ const Home: NextPage = () => {
 
       </SkillsSection>
       <ContactSection>
-        <ContactSectionContainer>
+        <ContactSectionContainer id='contact'>
           <Title
             content='Contato'
           />

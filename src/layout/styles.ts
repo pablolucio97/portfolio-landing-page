@@ -7,13 +7,13 @@ export const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.black300};
   & .headerScrolling {
     position: fixed;
-    background-color: ${({ theme }) => theme.colors.primary};
+    background-color: transparent;
     z-index: 999;
     padding: 0 12px;
     transition: all 0.8s ease;
   }
   & .headerNotScrolling {
-    background-color: ${({ theme }) => theme.colors.primary};
+    background-color: ${({ theme }) => theme.colors.black100};
     transition: all 0.8s ease;
     padding: 8px 12px;
   }

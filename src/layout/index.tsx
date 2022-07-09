@@ -91,34 +91,29 @@ export default function Layout({ children }: LayoutProps) {
                 whatsappContact='31985187963'
             />
             <Header
-                className={headerAnimation ? 'headerScrolling' : 'headerNotScrolling'}
+                className={headerAnimation ? 'headerScrolling glassEffect' : 'headerNotScrolling'}
             >
                 {toggleDrawer &&
                     <Drawer
                         toggleDrawer={handleToggleDrawer}
                         direction='top'
                         style={{
-                            backgroundColor: theme.colors.primary
+                            backgroundColor: theme.colors.black100
                         }}
                     >
-                        <HeaderLink
-                            content='Quem sou eu'
-                            url='#whoami'
-                            onClick={handleToggleDrawer}
-                        />
                         <HeaderLink
                             content='Portfólio'
                             url='#portfolio'
                             onClick={handleToggleDrawer}
                         />
                         <HeaderLink
-                            content='Conhecimentos'
-                            url='#skills'
+                            content='Quem sou eu'
+                            url='#whoami'
                             onClick={handleToggleDrawer}
                         />
                         <HeaderLink
-                            content='Implementações'
-                            url='#implementations'
+                            content='Conhecimentos'
+                            url='#skills'
                             onClick={handleToggleDrawer}
                         />
                         <HeaderLink
@@ -139,36 +134,27 @@ export default function Layout({ children }: LayoutProps) {
                 </HeaderLogoContainer>
                 <HeaderLinksContainer>
                     <HeaderLink
-                        content='Quem sou eu'
-                        url='#whoami'
-                        onClick={handleToggleDrawer}
-                    />
-                    <HeaderLink
                         content='Portfólio'
                         url='#portfolio'
-                        onClick={handleToggleDrawer}
+                    />
+                    <HeaderLink
+                        content='Quem sou eu'
+                        url='#whoami'
                     />
                     <HeaderLink
                         content='Conhecimentos'
                         url='#skills'
-                        onClick={handleToggleDrawer}
-                    />
-                    <HeaderLink
-                        content='Implementações'
-                        url='#implementations'
-                        onClick={handleToggleDrawer}
                     />
                     <HeaderLink
                         content='Contato'
                         url='#contact'
-                        onClick={handleToggleDrawer}
                     />
                 </HeaderLinksContainer>
             </Header>
             <main>{children}</main>
             <Footer
                 style={{
-                    backgroundColor: theme.colors.primary
+                    backgroundColor: theme.colors.black100
                 }}
             >
                 <FooterFirstSection>
@@ -176,20 +162,16 @@ export default function Layout({ children }: LayoutProps) {
                         content='Acesso rápido'
                     />
                     <FooterLink
-                        content='Quem sou eu'
-                        url='#whoami'
-                    />
-                    <FooterLink
                         content='Portfólio'
                         url='#portfolio'
                     />
                     <FooterLink
-                        content='Conhecimentos'
-                        url='#skills'
+                        content='Quem sou eu'
+                        url='#whoami'
                     />
                     <FooterLink
-                        content='Implementações'
-                        url='#implementations'
+                        content='Conhecimentos'
+                        url='#skills'
                     />
                 </FooterFirstSection>
                 <FooterSecondSection>
@@ -224,7 +206,7 @@ export default function Layout({ children }: LayoutProps) {
             </Footer>
             <FooterAttach
                 style={{
-                    backgroundColor: theme.colors.primary,
+                    backgroundColor: theme.colors.black100,
                 }}
             >
                 <Divider />
