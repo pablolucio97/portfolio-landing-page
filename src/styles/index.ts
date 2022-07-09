@@ -4,6 +4,24 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+
+  & .contactCard{
+    width: 720px;
+    background: ${({ theme }) => theme.colors.black100};
+    margin-bottom: 40px;
+    @media(max-width: 720px){
+      width: 80%;
+    }
+    & span{
+      color: ${({ theme }) => theme.colors.white400}
+    }
+  }
+
+  & .socialContainer{
+    display: flex;
+    justify-content: center;
+    margin-top: -16px;
+  }
 `
 
 export const IntroductionSection = styled.section`
