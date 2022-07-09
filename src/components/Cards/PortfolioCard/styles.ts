@@ -66,9 +66,7 @@ cursor: pointer;
     }
 }
 
-@media (max-width: 720px) {
-    width: 80%;
-  }
+
 `
 
 export const Container = styled.div`
@@ -79,6 +77,10 @@ align-items: center;
 width: 560px;
 
 margin: 12px;
+@media (max-width: 720px) {
+    width: 80%;
+    margin: 0 auto;
+  }
 `
 
 export const Title = styled.h3`

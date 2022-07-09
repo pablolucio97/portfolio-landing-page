@@ -29,6 +29,8 @@ import { SubTitle } from '../components/Typography/SubTitle'
 import { Text } from '../components/Typography/Text'
 import { Title } from '../components/Typography/Title'
 import { landingPages, skills, webSites } from '../data/data'
+import { RevealFade } from '../components/Animations/RevealFade'
+import { RevealZoom } from '../components/Animations/RevealZoom'
 const Home: NextPage = () => {
 
 
@@ -55,15 +57,17 @@ const Home: NextPage = () => {
           />
           <CardsContainer id='landingpages'>
             {landingPages.map(landing => (
-              <PortfolioCard
-                key={landing.name}
-                imageUrl={landing.image}
-                imgWidth={560}
-                imgHeight={420}
-                title={landing.name}
-                pageUrl={landing.url}
-                techs={landing.techs.map(tech => tech.substring(0).concat('.png'))}
-              />
+              <RevealFade key={landing.name}>
+                <PortfolioCard
+                  imageUrl={landing.image}
+                  imgWidth={560}
+                  imgHeight={420}
+                  title={landing.name}
+                  pageUrl={landing.url}
+                  techs={landing.techs.map(tech =>
+                    tech.substring(0).concat('.png'))}
+                />
+              </RevealFade>
             ))}
           </CardsContainer>
           <SubTitle
@@ -71,15 +75,17 @@ const Home: NextPage = () => {
           />
           <CardsContainer id='websites'>
             {webSites.map(webSite => (
-              <PortfolioCard
-                key={webSite.name}
-                imageUrl={webSite.image}
-                imgWidth={560}
-                imgHeight={420}
-                title={webSite.name}
-                pageUrl={webSite.url}
-                techs={webSite.techs.map(tech => tech.substring(0).concat('.png'))}
-              />
+              <RevealFade key={webSite.name}>
+                <PortfolioCard
+                  imageUrl={webSite.image}
+                  imgWidth={560}
+                  imgHeight={420}
+                  title={webSite.name}
+                  pageUrl={webSite.url}
+                  techs={webSite.techs.map(tech =>
+                    tech.substring(0).concat('.png'))}
+                />
+              </RevealFade>
             ))}
           </CardsContainer>
         </PortfolioSectionContainer>
@@ -91,19 +97,25 @@ const Home: NextPage = () => {
           />
           <IntroductionSectionContentContainer>
             <IntroductionSectionContentInfoContainer>
-              <SubTitle
-                content='Olá!'
-              />
-              <Text
-                content='Meu nome é Pablo Silva, sou programador com 2 anos de experiência na criação de sites e aplicativos utilzando tecnologias modernas e altamente performáticas que ajudarão você ou sua empresa a  desenvolver projetos para o mundo virtual. O meu foco é construir aplicações inteligentes que fazem o uso de componentes que reforçam um padrão de projeto.'
-              />
+              <RevealFade>
+                <SubTitle
+                  content='Olá!'
+                />
+              </RevealFade>
+              <RevealFade>
+                <Text
+                  content='Meu nome é Pablo Silva, sou programador com 2 anos de experiência na criação de sites e aplicativos utilzando tecnologias modernas e altamente performáticas que ajudarão você ou sua empresa a  desenvolver projetos para o mundo virtual. O meu foco é construir aplicações inteligentes que fazem o uso de componentes que reforçam um padrão de projeto.'
+                />
+              </RevealFade>
             </IntroductionSectionContentInfoContainer>
             <IntroductionSectionImageContainer>
-              <NextImage
-                height={280}
-                width={280}
-                imgUrl='/profile.png'
-              />
+              <RevealZoom>
+                <NextImage
+                  height={280}
+                  width={280}
+                  imgUrl='/profile.png'
+                />
+              </RevealZoom>
             </IntroductionSectionImageContainer>
           </IntroductionSectionContentContainer>
         </IntroductionSectionContainer>
@@ -114,53 +126,59 @@ const Home: NextPage = () => {
             content='Conhecimentos'
           />
           <CardsContainer>
+            <RevealFade >
             {skills.map(skill => (
-              <SkillCard
+                <SkillCard
                 key={skill.image}
-                imageUrl={skill.image}
-                imgHeight={160}
-                imgWidth={160}
-                content={skill.content}
-              />
-            ))}
+                  imageUrl={skill.image}
+                  imgHeight={160}
+                  imgWidth={160}
+                  content={skill.content}
+                />
+                ))}
+                </RevealFade>
           </CardsContainer>
         </SkillsSectionContainer>
 
       </SkillsSection>
       <ContactSection>
         <ContactSectionContainer id='contact'>
-          <Title
-            content='Contato'
-          />
-          <ContactCard
-            cardTitle='Se você ou sua empresa precisa desenvolver um website, uma plataforma, ou aplicação web, não hesite em me contatar. Será um prazer ajudá-lo.'
-            email='pablolucio_@hotmail.com'
-            emailIcon={
-              <MdEmail
-                size={40}
-                color={theme.colors.secondary}
-              />}
-            phoneIcon={
-              <MdPhone
-                size={40}
-                color={theme.colors.secondary}
-              />}
-            phone='(31) 985187963'
-            cardClassName='contactCard glassEffect'
-          >
-            <SubTitle
-              content='Redes'
+          <RevealFade>
+            <Title
+              content='Contato'
             />
-            <SocialContactContainer>
-              <SocialIcons
-                instagramUrl='https://www.instagram.com/pablosilva.dev'
-                githubUrl='https://github.com/pablolucio97'
-                linkedinUrl='https://www.linkedin.com/in/pablo-silva-76b521156'
-                iconsSize='large'
-                containerClassName='socialContainer'
+          </RevealFade>
+          <RevealFade bottom>
+            <ContactCard
+              cardTitle='Se você ou sua empresa precisa desenvolver um website, uma plataforma, ou aplicação web, não hesite em me contatar. Será um prazer ajudá-lo.'
+              email='pablolucio_@hotmail.com'
+              emailIcon={
+                <MdEmail
+                  size={40}
+                  color={theme.colors.secondary}
+                />}
+              phoneIcon={
+                <MdPhone
+                  size={40}
+                  color={theme.colors.secondary}
+                />}
+              phone='(31) 985187963'
+              cardClassName='contactCard glassEffect'
+            >
+              <SubTitle
+                content='Redes'
               />
-            </SocialContactContainer>
-          </ContactCard>
+              <SocialContactContainer>
+                <SocialIcons
+                  instagramUrl='https://www.instagram.com/pablosilva.dev'
+                  githubUrl='https://github.com/pablolucio97'
+                  linkedinUrl='https://www.linkedin.com/in/pablo-silva-76b521156'
+                  iconsSize='large'
+                  containerClassName='socialContainer'
+                />
+              </SocialContactContainer>
+            </ContactCard>
+          </RevealFade>
         </ContactSectionContainer>
       </ContactSection>
     </Container>
