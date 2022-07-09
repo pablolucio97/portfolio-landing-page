@@ -51,12 +51,14 @@ export function ContactCard({
                 style={cardStyle}
                 className={glassEffect ? 'glassEffect' : cardClassName}
             >
-                <Title
-                    style={ActionCardStyle}
-                    className={ActionCardClassName}
-                >
-                    {cardTitle}
-                </Title>
+                {cardTitle &&
+                    <Title
+                        style={ActionCardStyle}
+                        className={ActionCardClassName}
+                    >
+                        {cardTitle}
+                    </Title>
+                }
                 {email &&
                     <TextContainer>
                         {emailIcon}

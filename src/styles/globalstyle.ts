@@ -166,6 +166,23 @@ export const GlobalStyle = createGlobalStyle`
     }
   }  
 
+  .contactCard{
+    width: 720px;
+    background: ${({ theme }) => theme.colors.black100};
+    @media(max-width: 720px){
+      width: 80%;
+    }
+    & span{
+      color: ${({ theme }) => theme.colors.white400}
+    }
+  }
+
+  .socialContainer{
+    display: flex;
+    justify-content: center;
+    margin-top: -16px;
+  }
+
   //REACT-RESPONSIVE-CARROUSEL-CUSTOM -DOTS
    .carousel .control-dots .dot {
       -webkit-transition: opacity 0.25s ease-in;

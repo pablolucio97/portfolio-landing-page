@@ -41,7 +41,8 @@ export const IntroductionSection = styled.section`
   align-items: center;
   width: 100%;
   min-height: 64vh;
-
+  background: -webkit-linear-gradient(-41deg, rgb(5, 5, 5), rgb(31, 31, 31));
+  background: linear-gradient(-41deg, rgb(5, 5, 5), rgb(31, 31, 31));
 `;
 
 export const IntroductionSectionContainer = styled.div`
@@ -121,7 +122,6 @@ export const IntroductionSectionImageContainer = styled.div`
   @media (max-width: 720px){
     width: 80%;
   }
-
 `;
 
 export const PortfolioSection = styled.section`
@@ -180,4 +180,36 @@ export const SkillsSectionContainer = styled.div`
     color: ${({ theme }) => theme.colors.white100};
     margin: 40px auto 16px;
   }
+`
+
+export const ContactSection = styled.section`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 64vh;
+  background: -webkit-linear-gradient(-41deg, rgb(5, 5, 5), rgb(31, 31, 31));
+    background: linear-gradient(-41deg, rgb(5, 5, 5), rgb(31, 31, 31));
+`;
+
+export const ContactSectionContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1440px;
+  margin: 0 auto;
+  padding: 40px 0;
+  & h1 {
+    color: ${({ theme }) => theme.colors.white100};
+    margin: 24px auto;
+    font-weight: 800;
+  }
+  & h3 {
+    color: ${({ theme }) => theme.colors.white100};
+    margin: 40px auto 16px;
+  }
+`
+
+export const SocialContactContainer = styled.div`
+  margin: 0 auto;
+
 `

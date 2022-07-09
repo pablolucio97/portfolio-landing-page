@@ -49,18 +49,14 @@ export const TextContainer = styled.div`
 `;
 
 export const Title = styled.h3`
-  font-size: ${({ theme }) => theme.sizes.xlarge};
-  font-weight: 500;
+  font-size: ${({ theme }) => theme.sizes.large};
+  font-weight: 400;
   color: ${({ theme }) => theme.colors.black100};
   width: 80%;
   text-align: center;
-  @media (max-width: 1080px) {
-    width: 80%;
-    font-size: ${({ theme }) => theme.sizes.xlarge}
-  }
   @media (max-width: 720px) {
     width: 80%;
-    font-size: ${({ theme }) => theme.sizes.large}
+    font-size: ${({ theme }) => theme.sizes.medium}
   }
   
   `;
