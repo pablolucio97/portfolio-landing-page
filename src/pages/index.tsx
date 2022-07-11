@@ -28,7 +28,7 @@ import { SocialIcons } from '../components/Elements/SocialIcons'
 import { SubTitle } from '../components/Typography/SubTitle'
 import { Text } from '../components/Typography/Text'
 import { Title } from '../components/Typography/Title'
-import { landingPages, skills, webSites } from '../data/data'
+import { landingPages, skills, webSites, applications } from '../data/data'
 import { RevealFade } from '../components/Animations/RevealFade'
 import { RevealZoom } from '../components/Animations/RevealZoom'
 const Home: NextPage = () => {
@@ -46,11 +46,59 @@ const Home: NextPage = () => {
         <meta name="keywords" content="pablosilvadev pablo silva psd landing pages" />
         <meta name='author' content='Pablo Silva' />
       </Head>
+      <IntroductionSection>
+        <IntroductionSectionContainer id='whoami'>
+          <Title
+            content='Quem sou eu'
+          />
+          <IntroductionSectionContentContainer>
+            <IntroductionSectionContentInfoContainer>
+              <RevealFade>
+                <SubTitle
+                  content='Olá!'
+                />
+              </RevealFade>
+              <RevealFade>
+                <Text
+                  content='Meu nome é Pablo Silva, sou programador com 2 anos de experiência na criação de sites e aplicativos utilzando tecnologias modernas e altamente performáticas que ajudarão você ou sua empresa a  desenvolver projetos para o mundo virtual. O meu foco é construir aplicações inteligentes que fazem o uso de componentes que reforçam um padrão de projeto.'
+                />
+              </RevealFade>
+            </IntroductionSectionContentInfoContainer>
+            <IntroductionSectionImageContainer>
+              <RevealZoom>
+                <NextImage
+                  height={280}
+                  width={280}
+                  imgUrl='/profile.png'
+                />
+              </RevealZoom>
+            </IntroductionSectionImageContainer>
+          </IntroductionSectionContentContainer>
+        </IntroductionSectionContainer>
+      </IntroductionSection>
       <PortfolioSection>
         <PortfolioSectionContainer id='portfolio'>
           <Title
             content='Portfólio'
           />
+          <SubTitle
+            content='Aplicações web'
+          />
+          <CardsContainer id='applications'>
+            {applications.map(application => (
+              <RevealFade key={application.name}>
+                <PortfolioCard
+                  imageUrl={application.image}
+                  imgWidth={560}
+                  imgHeight={420}
+                  title={application.name}
+                  pageUrl={application.url}
+                  techs={application.techs.map(tech =>
+                    tech.substring(0).concat('.png'))}
+                />
+              </RevealFade>
+            ))}
+          </CardsContainer>
           <SubTitle
             content='Landing Pages'
 
@@ -90,36 +138,7 @@ const Home: NextPage = () => {
           </CardsContainer>
         </PortfolioSectionContainer>
       </PortfolioSection>
-      <IntroductionSection>
-        <IntroductionSectionContainer id='whoami'>
-          <Title
-            content='Quem sou eu'
-          />
-          <IntroductionSectionContentContainer>
-            <IntroductionSectionContentInfoContainer>
-              <RevealFade>
-                <SubTitle
-                  content='Olá!'
-                />
-              </RevealFade>
-              <RevealFade>
-                <Text
-                  content='Meu nome é Pablo Silva, sou programador com 2 anos de experiência na criação de sites e aplicativos utilzando tecnologias modernas e altamente performáticas que ajudarão você ou sua empresa a  desenvolver projetos para o mundo virtual. O meu foco é construir aplicações inteligentes que fazem o uso de componentes que reforçam um padrão de projeto.'
-                />
-              </RevealFade>
-            </IntroductionSectionContentInfoContainer>
-            <IntroductionSectionImageContainer>
-              <RevealZoom>
-                <NextImage
-                  height={280}
-                  width={280}
-                  imgUrl='/profile.png'
-                />
-              </RevealZoom>
-            </IntroductionSectionImageContainer>
-          </IntroductionSectionContentContainer>
-        </IntroductionSectionContainer>
-      </IntroductionSection>
+
       <SkillsSection>
         <SkillsSectionContainer id='skills'>
           <Title

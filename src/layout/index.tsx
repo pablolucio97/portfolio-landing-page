@@ -11,12 +11,10 @@ import { FooterLink } from '../components/Elements/Footer/FooterLink';
 import { FooterSecondSection } from '../components/Elements/Footer/FooterSecondSection';
 import { FooterTitle } from '../components/Elements/Footer/FooterTitle';
 import { Header } from '../components/Elements/Header';
-import { HeaderAuthenticationContainer } from '../components/Elements/Header/HeaderAuthenticationContainer';
 import { HeaderLink } from '../components/Elements/Header/HeaderLink';
 import { HeaderLinksContainer } from '../components/Elements/Header/HeaderLinksContainer';
 import { HeaderLogoContainer } from '../components/Elements/Header/HeaderLogoContainer';
 import { Logo } from '../components/Elements/Logo';
-import { PrimaryButton } from '../components/Elements/PrimaryButton';
 import { SocialIcons } from '../components/Elements/SocialIcons';
 import { TopScrollButton } from '../components/Elements/TopScrollButton';
 import { Text } from '../components/Typography/Text';
@@ -102,13 +100,13 @@ export default function Layout({ children }: LayoutProps) {
                         }}
                     >
                         <HeaderLink
-                            content='Portfólio'
-                            url='#portfolio'
+                            content='Quem sou eu'
+                            url='#whoami'
                             onClick={handleToggleDrawer}
                         />
                         <HeaderLink
-                            content='Quem sou eu'
-                            url='#whoami'
+                            content='Portfólio'
+                            url='#portfolio'
                             onClick={handleToggleDrawer}
                         />
                         <HeaderLink
@@ -134,12 +132,12 @@ export default function Layout({ children }: LayoutProps) {
                 </HeaderLogoContainer>
                 <HeaderLinksContainer>
                     <HeaderLink
-                        content='Portfólio'
-                        url='#portfolio'
-                    />
-                    <HeaderLink
                         content='Quem sou eu'
                         url='#whoami'
+                    />
+                    <HeaderLink
+                        content='Portfólio'
+                        url='#portfolio'
                     />
                     <HeaderLink
                         content='Conhecimentos'
@@ -162,12 +160,12 @@ export default function Layout({ children }: LayoutProps) {
                         content='Acesso rápido'
                     />
                     <FooterLink
-                        content='Portfólio'
-                        url='#portfolio'
-                    />
-                    <FooterLink
                         content='Quem sou eu'
                         url='#whoami'
+                    />
+                    <FooterLink
+                        content='Portfólio'
+                        url='#portfolio'
                     />
                     <FooterLink
                         content='Conhecimentos'
@@ -179,16 +177,16 @@ export default function Layout({ children }: LayoutProps) {
                         content='Portfólio'
                     />
                     <FooterLink
+                        content='Aplicações e plataformas'
+                        url='#applications'
+                    />
+                    <FooterLink
                         content='Landing Pages'
                         url='/#landingpages'
                     />
                     <FooterLink
                         content='WebSites'
                         url='#websites'
-                    />
-                    <FooterLink
-                        content='Aplicações e plataformas'
-                        url='#applications'
                     />
                 </FooterSecondSection>
                 <FooterThirdSection>

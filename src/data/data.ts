@@ -1,53 +1,80 @@
+export const applications = [
+  {
+    image: "/components.png",
+    name: "react-components-library",
+    url: "https://react-components-liard.vercel.app/actioncard",
+    techs: ["/html", "/css", "/js", "/react", "/ts", "/styled", "/next"]
+  },
+  {
+    image: "/whattoplay.png",
+    name: "what-to-play-web-application",
+    url: "https://what-to-play.vercel.app/",
+    techs: ["/html", "/css", "/js", "/react", "/ts", "/styled", "/next"]
+  },
+  {
+    image: "/moveit.png",
+    name: "moveit-web-application",
+    url: "https://moveit-eta-sage.vercel.app/",
+    techs: ["/html", "/css", "/js", "/react", "/ts", "/next"]
+  },
+  {
+    image: "/reactflix.png",
+    name: "reactflix-web-application",
+    url: "https://62cbfee4368e150a72e22703--reactflix-pablosilvadev.netlify.app/",
+    techs: ["/html", "/css", "/js", "/react", "/styled"]
+  },
+]
+
 export const landingPages = [
   {
     image: "/landing1.png",
     name: "product-landing-page",
     url: "https://product-landing-page-vert-ten.vercel.app/",
-    techs: ["/html", "/css", "/js", "/ts", "/styled", "/next"]
+    techs: ["/html", "/css", "/js", "/react", "/ts", "/styled", "/next"]
   },
   {
     image: "/landing2.png",
     name: "english-week-landing-page",
     url: "https://english-week-landing-page.vercel.app/",
-    techs: ["/html", "/css", "/js", "/ts", "/styled", "/next"]
+    techs: ["/html", "/css", "/js", "/react", "/ts", "/styled", "/next"]
   },
   {
     image: "/landing3.png",
     name: "react-native-course-landing-page",
     url: "https://landingpage-react-native-course-example.vercel.app/",
-    techs: ["/html", "/css", "/js", "/ts", "/styled", "/next"]
+    techs: ["/html", "/css", "/js", "/react", "/ts", "/styled", "/next"]
   },
   {
     image: "/landing4.png",
     name: "power-muscles-landing-page",
     url: "https://power-muscles-landing-page.vercel.app/",
-    techs: ["/html", "/css", "/js", "/ts", "/styled", "/next"]
+    techs: ["/html", "/css", "/js", "/react", "/ts", "/styled", "/next"]
   },
 ]
 export const webSites = [
   {
     image: "/site1.png",
     name: "photographer-institutional-website",
-    url: "https://esthetic-clinic-institutional-website.vercel.app/",
-    techs: ["/html", "/css", "/js", "/ts", "/styled", "/next"]
+    url: "https://photographer-institutional-website.vercel.app/",
+    techs: ["/html", "/css", "/js", "/react", "/ts", "/styled", "/next"]
   },
   {
     image: "/site2.png",
     name: "esthetic-clinic-institutional-website",
-    url: "https://photographer-institutional-website.vercel.app/",
-    techs: ["/html", "/css", "/js", "/ts", "/styled", "/next"]
+    url: "https://esthetic-clinic-institutional-website.vercel.app/",
+    techs: ["/html", "/css", "/js", "/react", "/ts", "/styled", "/next"]
   },
   {
     image: "/site3.png",
     name: "beauty-nails-website",
     url: "https://beauty-nails.vercel.app/",
-    techs: ["/html", "/css", "/js", "/ts", "/styled", "/next"]
+    techs: ["/html", "/css", "/js", "/react", "/ts", "/styled", "/next"]
   },
   {
     image: "/site4.png",
     name: "simone-psychologist-website",
     url: "https://psychologist-website.vercel.app/",
-    techs: ["/html", "/css", "/js", "/ts", "/styled", "/next"]
+    techs: ["/html", "/css", "/js", "/react", "/ts", "/styled", "/next"]
   },
 ]
 
