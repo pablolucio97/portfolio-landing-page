@@ -1,15 +1,9 @@
-import Image from 'next/image'
-import React, { CSSProperties } from 'react';
+import Image from 'next/image';
+import { CSSProperties } from 'react';
 import {
     Button,
-    Container,
-    RevealContainer,
-    Title,
-    Text,
-    TechsContainer,
-    TechsImageContainer,
-    ImageContainer,
-    ContentText
+    Container, ContentText, ImageContainer, RevealContainer, TechsContainer,
+    TechsImageContainer, Text, Title
 } from './styles';
 
 interface PortfolioCardProps {
@@ -68,7 +62,7 @@ export function PortfolioCard({
                 <RevealContainer>
                 </RevealContainer>
                 <Button onClick={() => handleVisitPage(pageUrl!)}>
-                    Visitar página
+                    Visitar projeto
                 </Button>
                 <ContentText>
                     {content}

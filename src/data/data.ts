@@ -84,7 +84,7 @@ export const webSites = [
   {
     image: "/site4.png",
     name: "simone-psychologist-website",
-    description: "Website desenvolvido para exibir informações profissionais de uma pscicóloga. Autoria própria.",
+    description: "Website desenvolvido para exibir informações profissionais de uma psicóloga. Autoria própria.",
     url: "https://psychologist-website.vercel.app/",
     techs: ["/html", "/css", "/js", "/react", "/ts", "/styled", "/next"]
   },

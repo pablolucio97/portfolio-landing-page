@@ -60,7 +60,7 @@ const Home: NextPage = () => {
               </RevealFade>
               <RevealFade>
                 <Text
-                  content='Meu nome é Pablo Silva, sou programador com 2 anos de experiência na criação de sites e aplicativos utilzando tecnologias modernas e altamente performáticas que ajudarão você ou sua empresa a  desenvolver projetos para o mundo virtual. O meu foco é construir aplicações inteligentes que fazem o uso de componentes que reforçam um padrão de projeto.'
+                  content='Meu nome é Pablo Silva, sou programador com 2 anos de experiência na criação de sites e aplicativos utilzando tecnologias modernas e altamente performáticas que ajudarão você e sua empresa a  desenvolver projetos para o mundo virtual. O meu foco é construir aplicações web que fazem o uso de componentes inteligentes que reforçam um padrão de projeto sempre pensando em boas práticas, modularização e agradável experiência ao usuário.'
                 />
               </RevealFade>
             </IntroductionSectionContentInfoContainer>
@@ -172,7 +172,7 @@ const Home: NextPage = () => {
           </RevealFade>
           <RevealFade bottom>
             <ContactCard
-              cardTitle='Se você ou sua empresa precisa desenvolver um website, uma plataforma, ou aplicação web, não hesite em me contatar. Será um prazer ajudá-lo.'
+              cardTitle='Estou continuamente trabalhando para construir aplicações web cada vez melhores. Caso tenha gostado de meus trabalhos, sinta-se a vontade para me contatar. Será um prazer ajudá-lo.'
               email='pablolucio_@hotmail.com'
               emailIcon={
                 <MdEmail
