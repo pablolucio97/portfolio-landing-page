@@ -8,7 +8,8 @@ import {
     Text,
     TechsContainer,
     TechsImageContainer,
-    ImageContainer
+    ImageContainer,
+    ContentText
 } from './styles';
 
 interface PortfolioCardProps {
@@ -69,6 +70,9 @@ export function PortfolioCard({
                 <Button onClick={() => handleVisitPage(pageUrl!)}>
                     Visitar página
                 </Button>
+                <ContentText>
+                    {content}
+                </ContentText>
             </ImageContainer>
 
             <TechsContainer>

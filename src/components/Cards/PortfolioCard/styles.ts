@@ -26,6 +26,7 @@ export const Button = styled.button`
   align-items: center;
   padding: 4px 12px;
   min-width: 120px;
+  margin: 0 auto 40px;
   height: 40px;
   opacity: 1;
   background-color: ${({ theme }) => theme.colors.secondary};
@@ -42,6 +43,23 @@ export const Button = styled.button`
     max-width: 188px;
   }
 `;
+
+export const ContentText = styled.span`
+  font-size: ${({ theme }) => theme.sizes.normal};
+  font-weight: 300;
+  text-align: center;
+  margin: 24px auto;
+  color: ${({ theme }) => theme.colors.white400};
+  @media (max-width: 720px) {
+    font-size: ${({ theme }) => theme.sizes.small};
+  }
+  display: none;
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+`
+
 
 export const ImageContainer = styled.div`
 display: flex;
@@ -64,6 +82,24 @@ cursor: pointer;
         height: 40px;
         margin: 0 auto 16%;
     }
+    ${ContentText}{
+        display: flex;
+        opacity: 1;
+        z-index: 2;
+        padding: 0 8px;
+    }
+
+    @media (max-width: 768px){
+      ${Button}{
+        display: flex;
+        opacity: 1;
+        z-index: 2;
+        width: 170px;
+        height: 40px;
+        margin: 0 auto 24%;
+    }
+    }
+
 }
 
 
@@ -118,6 +154,7 @@ width: 100%;
 display: flex;
 justify-content: center;
 `
+
 
 
 

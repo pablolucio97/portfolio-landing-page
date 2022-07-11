@@ -93,6 +93,7 @@ const Home: NextPage = () => {
                   imgHeight={420}
                   title={application.name}
                   pageUrl={application.url}
+                  content={application.description}
                   techs={application.techs.map(tech =>
                     tech.substring(0).concat('.png'))}
                 />
@@ -111,6 +112,7 @@ const Home: NextPage = () => {
                   imgWidth={560}
                   imgHeight={420}
                   title={landing.name}
+                  content={landing.description}
                   pageUrl={landing.url}
                   techs={landing.techs.map(tech =>
                     tech.substring(0).concat('.png'))}
@@ -130,6 +132,7 @@ const Home: NextPage = () => {
                   imgHeight={420}
                   title={webSite.name}
                   pageUrl={webSite.url}
+                  content={webSite.description}
                   techs={webSite.techs.map(tech =>
                     tech.substring(0).concat('.png'))}
                 />
