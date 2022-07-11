@@ -14,6 +14,9 @@ opacity: .8;
 height: 8px;
 background-color: ${({ theme }) => theme.colors.black300};
 transition: all .3s ease;
+@media (max-width: 720px){
+  bottom: 48px;
+}
 `
 
 export const Button = styled.button`
@@ -41,7 +44,7 @@ export const Button = styled.button`
   @media (max-width: 720px) {
     font-size: ${({ theme }) => theme.sizes.normal};
     max-width: 188px;
-    bottom: 24px;
+    bottom: 80px;
   }
 `;
 
@@ -53,6 +56,7 @@ export const ContentText = styled.span`
   color: ${({ theme }) => theme.colors.white400};
   @media (max-width: 720px) {
     font-size: ${({ theme }) => theme.sizes.small};
+    bottom: 40px;
   }
   display: none;
   position: absolute;
