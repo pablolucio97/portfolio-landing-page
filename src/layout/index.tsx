@@ -13,16 +13,13 @@ import { FooterTitle } from '../components/Elements/Footer/FooterTitle';
 import { Header } from '../components/Elements/Header';
 import { HeaderLink } from '../components/Elements/Header/HeaderLink';
 import { HeaderLinksContainer } from '../components/Elements/Header/HeaderLinksContainer';
-import { HeaderLogoContainer } from '../components/Elements/Header/HeaderLogoContainer';
-import { Logo } from '../components/Elements/Logo';
 import { SocialIcons } from '../components/Elements/SocialIcons';
 import { TopScrollButton } from '../components/Elements/TopScrollButton';
 import { Text } from '../components/Typography/Text';
 import { Container } from './styles';
 
-import { NextProgressComponent } from '../components/Next/NextProgress'
 import { WhatsappButton } from '../components/Elements/WhatsappButton';
-import { FooterThirdSection } from '../components/Elements/Footer/FooterThirdSection';
+import { NextProgressComponent } from '../components/Next/NextProgress';
 
 interface LayoutProps {
     children: ReactNode;
@@ -95,9 +92,6 @@ export default function Layout({ children }: LayoutProps) {
                     <Drawer
                         toggleDrawer={handleToggleDrawer}
                         direction='top'
-                        style={{
-                            backgroundColor: theme.colors.black100
-                        }}
                     >
                         <HeaderLink
                             content='Quem sou eu'
@@ -124,12 +118,6 @@ export default function Layout({ children }: LayoutProps) {
                 <DrawerButton
                     toggleDrawer={handleToggleDrawer}
                 />
-                <HeaderLogoContainer>
-                    <Logo
-                        imageUrl='/logo.svg'
-                        size={headerAnimation ? 'small' : 'medium'}
-                    />
-                </HeaderLogoContainer>
                 <HeaderLinksContainer>
                     <HeaderLink
                         content='Quem sou eu'
@@ -164,7 +152,7 @@ export default function Layout({ children }: LayoutProps) {
                         url='#whoami'
                     />
                     <FooterLink
-                        content='Portfólio'
+                        content='Experiências e Portfólio'
                         url='#portfolio'
                     />
                     <FooterLink
@@ -173,23 +161,6 @@ export default function Layout({ children }: LayoutProps) {
                     />
                 </FooterFirstSection>
                 <FooterSecondSection>
-                    <FooterTitle
-                        content='Portfólio'
-                    />
-                    <FooterLink
-                        content='Aplicações e plataformas'
-                        url='#applications'
-                    />
-                    <FooterLink
-                        content='Landing Pages'
-                        url='/#landingpages'
-                    />
-                    <FooterLink
-                        content='WebSites'
-                        url='#websites'
-                    />
-                </FooterSecondSection>
-                <FooterThirdSection>
                     <FooterTitle
                         content='Redes sociais'
                     />
@@ -200,7 +171,7 @@ export default function Layout({ children }: LayoutProps) {
                         iconsSize='small'
                         iconsStyle={{ color: theme.colors.white500 }}
                     />
-                </FooterThirdSection>
+                </FooterSecondSection>
             </Footer>
             <FooterAttach
                 style={{

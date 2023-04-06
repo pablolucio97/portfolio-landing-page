@@ -26,7 +26,7 @@ export const Text = styled.span`
   color: ${({ theme }) => theme.colors.text};
   word-break: break-word;
   text-align: center;
-  @media (max-width: 720px) {
+  @media (max-width: 768px) {
     font-size: ${({ theme }) => theme.sizes.medium};
   }
 `;
@@ -38,7 +38,7 @@ export const Title = styled.h3`
   @media (max-width: 1080px) {
     font-size: ${({ theme }) => theme.sizes.xlarge};
   }
-  @media (max-width: 720px) {
+  @media (max-width: 768px) {
     font-size: ${({ theme }) => theme.sizes.large};
   }
 `;

@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const RevealContainer = styled.div`
 width: 100%;
@@ -14,7 +14,7 @@ opacity: .8;
 height: 8px;
 background-color: ${({ theme }) => theme.colors.black300};
 transition: all .3s ease;
-@media (max-width: 720px){
+@media (max-width: 768px){
   bottom: 48px;
 }
 `
@@ -41,7 +41,7 @@ export const Button = styled.button`
   &:disabled {
     background-color: ${({ theme }) => theme.colors.primary_light};
   }
-  @media (max-width: 720px) {
+  @media (max-width: 768px) {
     font-size: ${({ theme }) => theme.sizes.normal};
     max-width: 188px;
     bottom: 80px;
@@ -54,8 +54,8 @@ export const ContentText = styled.span`
   text-align: center;
   margin: 24px auto;
   color: ${({ theme }) => theme.colors.white400};
-  @media (max-width: 720px) {
-    font-size: ${({ theme }) => theme.sizes.small};
+  @media (max-width: 768px) {
+    font-size: ${({ theme }) => theme.sizes.xsmall};
     bottom: 40px;
   }
   display: none;
@@ -118,7 +118,7 @@ align-items: center;
 width: 560px;
 
 margin: 12px;
-@media (max-width: 720px) {
+@media (max-width: 768px) {
     width: 80%;
     margin: 0 auto;
   }
@@ -131,7 +131,7 @@ export const Title = styled.h3`
   @media (max-width: 1080px) {
     font-size: ${({ theme }) => theme.sizes.medium};
   }
-  @media (max-width: 720px) {
+  @media (max-width: 768px) {
     font-size: ${({ theme }) => theme.sizes.small};
   }
 `;
@@ -142,7 +142,7 @@ export const Text = styled.p`
   text-align: justify;
   margin: 4px 0;
   color: ${({ theme }) => theme.colors.white400};
-  @media (max-width: 720px) {
+  @media (max-width: 768px) {
     font-size: ${({ theme }) => theme.sizes.normal};
   }
 `;

@@ -26,6 +26,7 @@ export function NextImage({
                 height={height}
                 style={style}
                 className={className}
+                quality={100}
             />
         </Container>
     )

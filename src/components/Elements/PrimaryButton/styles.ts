@@ -13,10 +13,10 @@ export const Container = styled.button<PrimaryButtonProps>`
     size === "large"
       ? "240px"
       : size === "tiny"
-      ? "80px"
-      : size === "small"
-      ? "120px"
-      : "160px"};
+        ? "80px"
+        : size === "small"
+          ? "120px"
+          : "160px"};
   height: 40px;
   background-color: ${({ theme }) => theme.colors.primary};
   border-radius: 4px;
@@ -27,7 +27,7 @@ export const Container = styled.button<PrimaryButtonProps>`
   &:disabled {
     background-color: ${({ theme }) => theme.colors.primary_light};
   }
-  @media (max-width: 720px) {
+  @media (max-width: 768px) {
     font-size: ${({ theme }) => theme.sizes.normal};
     max-width: 188px;
   }
