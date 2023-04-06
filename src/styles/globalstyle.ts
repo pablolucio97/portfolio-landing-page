@@ -48,14 +48,14 @@ export const GlobalStyle = createGlobalStyle`
             font-size: 1.24rem;
             color: ${(props) => props.theme.colors.black100}
         }
-        @media(max-width: 720px){
+        @media(max-width: 768px){
             width: 92%;
         }
   }
 
   .video-modal{
       background: transparent;
-      @media (max-width: 720px) {
+      @media (max-width: 768px) {
         margin: 12px auto;
         align-self: center;
      }
@@ -134,7 +134,7 @@ export const GlobalStyle = createGlobalStyle`
     @media(max-width: 1080px){
       font-size: ${({ theme }) => theme.sizes.xhuge};
     }
-    @media(max-width: 720px){
+    @media(max-width: 768px){
       font-size: ${({ theme }) => theme.sizes.huge};
     }
   }
@@ -160,17 +160,17 @@ export const GlobalStyle = createGlobalStyle`
     min-width: 100%;
     opacity: .2;
     z-index: 1;
-    @media(max-width: 720px) {
+    @media(max-width: 768px) {
       min-width: 100%;
       min-height: 50%;
     }
   }  
 
   .contactCard{
-    width: 720px;
+    width: 768px;
     background: ${({ theme }) => theme.colors.black100};
     margin-bottom: 40px;
-    @media(max-width: 720px){
+    @media(max-width: 768px){
       width: 80%;
     }
     & span{

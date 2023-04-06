@@ -9,7 +9,7 @@ export const Container = styled.a`
   word-wrap: break-word;
   text-align: center;
   cursor: pointer;
-  @media (max-width: 720px){
+  @media (max-width: 768px){
     margin: 4px auto;
     width: 100%;
     text-align: center;

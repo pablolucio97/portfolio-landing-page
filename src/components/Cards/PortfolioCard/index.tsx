@@ -29,8 +29,6 @@ function handleVisitPage(url: string) {
 export function PortfolioCard({
     cardClassName,
     cardStyle,
-    contentClassName,
-    contentStyle,
     imageUrl,
     imgHeight,
     imgWidth,
@@ -79,6 +77,7 @@ export function PortfolioCard({
                             width={40}
                             height={40}
                             alt={tech}
+                            style={{borderRadius: '2px'}}
                         />
                     ))}
                 </TechsImageContainer>

@@ -7,7 +7,7 @@ export const SubTitle = styled.h3`
   @media (max-width: 1080px) {
     font-size: ${({ theme }) => theme.sizes.xlarge};
   }
-  @media (max-width: 720px) {
+  @media (max-width: 768px) {
     font-size: ${({ theme }) => theme.sizes.large};
   }
 `;

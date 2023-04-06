@@ -9,7 +9,7 @@ export const Container = styled.p`
   word-wrap: break-word;
   cursor: pointer;
   margin: 4px;
-  @media (max-width: 720px) {
+  @media (max-width: 768px) {
     font-size: ${({ theme }) => theme.sizes.normal};
   }
 `;

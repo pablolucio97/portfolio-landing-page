@@ -7,7 +7,7 @@ export const Container = styled.div`
     background-color: rgba(17, 25, 40, 0.24);
     border: 1px solid rgba(255, 255, 255, 0.125);
   }
-  @media (max-width: 720px) {
+  @media (max-width: 768px) {
     width: 98%;
   }
 `;
@@ -30,7 +30,7 @@ export const CardContainer = styled.div`
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.125);
   }
-  @media (max-width: 720px) {
+  @media (max-width: 768px) {
     width: 98%;
     font-size: ${({ theme }) => theme.sizes.large};
   }
@@ -42,7 +42,7 @@ export const TextContainer = styled.div`
   align-items: center;
   margin: 12px auto;
   padding: 8px;
-  @media (max-width: 720px) {
+  @media (max-width: 768px) {
     width: 80%;
     font-size: ${({ theme }) => theme.sizes.large};
   }
@@ -54,7 +54,7 @@ export const Title = styled.h3`
   color: ${({ theme }) => theme.colors.black100};
   width: 80%;
   text-align: center;
-  @media (max-width: 720px) {
+  @media (max-width: 768px) {
     width: 80%;
     font-size: ${({ theme }) => theme.sizes.medium}
   }
@@ -70,7 +70,7 @@ export const Text = styled.span`
   @media (max-width: 1080px) {
     margin-top: 12px;
   }
-  @media (max-width: 720px) {
+  @media (max-width: 768px) {
     text-align: center;
     font-size: ${({ theme }) => theme.sizes.medium};
   }
@@ -87,7 +87,7 @@ export const WhatsappButton = styled.button`
   color: ${({ theme }) => theme.colors.white100};
   font-size: ${({ theme }) => theme.sizes.large};
   font-weight: 500;
-  @media (max-width: 720px) {
+  @media (max-width: 768px) {
     width: 80%;
     text-align: center;
     font-size: ${({ theme }) => theme.sizes.normal};

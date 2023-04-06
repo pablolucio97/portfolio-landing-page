@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Container = styled.div`
 display: flex;
@@ -19,7 +19,7 @@ transition: all .3s ease-in-out;
   transform: translateY(-12px)
 }
 
-@media (max-width: 720px) {
+@media (max-width: 768px) {
     width: 80%;
     margin: 12px auto;
   }
@@ -36,7 +36,7 @@ export const Text = styled.p`
   @media (max-width: 1080px) {
     font-size: ${({ theme }) => theme.sizes.normal};
   }
-  @media (max-width: 720px) {
+  @media (max-width: 768px) {
     font-size: ${({ theme }) => theme.sizes.small};
   }
 `;

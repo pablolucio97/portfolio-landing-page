@@ -16,7 +16,7 @@ export const Container = styled.footer`
     "First Second"
     "Third Fourth";
   }
-  @media (max-width: 720px) {
+  @media (max-width: 768px) {
     grid-template-rows: repeat(1, 1fr);
     grid-template-columns: 1fr;
     grid-template-areas: "First" "Second" "Third" "Fourth";
