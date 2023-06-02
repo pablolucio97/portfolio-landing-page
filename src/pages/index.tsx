@@ -81,7 +81,7 @@ export default function Home() {
                                             content='Dsenvolvedor'
                                         />
                                         <GradientText
-                                            content='front-end'
+                                            content='full-stack'
                                             direction='top-to-bottom'
                                             initialColor='#0094FF'
                                             finalColor='#90c3eb'
