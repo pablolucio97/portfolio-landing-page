@@ -1,0 +1,14 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["SZQ7RJ8AMP.com.BuyByeSmart.app"],
+        "components": [
+          {
+            "/": "/delivery/*"
+          }
+        ]
+      }
+    ]
+  }
+}
