@@ -2,7 +2,7 @@
   "applinks": {
     "details": [
       {
-        "appIDs": ["SZQ7RJ8AMP.com.BuyByeSmart"],
+        "appIDs": ["SZQ7RJ8AMP.com.BuyByeSmart.app"],
         "components": [
           {
             "/": "/delivery/*"
@@ -12,9 +12,9 @@
     ]
   },
   "webcredentials": {
-    "apps": ["SZQ7RJ8AMP.com.BuyByeSmart"]
+    "apps": ["SZQ7RJ8AMP.com.BuyByeSmart.app"]
   },
   "appclips": {
-    "apps": ["SZQ7RJ8AMP.com.BuyByeSmart"]
+    "apps": ["SZQ7RJ8AMP.com.BuyByeSmart.app"]
   }
 }
