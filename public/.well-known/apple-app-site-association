@@ -8,7 +8,19 @@
             "/": "/delivery/*"
           }
         ]
+      },
+      {
+        "appID": "SZQ7RJ8AMP.com.BuyByeSmart.app",
+        "paths": ["/delivery/*"]
       }
     ]
+  },
+  "webcredentials": {
+    "apps": [ "SZQ7RJ8AMP.com.BuyByeSmart.app" ]
+ },
+
+
+  "appclips": {
+      "apps": ["SZQ7RJ8AMP.com.BuyByeSmart.app"]
   }
 }
