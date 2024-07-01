@@ -245,7 +245,7 @@ export const PortfolioSection = styled.section`
   display: flex;
   justify-content: center;
   width: 100%;
-  min-height: 64vh;
+  min-height: 56vh;
   background: -webkit-linear-gradient(-41deg, rgb(5, 5, 5), rgb(31, 31, 31));
   background: linear-gradient(-41deg, rgb(5, 5, 5), rgb(31, 31, 31));
 `;
@@ -266,6 +266,17 @@ export const PortfolioSectionContainer = styled.div`
     color: ${({ theme }) => theme.colors.white100};
     margin: 40px auto 16px;
   }
+  
+  & p {
+      color: ${({ theme }) => theme.colors.white100};
+      margin: 24px auto 16px;
+  }
+
+  @media(max-width: 560px){
+   & p {
+      max-width: 80%;
+  }
+  }
 `
 
 export const CardsContainer = styled.div`
@@ -283,7 +294,7 @@ export const SkillsSection = styled.section`
   background: -webkit-linear-gradient(139deg, rgb(255, 255, 255), rgb(230, 230, 230));
   background: linear-gradient(139deg, rgb(255, 255, 255), rgb(230, 230, 230));
   @media(max-width: 1024px){
-    min-height: 75vh;
+    min-height: 48vh;
   }
 `;
 

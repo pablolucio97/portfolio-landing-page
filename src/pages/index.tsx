@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import { RevealFade } from '../components/Animations/RevealFade';
-import { PortfolioCard } from '../components/Cards/PortfolioCard';
 import { SkillCardImage } from '../components/Cards/SkillCardImage';
 import { TestimonialCard } from '../components/Cards/TestimonialCard';
 import { PrimaryButton } from '../components/Elements/PrimaryButton';
@@ -10,13 +8,11 @@ import { SubTitle } from '../components/Typography/SubTitle';
 import { Text } from '../components/Typography/Text';
 import { Title } from '../components/Typography/Title';
 import {
-    applications,
-    landingPages,
+    enterprises,
     skills,
     testimonials
 } from '../data/data';
 import {
-    CardsContainer,
     ContactSection,
     ContactSectionContainer,
     Container,
@@ -139,48 +135,22 @@ export default function Home() {
             <PortfolioSection>
                 <PortfolioSectionContainer id='portfolio'>
                     <Title
-                        content='Experiências e Portfólio '
+                        content='Empresas assistidas'
                     />
-                    <SubTitle
-                        content='Aplicações web'
+                    <Text
+                        content='Empresas em que já trabalhei diretamente ou prestei serviços como freelancer'
                     />
-                    <CardsContainer id='applications'>
-                        {applications.map(application => (
-                            <RevealFade key={application.name}>
-                                <PortfolioCard
-                                    imageUrl={application.image}
-                                    imgWidth={560}
-                                    imgHeight={420}
-                                    title={application.name}
-                                    pageUrl={application.url}
-                                    content={application.description}
-                                    techs={application.techs.map(tech =>
-                                        tech.substring(0).concat('.png'))}
+                    {
+                        enterprises.map(enterprise => (
+                            <a key={enterprise.id} href={enterprise.website}>
+                                <NextImage
+                                    width={enterprise.width}
+                                    height={enterprise.height}
+                                    imgUrl={enterprise.img}
                                 />
-                            </RevealFade>
-                        ))}
-                    </CardsContainer>
-                    <SubTitle
-                        content='Landing Pages'
-
-                    />
-                    <CardsContainer id='landingpages'>
-                        {landingPages.map(landing => (
-                            <RevealFade key={landing.name}>
-                                <PortfolioCard
-                                    imageUrl={landing.image}
-                                    imgWidth={560}
-                                    imgHeight={420}
-                                    title={landing.name}
-                                    content={landing.description}
-                                    pageUrl={landing.url}
-                                    techs={landing.techs.map(tech =>
-                                        tech.substring(0).concat('.png'))}
-                                />
-                            </RevealFade>
-                        ))}
-                    </CardsContainer>
-
+                            </a>
+                        ))
+                    }
                 </PortfolioSectionContainer>
             </PortfolioSection>
 
@@ -265,6 +235,6 @@ export default function Home() {
                 </ContactSectionContainer>
             </ContactSection>
 
-        </Container>
+        </Container >
     )
 }

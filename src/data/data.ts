@@ -128,3 +128,34 @@ export const testimonials = [
     role: 'Desenvoledor front-end'
   },
 ]
+
+export const enterprises = [
+  {
+    id: '1',
+    img: '/hygia_logo.png',
+    website: 'https://www.hygiasaude.com.br/',
+    width: 320,
+    height: 104,
+  },
+  {
+    id: '2',
+    img: '/optmizeit_logo.png',
+    website: 'http://optimizeit.com.br/optimizeit/',
+    width: 320,
+    height: 64,
+  },
+  {
+    id:'3',
+    img: '/avod_logo.png',
+    website: 'https://avodtech.com/',
+    width: 320,
+    height: 80,
+  },
+  {
+    id: '4',
+    img: '/buybye_logo.png',
+    website: 'https://www.buybye.com.br',
+    width: 320,
+    height: 64,
+  },
+]
