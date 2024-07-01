@@ -132,7 +132,7 @@ export const IntroductionSectionImageContainer = styled.div`
 display: flex;
 justify-content: flex-end;
 align-items: flex-end;
-margin-bottom: -7px;
+margin-bottom: 16px;
 width: 50%;
   @media (max-width: 992px){
     width: 80%;
@@ -465,8 +465,8 @@ export const ContactSectionContainer = styled.div`
   & h3 {
     color: ${({ theme }) => theme.colors.black300};
     font-size: ${({ theme }) => theme.sizes.large};
-    width: 60%;
-    margin: -12px auto 24px;
+    width: 50%;
+    margin: 8px auto 40px;
     text-align: center;
 
     @media(max-width: 992px){
@@ -479,6 +479,7 @@ export const ContactSectionContainer = styled.div`
     width: 320px;
     height: 58px;
     color: ${({ theme }) => theme.colors.white100};
+    margin-bottom: 16px;
   }
 `
 

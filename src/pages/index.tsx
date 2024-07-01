@@ -7,6 +7,8 @@ import { GradientText } from '../components/Typography/GradientText';
 import { SubTitle } from '../components/Typography/SubTitle';
 import { Text } from '../components/Typography/Text';
 import { Title } from '../components/Typography/Title';
+import { FaWhatsapp } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 import {
     enterprises,
     skills,
@@ -41,6 +43,8 @@ import {
     WhoAmISectionContentInfoContainer,
     WhoAmISectionImageContainer
 } from '../styles/';
+import { theme } from '../themes/theme';
+import { sendWhatsAppMessage } from '../ultis/sendWhatsAppMessage';
 
 export default function Home() {
 
@@ -49,11 +53,13 @@ export default function Home() {
         content: ''
     })
 
-    function handleGetInTouch() {
+    function handleSendEmail() {
         const email = 'pablolucio_@hotmail.com'
         const body = 'Gostaria de iniciar um novo projeto.'
         return window.location.href = `mailto:?subject=${email}&body=${body}`
     }
+
+ 
 
     return (
         <Container>
@@ -91,9 +97,9 @@ export default function Home() {
                     </IntroductionSectionContentContainer>
                     <IntroductionSectionImageContainer>
                         <NextImage
-                            height={368}
-                            width={480}
-                            imgUrl='/phone.svg'
+                            height={400}
+                            width={640}
+                            imgUrl='/systems.png'
                         />
                     </IntroductionSectionImageContainer>
                 </IntroductionSectionContainer>
@@ -108,10 +114,10 @@ export default function Home() {
                                     content='Quem sou eu'
                                 />
                                 <Text
-                                    content='Meu nome é Pablo Silva e sou desenvolvedor front-end. Trabalho com o desenvolvimento de aplicações web e mobile. '
+                                    content='Meu nome é Pablo Silva e sou desenvolvedor full-stack. Trabalho com o desenvolvimento de aplicações completas utilizando NodeJS no back-end, React/NextJS no front-end e React Native/Expo no mobile.'
                                 />
                                 <Text
-                                    content='Desde 2020, o meu foco tem sido construir aplicações web e mobile que fazem o uso de componentes inteligentes que reforçam um padrão de projeto sempre pensando em boas práticas, modularização e agradável experiência ao usuário.'
+                                    content='Durante a minha jornada, sempre procuro trabalhar observando boas práticas de desenvolvimento e adotar ações para providenciar agradável experiência ao usuário final.'
                                 />
                                 <NextImage
                                     height={131}
@@ -166,7 +172,7 @@ export default function Home() {
                         <Text
                             content={skill.content ?
                                 skill.content :
-                                'Passe o mouse sobre a tecnologia entender como a utilizo em uma aplicação do mundo real.'}
+                                'Passe o mouse sobre a tecnologia para entender como a utilizo em uma aplicação do mundo real.'}
                         />
 
                     </SkillsInfoContainer>
@@ -198,7 +204,7 @@ export default function Home() {
                             content='Depoimentos'
                         />
                         <SubTitle
-                            content={`Veja o que pessoas que já trablharam comigo \n dizem a respeito.`}
+                            content={`Veja o que pessoas que já trabalharam comigo \n dizem`}
                         />
                     </TestimonialsInfoContainer>
                     <TestimonialsCardsContainer>
@@ -224,13 +230,22 @@ export default function Home() {
                         content='Contato'
                     />
                     <SubTitle
-                        content='Vamos juntos dar vida às interfaces e alavancar projetos que podem transformar o mundo, literalmente.'
+                        content={`Vamos juntos dar vida às interfaces e alavancar projetos \nque podem transformar o mundo, literalmente.`}
                     />
                     <PrimaryButton
                         ariaLabel='button'
-                        onClick={handleGetInTouch}
-                        title='Entrar em contato'
+                        onClick={handleSendEmail}
+                        title='Enviar um email'
                         size='large'
+                        icon={<MdEmail size={20} />}
+                    />
+                    <PrimaryButton
+                        ariaLabel='button'
+                        onClick={sendWhatsAppMessage}
+                        title='Chamar no Whatsapp'
+                        size='large'
+                        style={{ backgroundColor: theme.colors.success }}
+                        icon={<FaWhatsapp size={20} />}
                     />
                 </ContactSectionContainer>
             </ContactSection>

@@ -1,6 +1,7 @@
 import React, { CSSProperties, ReactNode } from 'react';
 import { Button } from './styles'
 import { BsWhatsapp } from 'react-icons/bs'
+import { sendWhatsAppMessage } from '../../../ultis/sendWhatsAppMessage';
 
 interface WhatsappButtonProps {
     whatsappContact: string;
@@ -18,13 +19,10 @@ export function WhatsappButton({
     backgroundVariant = 'light'
 }: WhatsappButtonProps) {
 
-    function startChat(whatsappContact: string) {
-        window.open(`http://api.whatsapp.com/send?phone=55${whatsappContact}`)
-    }
 
     return (
         <Button
-            onClick={() => startChat(whatsappContact)}
+            onClick={sendWhatsAppMessage}
             style={{
                 backgroundColor: backgroundVariant === 'dark' ?
                     '#075e54' :
@@ -33,9 +31,7 @@ export function WhatsappButton({
             className={className}
             aria-label={ariaLabel}
         >
-            <BsWhatsapp
-
-            />
+            <BsWhatsapp />
         </Button>
     )
 }

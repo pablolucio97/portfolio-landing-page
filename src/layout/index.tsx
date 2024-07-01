@@ -83,7 +83,7 @@ export default function Layout({ children }: LayoutProps) {
             <WhatsappButton
                 ariaLabel='Voltar para o topo'
                 className={scrollTopAnimation ? 'animatedTopScroll' : 'normalTopScroll'}
-                whatsappContact='31985187963'
+                whatsappContact={process.env.NEXT_PUBLIC_PHONE}
             />
             <Header
                 className={headerAnimation ? 'headerScrolling glassEffect' : 'headerNotScrolling'}
@@ -99,7 +99,7 @@ export default function Layout({ children }: LayoutProps) {
                             onClick={handleToggleDrawer}
                         />
                         <HeaderLink
-                            content='Portfólio'
+                            content='Empresas assistidas'
                             url='#portfolio'
                             onClick={handleToggleDrawer}
                         />
@@ -124,7 +124,7 @@ export default function Layout({ children }: LayoutProps) {
                         url='#whoami'
                     />
                     <HeaderLink
-                        content='Portfólio'
+                        content='Empresas assistidas'
                         url='#portfolio'
                     />
                     <HeaderLink
@@ -152,7 +152,7 @@ export default function Layout({ children }: LayoutProps) {
                         url='#whoami'
                     />
                     <FooterLink
-                        content='Experiências e Portfólio'
+                        content='Empresas assistidas'
                         url='#portfolio'
                     />
                     <FooterLink
@@ -180,7 +180,7 @@ export default function Layout({ children }: LayoutProps) {
             >
                 <Divider />
                 <Text
-                    content='PabloSilvaDev - © Copyright  2022'
+                    content='PabloSilvaDev - © Copyright  2024'
                     style={{
                         color: theme.colors.white100,
                         fontSize: theme.sizes.small
