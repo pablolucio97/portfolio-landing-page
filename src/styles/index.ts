@@ -331,14 +331,18 @@ flex-direction: column;
 justify-content: center;
 margin-bottom: 2rem;
 
-@media(max-width: 992px){
-    width: 100%;
-  }
-
 & p{
-  width: 100%;
+  width: 72%;
   transition: 1s ease-out;
 }
+
+@media(max-width: 992px){
+    width: 100%;
+    & p{
+      width: 100%;
+    }
+  }
+
 `
 
 export const SkillsCardsContainer = styled.div`
