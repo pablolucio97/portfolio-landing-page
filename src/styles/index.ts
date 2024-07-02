@@ -245,7 +245,7 @@ export const PortfolioSection = styled.section`
   display: flex;
   justify-content: center;
   width: 100%;
-  min-height: 56vh;
+  min-height: 40vh;
   background: -webkit-linear-gradient(-41deg, rgb(5, 5, 5), rgb(31, 31, 31));
   background: linear-gradient(-41deg, rgb(5, 5, 5), rgb(31, 31, 31));
 `;
