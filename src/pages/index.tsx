@@ -185,10 +185,8 @@ export default function Home() {
                     </SkillsInfoContainer>
                     <SkillsCardsContainer>
                         {skills.map((skill, i) => (
-                            <Roll>
-
+                            <Roll key={skill.image}>
                                 <SkillCardImage
-                                    key={skill.image}
                                     imgAlt={skill.alt}
                                     imgUrl={skill.image}
                                     className='skillCard'
@@ -220,9 +218,8 @@ export default function Home() {
                     <TestimonialsCardsContainer>
                         {
                             testimonials.map(testimonial => (
-                                <Zoom>
+                                <Zoom key={testimonial.name}>
                                     <TestimonialCard
-                                        key={testimonial.name}
                                         personName={testimonial.name}
                                         personPhotoUrl={testimonial.image}
                                         personRole={testimonial.role}
