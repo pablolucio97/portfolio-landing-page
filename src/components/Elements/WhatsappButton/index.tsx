@@ -4,6 +4,7 @@ import { BsWhatsapp } from 'react-icons/bs'
 import { sendWhatsAppMessage } from '../../../ultis/sendWhatsAppMessage';
 
 interface WhatsappButtonProps {
+    whatsappContact: string | undefined;
     ariaLabel: string;
     style?: CSSProperties;
     className?: string;
@@ -14,6 +15,7 @@ export function WhatsappButton({
     className,
     ariaLabel,
     style,
+    whatsappContact,
     backgroundVariant = 'light'
 }: WhatsappButtonProps) {
 
