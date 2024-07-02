@@ -1,24 +1,5 @@
 import styled from 'styled-components';
 
-export const RevealContainer = styled.div`
-width: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
-position: absolute;
-right: 0;
-left: 0;
-bottom: 0;
-overflow: hidden;
-opacity: .8;
-height: 8px;
-background-color: ${({ theme }) => theme.colors.black300};
-transition: all .3s ease;
-@media (max-width: 768px){
-  bottom: 48px;
-}
-`
-
 export const Button = styled.button`
   display: none;
   position: absolute;
@@ -76,9 +57,6 @@ height: 420px;
 position: relative;
 cursor: pointer;
 &:hover{
-    ${RevealContainer}{
-        height: 56%;
-    }
     ${Button}{
         display: flex;
         opacity: 1;

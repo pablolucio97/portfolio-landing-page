@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { CSSProperties } from 'react';
 import {
     Button,
-    Container, ContentText, ImageContainer, RevealContainer, TechsContainer,
+    Container, ContentText, ImageContainer, TechsContainer,
     TechsImageContainer, Text, Title
 } from './styles';
 
@@ -57,8 +57,6 @@ export function PortfolioCard({
                     height={imgHeight}
                     alt='Pablo Silva Dev'
                 />
-                <RevealContainer>
-                </RevealContainer>
                 <Button onClick={() => handleVisitPage(pageUrl!)}>
                     Visitar projeto
                 </Button>

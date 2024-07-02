@@ -45,6 +45,7 @@ import {
 } from '../styles/';
 import { theme } from '../themes/theme';
 import { sendWhatsAppMessage } from '../ultis/sendWhatsAppMessage';
+import { Zoom, Fade, Roll } from 'react-reveal'
 
 export default function Home() {
 
@@ -59,7 +60,7 @@ export default function Home() {
         return window.location.href = `mailto:?subject=${email}&body=${body}`
     }
 
- 
+
 
     return (
         <Container>
@@ -69,11 +70,13 @@ export default function Home() {
                     <IntroductionSectionContentContainer>
                         <IntroductionSectionContentInfoContainer>
                             <ProfileRowContainer>
-                                <NextImage
-                                    height={160}
-                                    width={160}
-                                    imgUrl='/profile.png'
-                                />
+                                <Fade>
+                                    <NextImage
+                                        height={160}
+                                        width={160}
+                                        imgUrl='/profile.png'
+                                    />
+                                </Fade>
                                 <ProfileColumnContainer>
                                     <Title
                                         content='Pablo Silva'
@@ -89,53 +92,55 @@ export default function Home() {
                                             finalColor='#90c3eb'
 
                                         />
-
                                     </SubtitleContentContainer>
                                 </ProfileColumnContainer>
                             </ProfileRowContainer>
                         </IntroductionSectionContentInfoContainer>
                     </IntroductionSectionContentContainer>
                     <IntroductionSectionImageContainer>
-                        <NextImage
-                            height={400}
-                            width={640}
-                            imgUrl='/systems.png'
-                        />
+                        <Zoom>
+                            <NextImage
+                                height={400}
+                                width={640}
+                                imgUrl='/systems.png'
+                            />
+                        </Zoom>
                     </IntroductionSectionImageContainer>
                 </IntroductionSectionContainer>
             </IntroductionSection>
 
             <WhoAmISection id='whoami'>
-                <WhoAmISectionContainer>
-                    <WhoAmISectionContentInfoContainer>
-                        <WhoAmISectionContentContainer>
-                            <WhoAmIColumnContainer>
-                                <Title
-                                    content='Quem sou eu'
-                                />
-                                <Text
-                                    content='Meu nome é Pablo Silva e sou desenvolvedor full-stack. Trabalho com o desenvolvimento de aplicações completas utilizando NodeJS no back-end, React/NextJS no front-end e React Native/Expo no mobile.'
-                                />
-                                <Text
-                                    content='Durante a minha jornada, sempre procuro trabalhar observando boas práticas de desenvolvimento e adotar ações para providenciar agradável experiência ao usuário final.'
-                                />
+                <Fade>
+                    <WhoAmISectionContainer>
+                        <WhoAmISectionContentInfoContainer>
+                            <WhoAmISectionContentContainer>
+                                <WhoAmIColumnContainer>
+                                    <Title
+                                        content='Quem sou eu'
+                                    />
+                                    <Text
+                                        content='Meu nome é Pablo Silva e sou desenvolvedor full-stack. Trabalho com o desenvolvimento de aplicações completas utilizando NodeJS no back-end, React/NextJS no front-end e React Native/Expo no mobile.'
+                                    />
+                                    <Text
+                                        content='Durante a minha jornada, sempre procuro trabalhar observando boas práticas de desenvolvimento e adotar ações para providenciar agradável experiência ao usuário final.'
+                                    />
+                                    <NextImage
+                                        height={131}
+                                        width={697}
+                                        imgUrl='/gb_contribuition.svg'
+                                    />
+                                </WhoAmIColumnContainer>
+                            </WhoAmISectionContentContainer>
+                            <WhoAmISectionImageContainer>
                                 <NextImage
-                                    height={131}
-                                    width={697}
-                                    imgUrl='/gb_contribuition.svg'
+                                    height={368}
+                                    width={480}
+                                    imgUrl='/code.svg'
                                 />
-                            </WhoAmIColumnContainer>
-                        </WhoAmISectionContentContainer>
-
-                        <WhoAmISectionImageContainer>
-                            <NextImage
-                                height={368}
-                                width={480}
-                                imgUrl='/code.svg'
-                            />
-                        </WhoAmISectionImageContainer>
-                    </WhoAmISectionContentInfoContainer>
-                </WhoAmISectionContainer>
+                            </WhoAmISectionImageContainer>
+                        </WhoAmISectionContentInfoContainer>
+                    </WhoAmISectionContainer>
+                </Fade>
             </WhoAmISection>
 
             <PortfolioSection>
@@ -148,13 +153,15 @@ export default function Home() {
                     />
                     {
                         enterprises.map(enterprise => (
-                            <a key={enterprise.id} href={enterprise.website}>
-                                <NextImage
-                                    width={enterprise.width}
-                                    height={enterprise.height}
-                                    imgUrl={enterprise.img}
-                                />
-                            </a>
+                            <Fade key={enterprise.id} >
+                                <a href={enterprise.website}>
+                                    <NextImage
+                                        width={enterprise.width}
+                                        height={enterprise.height}
+                                        imgUrl={enterprise.img}
+                                    />
+                                </a>
+                            </Fade>
                         ))
                     }
                 </PortfolioSectionContainer>
@@ -178,20 +185,23 @@ export default function Home() {
                     </SkillsInfoContainer>
                     <SkillsCardsContainer>
                         {skills.map((skill, i) => (
-                            <SkillCardImage
-                                key={skill.image}
-                                imgAlt={skill.alt}
-                                imgUrl={skill.image}
-                                className='skillCard'
-                                onMouseEnter={() => setSkill({
-                                    title: skill.title,
-                                    content: skill.content
-                                })}
-                                onMouseLeave={() => setSkill({
-                                    title: '',
-                                    content: ''
-                                })}
-                            />
+                            <Roll>
+
+                                <SkillCardImage
+                                    key={skill.image}
+                                    imgAlt={skill.alt}
+                                    imgUrl={skill.image}
+                                    className='skillCard'
+                                    onMouseEnter={() => setSkill({
+                                        title: skill.title,
+                                        content: skill.content
+                                    })}
+                                    onMouseLeave={() => setSkill({
+                                        title: '',
+                                        content: ''
+                                    })}
+                                />
+                            </Roll>
                         ))}
                     </SkillsCardsContainer>
                 </SkillsSectionContainer>
@@ -210,13 +220,15 @@ export default function Home() {
                     <TestimonialsCardsContainer>
                         {
                             testimonials.map(testimonial => (
-                                <TestimonialCard
-                                    key={testimonial.name}
-                                    personName={testimonial.name}
-                                    personPhotoUrl={testimonial.image}
-                                    personRole={testimonial.role}
-                                    testimonial={testimonial.testimonial}
-                                />
+                                <Zoom>
+                                    <TestimonialCard
+                                        key={testimonial.name}
+                                        personName={testimonial.name}
+                                        personPhotoUrl={testimonial.image}
+                                        personRole={testimonial.role}
+                                        testimonial={testimonial.testimonial}
+                                    />
+                                </Zoom>
                             ))
                         }
 
