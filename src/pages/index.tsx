@@ -154,7 +154,7 @@ export default function Home() {
                     {
                         enterprises.map(enterprise => (
                             <Fade key={enterprise.id} >
-                                <a href={enterprise.website}>
+                                <a href={enterprise.website} key={enterprise.id}>
                                     <NextImage
                                         width={enterprise.width}
                                         height={enterprise.height}
@@ -184,9 +184,10 @@ export default function Home() {
 
                     </SkillsInfoContainer>
                     <SkillsCardsContainer>
-                        {skills.map((skill, i) => (
+                        {skills.map((skill) => (
                             <Roll key={skill.image}>
                                 <SkillCardImage
+                                    key={skill.image}
                                     imgAlt={skill.alt}
                                     imgUrl={skill.image}
                                     className='skillCard'
@@ -220,6 +221,7 @@ export default function Home() {
                             testimonials.map(testimonial => (
                                 <Zoom key={testimonial.name}>
                                     <TestimonialCard
+                                        key={testimonial.name}
                                         personName={testimonial.name}
                                         personPhotoUrl={testimonial.image}
                                         personRole={testimonial.role}
