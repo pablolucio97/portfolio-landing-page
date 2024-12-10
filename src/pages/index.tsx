@@ -115,7 +115,6 @@ export default function Home() {
         <IntroductionSectionContainer>
           <IntroductionSectionContentContainer>
             <IntroductionSectionContentInfoContainer>
-              <FadeAnimation>
                 <ProfileRowContainer>
                   <NextImage
                     height={160}
@@ -137,7 +136,6 @@ export default function Home() {
                     </SubtitleContentContainer>
                   </ProfileColumnContainer>
                 </ProfileRowContainer>
-              </FadeAnimation>
             </IntroductionSectionContentInfoContainer>
           </IntroductionSectionContentContainer>
           <IntroductionSectionImageContainer>
@@ -170,14 +168,14 @@ export default function Home() {
               </WhoAmIColumnContainer>
             </WhoAmISectionContentContainer>
             <WhoAmISectionImageContainer>
-              <ZoomAnimation>
+              <FadeAnimation>
                 <NextImage
                   height={260}
                   width={465}
                   imgUrl="/ajx-app.png"
                   style={{ filter: "contrast(100%) brightness(100%)" }}
                 />
-              </ZoomAnimation>
+              </FadeAnimation>
             </WhoAmISectionImageContainer>
           </WhoAmISectionContentInfoContainer>
         </WhoAmISectionContainer>
