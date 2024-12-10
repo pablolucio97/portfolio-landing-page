@@ -13,7 +13,7 @@ export const Button = styled.button`
   margin: 0 auto 40px;
   height: 40px;
   opacity: 1;
-  background-color: ${({ theme }) => theme.colors.secondary};
+  background-color: ${({ theme }) => theme.colors.primary};
   border-radius: 4px;
   color: ${({ theme }) => theme.colors.black400};
   font-size: ${({ theme }) => theme.sizes.medium};

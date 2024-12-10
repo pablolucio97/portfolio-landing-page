@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { FaArrowLeft, FaArrowRight, FaWhatsapp } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import { Fade, Roll, Zoom } from "react-reveal";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
@@ -114,14 +113,13 @@ export default function Home() {
           <IntroductionSectionContentContainer>
             <IntroductionSectionContentInfoContainer>
               <ProfileRowContainer>
-                <Fade>
-                  <NextImage
-                    height={160}
-                    width={160}
-                    imgUrl="/profile.png"
-                    style={{ borderRadius: 16, opacity: 0.8 }}
-                  />
-                </Fade>
+                <NextImage
+                  height={160}
+                  width={160}
+                  imgUrl="/profile.png"
+                  style={{ borderRadius: 16, opacity: 0.8 }}
+                />
+
                 <ProfileColumnContainer>
                   <Title content="Pablo Silva" />
                   <SubtitleContentContainer>
@@ -138,46 +136,40 @@ export default function Home() {
             </IntroductionSectionContentInfoContainer>
           </IntroductionSectionContentContainer>
           <IntroductionSectionImageContainer>
-            <Zoom>
-              <NextImage height={400} width={640} imgUrl="/systems.png" />
-            </Zoom>
+            <NextImage height={400} width={640} imgUrl="/systems.png" />
           </IntroductionSectionImageContainer>
         </IntroductionSectionContainer>
       </IntroductionSection>
 
       <WhoAmISection id="whoami">
-        <Fade>
-          <WhoAmISectionContainer>
-            <WhoAmISectionContentInfoContainer>
-              <WhoAmISectionContentContainer>
-                <WhoAmIColumnContainer>
-                  <Title content="Quem sou eu" />
-                  <Text content="Meu nome é Pablo Silva e sou desenvolvedor full-stack com mais de 4 anos de de experiência. Ao longo da minha carreira, trabalhei em uma variedade de projetos em diferentes setores, incluindo healthtech, fintech e varejo." />
-                  <Text content="Como profissional, me dedico a criar soluções robustas e escaláveis, sempre priorizando boas práticas de desenvolvimento e entregando uma intuitiva e agradável experiência para o usuário final." />
-                  <NextImage
-                    height={131}
-                    width={697}
-                    imgUrl="/gb_contribuition.svg"
-                    style={{
-                      filter: "grayscale(100%) sepia(100%) hue-rotate(210deg)",
-                      borderRadius: 8,
-                    }}
-                  />
-                </WhoAmIColumnContainer>
-              </WhoAmISectionContentContainer>
-              <WhoAmISectionImageContainer>
-                <Zoom>
-                  <NextImage
-                    height={260}
-                    width={465}
-                    imgUrl="/ajx-app.png"
-                    style={{ filter: "contrast(100%) brightness(100%)" }}
-                  />
-                </Zoom>
-              </WhoAmISectionImageContainer>
-            </WhoAmISectionContentInfoContainer>
-          </WhoAmISectionContainer>
-        </Fade>
+        <WhoAmISectionContainer>
+          <WhoAmISectionContentInfoContainer>
+            <WhoAmISectionContentContainer>
+              <WhoAmIColumnContainer>
+                <Title content="Quem sou eu" />
+                <Text content="Meu nome é Pablo Silva e sou desenvolvedor full-stack com mais de 4 anos de de experiência. Ao longo da minha carreira, trabalhei em uma variedade de projetos em diferentes setores, incluindo healthtech, fintech e varejo." />
+                <Text content="Como profissional, me dedico a criar soluções robustas e escaláveis, sempre priorizando boas práticas de desenvolvimento e entregando uma intuitiva e agradável experiência para o usuário final." />
+                <NextImage
+                  height={131}
+                  width={697}
+                  imgUrl="/gb_contribuition.svg"
+                  style={{
+                    filter: "grayscale(100%) sepia(100%) hue-rotate(210deg)",
+                    borderRadius: 8,
+                  }}
+                />
+              </WhoAmIColumnContainer>
+            </WhoAmISectionContentContainer>
+            <WhoAmISectionImageContainer>
+              <NextImage
+                height={260}
+                width={465}
+                imgUrl="/ajx-app.png"
+                style={{ filter: "contrast(100%) brightness(100%)" }}
+              />
+            </WhoAmISectionImageContainer>
+          </WhoAmISectionContentInfoContainer>
+        </WhoAmISectionContainer>
       </WhoAmISection>
 
       <ProjectsSection>
@@ -189,20 +181,18 @@ export default function Home() {
             />
           </ProjectsInfoContainer>
 
-          <Zoom>
-            <SlickContainer>
-              <Slider {...slickSettings} centerMode lazyLoad="ondemand">
-                {projects.map((project) => (
-                  <ProjectCrd
-                    key={project.id}
-                    title={project.title}
-                    description={project.description}
-                    videoId={project.videoId}
-                  />
-                ))}
-              </Slider>
-            </SlickContainer>
-          </Zoom>
+          <SlickContainer>
+            <Slider {...slickSettings} centerMode lazyLoad="ondemand">
+              {projects.map((project) => (
+                <ProjectCrd
+                  key={project.id}
+                  title={project.title}
+                  description={project.description}
+                  videoId={project.videoId}
+                />
+              ))}
+            </Slider>
+          </SlickContainer>
         </ProjectsSectionContainer>
       </ProjectsSection>
 
@@ -220,26 +210,24 @@ export default function Home() {
           </SkillsInfoContainer>
           <SkillsCardsContainer>
             {skills.map((skill) => (
-              <Roll key={skill.image}>
-                <SkillCardImage
-                  key={skill.image}
-                  imgAlt={skill.alt}
-                  imgUrl={skill.image}
-                  className="skillCard"
-                  onMouseEnter={() =>
-                    setSkill({
-                      title: skill.title,
-                      content: skill.content,
-                    })
-                  }
-                  onMouseLeave={() =>
-                    setSkill({
-                      title: "",
-                      content: "",
-                    })
-                  }
-                />
-              </Roll>
+              <SkillCardImage
+                key={skill.image}
+                imgAlt={skill.alt}
+                imgUrl={skill.image}
+                className="skillCard"
+                onMouseEnter={() =>
+                  setSkill({
+                    title: skill.title,
+                    content: skill.content,
+                  })
+                }
+                onMouseLeave={() =>
+                  setSkill({
+                    title: "",
+                    content: "",
+                  })
+                }
+              />
             ))}
           </SkillsCardsContainer>
         </SkillsSectionContainer>
@@ -255,19 +243,17 @@ export default function Home() {
           </TestimonialsInfoContainer>
           {/* <TestimonialsCardsContainer> */}
           <SlickContainer>
-            <Fade>
-              <Slider {...slickSettings} centerMode lazyLoad="ondemand">
-                {testimonials.map((testimonial) => (
-                  <TestimonialCard
-                    key={testimonial.name}
-                    personName={testimonial.name}
-                    personPhotoUrl={testimonial.image}
-                    personRole={testimonial.role}
-                    testimonial={testimonial.testimonial}
-                  />
-                ))}
-              </Slider>
-            </Fade>
+            <Slider {...slickSettings} centerMode lazyLoad="ondemand">
+              {testimonials.map((testimonial) => (
+                <TestimonialCard
+                  key={testimonial.name}
+                  personName={testimonial.name}
+                  personPhotoUrl={testimonial.image}
+                  personRole={testimonial.role}
+                  testimonial={testimonial.testimonial}
+                />
+              ))}
+            </Slider>
           </SlickContainer>
           {/* </TestimonialsCardsContainer> */}
         </TestimonialsSectionContainer>
@@ -279,18 +265,16 @@ export default function Home() {
           <Text content="Empresas em que já trabalhei diretamente ou prestei serviços como freelancer" />
           <CompaniesContainer>
             {enterprises.map((enterprise) => (
-              <Fade key={enterprise.id}>
-                <a href={enterprise.website} key={enterprise.id}>
-                  <NextImage
-                    width={enterprise.width}
-                    height={enterprise.height}
-                    imgUrl={enterprise.img}
-                    style={{
-                      filter: "grayscale(100%) sepia(100%) hue-rotate(200deg)",
-                    }}
-                  />
-                </a>
-              </Fade>
+              <a href={enterprise.website} key={enterprise.id}>
+                <NextImage
+                  width={enterprise.width}
+                  height={enterprise.height}
+                  imgUrl={enterprise.img}
+                  style={{
+                    filter: "grayscale(100%) sepia(100%) hue-rotate(200deg)",
+                  }}
+                />
+              </a>
             ))}
           </CompaniesContainer>
         </PortfolioSectionContainer>
@@ -304,23 +288,15 @@ export default function Home() {
               content={`Se você precisa de um profissional experiente para:`}
             />
             <ul>
-              <Fade>
-                <li>• Desenvolver um aplicativo Android e iOS</li>
-              </Fade>
-              <Fade>
-                <li>• Desenvolver seu site pessoal</li>
-              </Fade>
-              <Fade>
-                <li>• Desenvolver uma landing page</li>
-              </Fade>
-              <Fade>
-                <li>• Criar um sistema robusto para sua empresa</li>
-              </Fade>
-              <Fade>
-                <li>
-                  • Desenvolver uma solução personalizada para seu negócio
-                </li>
-              </Fade>
+              <li>• Desenvolver um aplicativo Android e iOS</li>
+
+              <li>• Desenvolver seu site pessoal</li>
+
+              <li>• Desenvolver uma landing page</li>
+
+              <li>• Criar um sistema robusto para sua empresa</li>
+
+              <li>• Desenvolver uma solução personalizada para seu negócio</li>
             </ul>
             <ContactSectionButtonsContainer>
               <PrimaryButton

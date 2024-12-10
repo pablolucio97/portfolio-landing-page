@@ -10,8 +10,7 @@ export default class MyDocument extends Document {
         return (
             <Html>
                 <Head>
-                    {/* @ts-ignore */}
-                    <meta charset="UTF-8" />
+                    <meta charSet="UTF-8" />
                     <meta name="description" content="Landing pages de alta conversão e sites institucionais para o seu negócio." />
                     <meta name="keywords" content="pablosilvadev pablo silva psd landing pages" />
                     <meta name='author' content='Pablo Silva' />
