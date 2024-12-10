@@ -30,6 +30,7 @@ export default class MyDocument extends Document {
         {/* Loading Google Tag Manager script script */}
         <Script
           id="load-google-tag-manager"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -44,11 +45,13 @@ export default class MyDocument extends Document {
         <Script
           id="load-google-analytics"
           src="https://www.googletagmanager.com/gtag/js?id=G-R1X93YMK83"
+          strategy="afterInteractive"
           async
         />
         {/* Initialize Google Analytics */}
         <Script
           id="execute-google-analytics"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
             window.dataLayer = window.dataLayer || [];
