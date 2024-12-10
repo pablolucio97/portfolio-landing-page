@@ -139,9 +139,7 @@ export default function Home() {
             </IntroductionSectionContentInfoContainer>
           </IntroductionSectionContentContainer>
           <IntroductionSectionImageContainer>
-            <ZoomAnimation>
               <NextImage height={400} width={640} imgUrl="/systems.png" />
-            </ZoomAnimation>
           </IntroductionSectionImageContainer>
         </IntroductionSectionContainer>
       </IntroductionSection>
