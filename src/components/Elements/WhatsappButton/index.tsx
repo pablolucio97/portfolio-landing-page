@@ -1,37 +1,31 @@
-import React, { CSSProperties, ReactNode } from 'react';
-import { Button } from './styles'
-import { BsWhatsapp } from 'react-icons/bs'
-import { sendWhatsAppMessage } from '../../../ultis/sendWhatsAppMessage';
+import { CSSProperties } from "react";
+import { BsWhatsapp } from "react-icons/bs";
+import { sendWhatsAppMessage } from "../../../ultis/sendWhatsAppMessage";
+import { Button } from "./styles";
 
 interface WhatsappButtonProps {
-    whatsappContact: string | undefined;
-    ariaLabel: string;
-    style?: CSSProperties;
-    className?: string;
-    backgroundVariant?: 'dark' | 'light';
+  whatsappContact: string | undefined;
+  ariaLabel: string;
+  style?: CSSProperties;
+  className?: string;
+  backgroundVariant?: "dark" | "light";
 }
 
 export function WhatsappButton({
-    className,
-    ariaLabel,
-    style,
-    whatsappContact,
-    backgroundVariant = 'light'
+  className,
+  ariaLabel,
+  style,
 }: WhatsappButtonProps) {
-
-
-    return (
-        <Button
-            onClick={sendWhatsAppMessage}
-            style={{
-                backgroundColor: backgroundVariant === 'dark' ?
-                    '#075e54' :
-                    '#25d366'
-            } || style}
-            className={className}
-            aria-label={ariaLabel}
-        >
-            <BsWhatsapp />
-        </Button>
-    )
+  return (
+    <Button
+      onClick={sendWhatsAppMessage}
+      style={{
+        backgroundColor: "#02994d",
+      }}
+      className={className}
+      aria-label={ariaLabel}
+    >
+      <BsWhatsapp />
+    </Button>
+  );
 }

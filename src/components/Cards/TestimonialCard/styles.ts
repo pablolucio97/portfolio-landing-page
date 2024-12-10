@@ -14,15 +14,15 @@ export const SubContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 320px;
-  min-width: 320px;
+  min-width: 240px;
   padding: 16px 24px;
   margin: 8px auto;
-  border-radius: 4px;
-  background-color: ${({ theme }) => theme.colors.black300};
+  border-radius: 8px;
+  background-color: ${({ theme }) => theme.colors.primary_dark};
   box-shadow: ${({ theme }) => theme.shadows.soft};
-  @media (max-width: 992px) {
-    width: 88%;
+  @media (max-width: 480px) {
+    width: 100%;
+    margin: 8px;
   }
 `;
 
@@ -32,7 +32,7 @@ export const DataContainer = styled.div`
   width: 100%;
   & p{
     width: 100%;
-    text-align: justify;
+    text-align: left;
   }
 `
 export const AvatarContainer = styled.div`
@@ -48,15 +48,16 @@ export const StarsContainer = styled.div`
 `;
 
 export const Text = styled.p`
-  font-size: ${({ theme }) => theme.sizes.small};
+  font-size: ${({ theme }) => theme.sizes.medium};
+  text-align: center;
   font-weight: 300;
-  color: ${({ theme }) => theme.colors.white500};
+  color: ${({ theme }) => theme.colors.white300};
   padding: 8px 4px;
   margin: 12px 0;
   word-wrap: break-word;
   width: 96%;
   @media (max-width: 720px) {
-    font-size: ${({ theme }) => theme.sizes.xsmall};
+    font-size: ${({ theme }) => theme.sizes.small};
   }
 `;
 

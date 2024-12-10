@@ -93,7 +93,7 @@ export const GlobalStyle = createGlobalStyle`
 
   .accordionContent{
     padding: 14px;
-    color: ${({ theme }) => theme.colors.secondary_light};
+    color: ${({ theme }) => theme.colors.primary_light};
     font-size: ${({ theme }) => theme.sizes.medium};
   }
   
@@ -149,7 +149,7 @@ export const GlobalStyle = createGlobalStyle`
   .rgbBackground{
     background: linear-gradient(45deg,  
       ${({ theme }) => theme.colors.error}, 
-     ${({ theme }) => theme.colors.secondary});
+     ${({ theme }) => theme.colors.primary});
   }
 
     //ANIMATED VIDEO AS BACKGORUND 

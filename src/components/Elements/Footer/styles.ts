@@ -3,7 +3,8 @@ import styled from "styled-components";
 export const Container = styled.footer`
   width: 100%;
   min-height: 20vh;
-  background-color: ${({ theme }) => theme.colors.primary};
+  background: -webkit-linear-gradient(-141deg, #290ac2, #000000, #290ac2);
+  background: linear-gradient(-141deg, #290ac2, #000000, #290ac2);
   display: flex;
   justify-content: center;
   margin: 0 auto;
@@ -13,15 +14,15 @@ export const Container = styled.footer`
     grid-template-rows: 2fr;
     grid-template-columns: repeat(2, 2fr);
     grid-template-areas:
-    "First Second"
-    "Third Fourth";
+      "First Second"
+      "Third Fourth";
   }
   @media (max-width: 768px) {
     grid-template-rows: repeat(1, 1fr);
     grid-template-columns: 1fr;
     grid-template-areas: "First" "Second" "Third" "Fourth";
   }
-  `;
+`;
 
 export const FirstContainer = styled.div`
   display: flex;
@@ -30,7 +31,7 @@ export const FirstContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
   grid-area: First;
-  `;
+`;
 
 export const SecondContainer = styled.div`
   display: flex;
@@ -39,7 +40,7 @@ export const SecondContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
   grid-area: Second;
-  `;
+`;
 
 export const ThirdContainer = styled.div`
   display: flex;
@@ -48,7 +49,7 @@ export const ThirdContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
   grid-area: Third;
-  `;
+`;
 
 export const FourthContainer = styled.div`
   display: flex;
@@ -58,4 +59,3 @@ export const FourthContainer = styled.div`
   align-items: center;
   grid-area: Fourth;
 `;
-

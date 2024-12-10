@@ -61,7 +61,7 @@ export function SocialIcons({
                                     16 : iconsSize === 'small' ?
                                         24 : 32
                         }
-                        color={theme.colors.secondary}
+                        color={theme.colors.primary}
                         style={iconsStyle}
                         className={iconsClassName}
                     />
@@ -77,7 +77,7 @@ export function SocialIcons({
                                 40 : iconsSize === 'tiny' ?
                                     16 : iconsSize === 'small' ?
                                         24 : 32
-                        } color={theme.colors.secondary}
+                        } color={theme.colors.primary}
                         style={iconsStyle}
                         className={iconsClassName}
                     />
@@ -93,7 +93,7 @@ export function SocialIcons({
                                 40 : iconsSize === 'tiny' ?
                                     16 : iconsSize === 'small' ?
                                         24 : 32
-                        } color={theme.colors.secondary}
+                        } color={theme.colors.primary}
                         style={iconsStyle}
                         className={iconsClassName}
                     />
@@ -109,7 +109,7 @@ export function SocialIcons({
                                 40 : iconsSize === 'tiny' ?
                                     16 : iconsSize === 'small' ?
                                         24 : 32
-                        } color={theme.colors.secondary}
+                        } color={theme.colors.primary}
                         style={iconsStyle}
                         className={iconsClassName}
                     />
@@ -125,7 +125,7 @@ export function SocialIcons({
                                 40 : iconsSize === 'tiny' ?
                                     16 : iconsSize === 'small' ?
                                         24 : 32
-                        } color={theme.colors.secondary}
+                        } color={theme.colors.primary_light}
                         style={iconsStyle}
                         className={iconsClassName}
                     />
@@ -141,7 +141,7 @@ export function SocialIcons({
                                 40 : iconsSize === 'tiny' ?
                                     16 : iconsSize === 'small' ?
                                         24 : 32
-                        } color={theme.colors.secondary}
+                        } color={theme.colors.primary}
                         style={iconsStyle}
                         className={iconsClassName}
                     />

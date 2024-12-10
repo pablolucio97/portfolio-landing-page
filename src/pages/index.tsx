@@ -1,266 +1,352 @@
-import { useState } from 'react';
-import { SkillCardImage } from '../components/Cards/SkillCardImage';
-import { TestimonialCard } from '../components/Cards/TestimonialCard';
-import { PrimaryButton } from '../components/Elements/PrimaryButton';
-import { NextImage } from '../components/Next/NextImage';
-import { GradientText } from '../components/Typography/GradientText';
-import { SubTitle } from '../components/Typography/SubTitle';
-import { Text } from '../components/Typography/Text';
-import { Title } from '../components/Typography/Title';
-import { FaWhatsapp } from "react-icons/fa";
+import { useState } from "react";
+import { FaArrowLeft, FaArrowRight, FaWhatsapp } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { Fade, Roll, Zoom } from "react-reveal";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+import { ProjectCrd } from "../components/Cards/ProjectCard";
+import { SkillCardImage } from "../components/Cards/SkillCardImage";
+import { TestimonialCard } from "../components/Cards/TestimonialCard";
+import { PrimaryButton } from "../components/Elements/PrimaryButton";
+import { NextImage } from "../components/Next/NextImage";
+import { GradientText } from "../components/Typography/GradientText";
+import { SubTitle } from "../components/Typography/SubTitle";
+import { Text } from "../components/Typography/Text";
+import { Title } from "../components/Typography/Title";
+import { enterprises, projects, skills, testimonials } from "../data/data";
 import {
-    enterprises,
-    skills,
-    testimonials
-} from '../data/data';
-import {
-    ContactSection,
-    ContactSectionContainer,
-    Container,
-    IntroductionSection,
-    IntroductionSectionContainer,
-    IntroductionSectionContentContainer,
-    IntroductionSectionContentInfoContainer,
-    IntroductionSectionImageContainer,
-    PortfolioSection,
-    PortfolioSectionContainer,
-    ProfileColumnContainer,
-    ProfileRowContainer,
-    SkillsCardsContainer,
-    SkillsInfoContainer,
-    SkillsSection,
-    SkillsSectionContainer,
-    SubtitleContentContainer,
-    TestimonialsCardsContainer,
-    TestimonialsInfoContainer,
-    TestimonialsSection,
-    TestimonialsSectionContainer,
-    WhoAmIColumnContainer,
-    WhoAmISection,
-    WhoAmISectionContainer,
-    WhoAmISectionContentContainer,
-    WhoAmISectionContentInfoContainer,
-    WhoAmISectionImageContainer
-} from '../styles/';
-import { theme } from '../themes/theme';
-import { sendWhatsAppMessage } from '../ultis/sendWhatsAppMessage';
-import { Zoom, Fade, Roll } from 'react-reveal'
+  CompaniesContainer,
+  ContactSection,
+  ContactSectionButtonsContainer,
+  ContactSectionContainer,
+  ContactSectionListContainer,
+  Container,
+  IntroductionSection,
+  IntroductionSectionContainer,
+  IntroductionSectionContentContainer,
+  IntroductionSectionContentInfoContainer,
+  IntroductionSectionImageContainer,
+  PortfolioSection,
+  PortfolioSectionContainer,
+  ProfileColumnContainer,
+  ProfileRowContainer,
+  ProjectsInfoContainer,
+  ProjectsSection,
+  ProjectsSectionContainer,
+  SkillsCardsContainer,
+  SkillsInfoContainer,
+  SkillsSection,
+  SkillsSectionContainer,
+  SlickContainer,
+  SubtitleContentContainer,
+  TestimonialsInfoContainer,
+  TestimonialsSection,
+  TestimonialsSectionContainer,
+  WhoAmIColumnContainer,
+  WhoAmISection,
+  WhoAmISectionContainer,
+  WhoAmISectionContentContainer,
+  WhoAmISectionContentInfoContainer,
+  WhoAmISectionImageContainer,
+} from "../styles/";
+import { theme } from "../themes/theme";
+import { sendWhatsAppMessage } from "../ultis/sendWhatsAppMessage";
 
 export default function Home() {
+  const [skill, setSkill] = useState({
+    title: "",
+    content: "",
+  });
 
-    const [skill, setSkill] = useState({
-        title: '',
-        content: ''
-    })
+  function handleSendEmail() {
+    const email = "pablolucio_@hotmail.com";
+    const body = "Gostaria de iniciar um novo projeto.";
+    return (window.location.href = `mailto:?subject=${email}&body=${body}`);
+  }
 
-    function handleSendEmail() {
-        const email = 'pablolucio_@hotmail.com'
-        const body = 'Gostaria de iniciar um novo projeto.'
-        return window.location.href = `mailto:?subject=${email}&body=${body}`
-    }
+  const CustomPrevArrow = ({ onClick }) => (
+    <div
+      style={{
+        position: "absolute",
+        top: "50%",
+        left: "0px",
+        transform: "translateY(-50%)",
+        zIndex: 1,
+        cursor: "pointer",
+      }}
+      onClick={onClick}
+    >
+      <FaArrowLeft size={24} color="#ffffff" />
+    </div>
+  );
 
+  const CustomNextArrow = ({ onClick }) => (
+    <div
+      style={{
+        position: "absolute",
+        top: "50%",
+        right: "0",
+        transform: "translateY(-50%)",
+        zIndex: 1,
+        cursor: "pointer",
+      }}
+      onClick={onClick}
+    >
+      <FaArrowRight size={24} color="#ffffff" />
+    </div>
+  );
 
+  const slickSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    prevArrow: <CustomPrevArrow onClick={() => {}} />,
+    nextArrow: <CustomNextArrow onClick={() => {}} />,
+  };
 
-    return (
-        <Container>
-
-            <IntroductionSection>
-                <IntroductionSectionContainer>
-                    <IntroductionSectionContentContainer>
-                        <IntroductionSectionContentInfoContainer>
-                            <ProfileRowContainer>
-                                <Fade>
-                                    <NextImage
-                                        height={160}
-                                        width={160}
-                                        imgUrl='/profile.png'
-                                    />
-                                </Fade>
-                                <ProfileColumnContainer>
-                                    <Title
-                                        content='Pablo Silva'
-                                    />
-                                    <SubtitleContentContainer>
-                                        <SubTitle
-                                            content='Dsenvolvedor'
-                                        />
-                                        <GradientText
-                                            content='full-stack'
-                                            direction='top-to-bottom'
-                                            initialColor='#0094FF'
-                                            finalColor='#90c3eb'
-
-                                        />
-                                    </SubtitleContentContainer>
-                                </ProfileColumnContainer>
-                            </ProfileRowContainer>
-                        </IntroductionSectionContentInfoContainer>
-                    </IntroductionSectionContentContainer>
-                    <IntroductionSectionImageContainer>
-                        <Zoom>
-                            <NextImage
-                                height={400}
-                                width={640}
-                                imgUrl='/systems.png'
-                            />
-                        </Zoom>
-                    </IntroductionSectionImageContainer>
-                </IntroductionSectionContainer>
-            </IntroductionSection>
-
-            <WhoAmISection id='whoami'>
+  return (
+    <Container>
+      <IntroductionSection>
+        <IntroductionSectionContainer>
+          <IntroductionSectionContentContainer>
+            <IntroductionSectionContentInfoContainer>
+              <ProfileRowContainer>
                 <Fade>
-                    <WhoAmISectionContainer>
-                        <WhoAmISectionContentInfoContainer>
-                            <WhoAmISectionContentContainer>
-                                <WhoAmIColumnContainer>
-                                    <Title
-                                        content='Quem sou eu'
-                                    />
-                                    <Text
-                                        content='Meu nome é Pablo Silva e sou desenvolvedor full-stack. Trabalho com o desenvolvimento de aplicações completas utilizando NodeJS no back-end, React/NextJS no front-end e React Native/Expo no mobile.'
-                                    />
-                                    <Text
-                                        content='Durante a minha jornada, sempre procuro trabalhar observando boas práticas de desenvolvimento e adotar ações para providenciar agradável experiência ao usuário final.'
-                                    />
-                                    <NextImage
-                                        height={131}
-                                        width={697}
-                                        imgUrl='/gb_contribuition.svg'
-                                    />
-                                </WhoAmIColumnContainer>
-                            </WhoAmISectionContentContainer>
-                            <WhoAmISectionImageContainer>
-                                <NextImage
-                                    height={368}
-                                    width={480}
-                                    imgUrl='/code.svg'
-                                />
-                            </WhoAmISectionImageContainer>
-                        </WhoAmISectionContentInfoContainer>
-                    </WhoAmISectionContainer>
+                  <NextImage
+                    height={160}
+                    width={160}
+                    imgUrl="/profile.png"
+                    style={{ borderRadius: 16, opacity: 0.8 }}
+                  />
                 </Fade>
-            </WhoAmISection>
-
-            <PortfolioSection>
-                <PortfolioSectionContainer id='portfolio'>
-                    <Title
-                        content='Empresas assistidas'
+                <ProfileColumnContainer>
+                  <Title content="Pablo Silva" />
+                  <SubtitleContentContainer>
+                    <SubTitle content="Dsenvolvedor" />
+                    <GradientText
+                      content="full-stack"
+                      direction="top-to-bottom"
+                      initialColor="#0094FF"
+                      finalColor="#90c3eb"
                     />
-                    <Text
-                        content='Empresas em que já trabalhei diretamente ou prestei serviços como freelancer'
-                    />
-                    {
-                        enterprises.map(enterprise => (
-                            <Fade key={enterprise.id} >
-                                <a href={enterprise.website} key={enterprise.id}>
-                                    <NextImage
-                                        width={enterprise.width}
-                                        height={enterprise.height}
-                                        imgUrl={enterprise.img}
-                                    />
-                                </a>
-                            </Fade>
-                        ))
-                    }
-                </PortfolioSectionContainer>
-            </PortfolioSection>
+                  </SubtitleContentContainer>
+                </ProfileColumnContainer>
+              </ProfileRowContainer>
+            </IntroductionSectionContentInfoContainer>
+          </IntroductionSectionContentContainer>
+          <IntroductionSectionImageContainer>
+            <Zoom>
+              <NextImage height={400} width={640} imgUrl="/systems.png" />
+            </Zoom>
+          </IntroductionSectionImageContainer>
+        </IntroductionSectionContainer>
+      </IntroductionSection>
 
-            <SkillsSection id='skills'>
-                <SkillsSectionContainer>
-                    <SkillsInfoContainer>
-                        <Title
-                            content={skill.title ?
-                                skill.title :
-                                'Tecnologias'
-                            }
-                        />
-                        <Text
-                            content={skill.content ?
-                                skill.content :
-                                'Passe o mouse sobre a tecnologia para entender como a utilizo em uma aplicação do mundo real.'}
-                        />
+      <WhoAmISection id="whoami">
+        <Fade>
+          <WhoAmISectionContainer>
+            <WhoAmISectionContentInfoContainer>
+              <WhoAmISectionContentContainer>
+                <WhoAmIColumnContainer>
+                  <Title content="Quem sou eu" />
+                  <Text content="Meu nome é Pablo Silva e sou desenvolvedor full-stack com mais de 4 anos de de experiência. Ao longo da minha carreira, trabalhei em uma variedade de projetos em diferentes setores, incluindo healthtech, fintech e varejo." />
+                  <Text content="Como profissional, me dedico a criar soluções robustas e escaláveis, sempre priorizando boas práticas de desenvolvimento e entregando uma intuitiva e agradável experiência para o usuário final." />
+                  <NextImage
+                    height={131}
+                    width={697}
+                    imgUrl="/gb_contribuition.svg"
+                    style={{
+                      filter: "grayscale(100%) sepia(100%) hue-rotate(210deg)",
+                      borderRadius: 8,
+                    }}
+                  />
+                </WhoAmIColumnContainer>
+              </WhoAmISectionContentContainer>
+              <WhoAmISectionImageContainer>
+                <Zoom>
+                  <NextImage
+                    height={260}
+                    width={465}
+                    imgUrl="/ajx-app.png"
+                    style={{ filter: "contrast(100%) brightness(100%)" }}
+                  />
+                </Zoom>
+              </WhoAmISectionImageContainer>
+            </WhoAmISectionContentInfoContainer>
+          </WhoAmISectionContainer>
+        </Fade>
+      </WhoAmISection>
 
-                    </SkillsInfoContainer>
-                    <SkillsCardsContainer>
-                        {skills.map((skill) => (
-                            <Roll key={skill.image}>
-                                <SkillCardImage
-                                    key={skill.image}
-                                    imgAlt={skill.alt}
-                                    imgUrl={skill.image}
-                                    className='skillCard'
-                                    onMouseEnter={() => setSkill({
-                                        title: skill.title,
-                                        content: skill.content
-                                    })}
-                                    onMouseLeave={() => setSkill({
-                                        title: '',
-                                        content: ''
-                                    })}
-                                />
-                            </Roll>
-                        ))}
-                    </SkillsCardsContainer>
-                </SkillsSectionContainer>
-            </SkillsSection>
+      <ProjectsSection>
+        <ProjectsSectionContainer>
+          <ProjectsInfoContainer>
+            <Title content="Portfólio" />
+            <SubTitle
+              content={`Veja abaixo os meus projetos mais relevantes`}
+            />
+          </ProjectsInfoContainer>
 
-            <TestimonialsSection>
-                <TestimonialsSectionContainer>
-                    <TestimonialsInfoContainer>
-                        <Title
-                            content='Depoimentos'
-                        />
-                        <SubTitle
-                            content={`Veja o que pessoas que já trabalharam comigo \n dizem`}
-                        />
-                    </TestimonialsInfoContainer>
-                    <TestimonialsCardsContainer>
-                        {
-                            testimonials.map(testimonial => (
-                                <Zoom key={testimonial.name}>
-                                    <TestimonialCard
-                                        key={testimonial.name}
-                                        personName={testimonial.name}
-                                        personPhotoUrl={testimonial.image}
-                                        personRole={testimonial.role}
-                                        testimonial={testimonial.testimonial}
-                                    />
-                                </Zoom>
-                            ))
-                        }
+          <Zoom>
+            <SlickContainer>
+              <Slider {...slickSettings} centerMode lazyLoad="ondemand">
+                {projects.map((project) => (
+                  <ProjectCrd
+                    key={project.id}
+                    title={project.title}
+                    description={project.description}
+                    videoId={project.videoId}
+                  />
+                ))}
+              </Slider>
+            </SlickContainer>
+          </Zoom>
+        </ProjectsSectionContainer>
+      </ProjectsSection>
 
-                    </TestimonialsCardsContainer>
-                </TestimonialsSectionContainer>
-            </TestimonialsSection>
+      <SkillsSection id="skills">
+        <SkillsSectionContainer>
+          <SkillsInfoContainer>
+            <Title content={skill.title ? skill.title : "Tecnologias"} />
+            <Text
+              content={
+                skill.content
+                  ? skill.content
+                  : "Passe o mouse sobre a tecnologia para entender como a utilizo em uma aplicação do mundo real."
+              }
+            />
+          </SkillsInfoContainer>
+          <SkillsCardsContainer>
+            {skills.map((skill) => (
+              <Roll key={skill.image}>
+                <SkillCardImage
+                  key={skill.image}
+                  imgAlt={skill.alt}
+                  imgUrl={skill.image}
+                  className="skillCard"
+                  onMouseEnter={() =>
+                    setSkill({
+                      title: skill.title,
+                      content: skill.content,
+                    })
+                  }
+                  onMouseLeave={() =>
+                    setSkill({
+                      title: "",
+                      content: "",
+                    })
+                  }
+                />
+              </Roll>
+            ))}
+          </SkillsCardsContainer>
+        </SkillsSectionContainer>
+      </SkillsSection>
 
-            <ContactSection id='contact'>
-                <ContactSectionContainer>
-                    <Title
-                        content='Contato'
-                    />
-                    <SubTitle
-                        content={`Vamos juntos dar vida às interfaces e alavancar projetos \nque podem transformar o mundo, literalmente.`}
-                    />
-                    <PrimaryButton
-                        ariaLabel='button'
-                        onClick={handleSendEmail}
-                        title='Enviar um email'
-                        size='large'
-                        icon={<MdEmail size={20} />}
-                    />
-                    <PrimaryButton
-                        ariaLabel='button'
-                        onClick={sendWhatsAppMessage}
-                        title='Chamar no Whatsapp'
-                        size='large'
-                        style={{ backgroundColor: theme.colors.success }}
-                        icon={<FaWhatsapp size={20} />}
-                    />
-                </ContactSectionContainer>
-            </ContactSection>
+      <TestimonialsSection>
+        <TestimonialsSectionContainer>
+          <TestimonialsInfoContainer>
+            <Title content="Depoimentos" />
+            <SubTitle
+              content={`Veja o que pessoas que já trabalharam comigo \n dizem`}
+            />
+          </TestimonialsInfoContainer>
+          {/* <TestimonialsCardsContainer> */}
+          <SlickContainer>
+            <Fade>
+              <Slider {...slickSettings} centerMode lazyLoad="ondemand">
+                {testimonials.map((testimonial) => (
+                  <TestimonialCard
+                    key={testimonial.name}
+                    personName={testimonial.name}
+                    personPhotoUrl={testimonial.image}
+                    personRole={testimonial.role}
+                    testimonial={testimonial.testimonial}
+                  />
+                ))}
+              </Slider>
+            </Fade>
+          </SlickContainer>
+          {/* </TestimonialsCardsContainer> */}
+        </TestimonialsSectionContainer>
+      </TestimonialsSection>
 
-        </Container >
-    )
+      <PortfolioSection>
+        <PortfolioSectionContainer id="portfolio">
+          <Title content="Empresas assistidas" />
+          <Text content="Empresas em que já trabalhei diretamente ou prestei serviços como freelancer" />
+          <CompaniesContainer>
+            {enterprises.map((enterprise) => (
+              <Fade key={enterprise.id}>
+                <a href={enterprise.website} key={enterprise.id}>
+                  <NextImage
+                    width={enterprise.width}
+                    height={enterprise.height}
+                    imgUrl={enterprise.img}
+                    style={{
+                      filter: "grayscale(100%) sepia(100%) hue-rotate(200deg)",
+                    }}
+                  />
+                </a>
+              </Fade>
+            ))}
+          </CompaniesContainer>
+        </PortfolioSectionContainer>
+      </PortfolioSection>
+
+      <ContactSection id="contact">
+        <ContactSectionContainer>
+          <ContactSectionListContainer>
+            <Title content="Contato" />
+            <SubTitle
+              content={`Se você precisa de um profissional experiente para:`}
+            />
+            <ul>
+              <Fade>
+                <li>• Desenvolver um aplicativo Android e iOS</li>
+              </Fade>
+              <Fade>
+                <li>• Desenvolver seu site pessoal</li>
+              </Fade>
+              <Fade>
+                <li>• Desenvolver uma landing page</li>
+              </Fade>
+              <Fade>
+                <li>• Criar um sistema robusto para sua empresa</li>
+              </Fade>
+              <Fade>
+                <li>
+                  • Desenvolver uma solução personalizada para seu negócio
+                </li>
+              </Fade>
+            </ul>
+            <ContactSectionButtonsContainer>
+              <PrimaryButton
+                ariaLabel="button"
+                onClick={handleSendEmail}
+                title="Me envie um email"
+                size="large"
+                icon={<MdEmail size={20} />}
+                style={{ marginTop: "1rem" }}
+              />
+              <p>ou</p>
+              <PrimaryButton
+                ariaLabel="button"
+                onClick={sendWhatsAppMessage}
+                title="Me chame no Whatsapp"
+                size="large"
+                style={{
+                  backgroundColor: theme.colors.success,
+                  marginTop: "1rem",
+                }}
+                icon={<FaWhatsapp size={20} />}
+              />
+            </ContactSectionButtonsContainer>
+          </ContactSectionListContainer>
+        </ContactSectionContainer>
+      </ContactSection>
+    </Container>
+  );
 }

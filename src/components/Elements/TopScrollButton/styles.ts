@@ -5,7 +5,7 @@ export const Button = styled.button`
   justify-content: center;
   align-items: center;
   background-color: ${(props) => props.theme.colors.primary};
-  color: ${(props) => props.theme.colors.black100};
+  color: ${(props) => props.theme.colors.white100};
   position: fixed;
   bottom: 8vh;
   right: -80px;

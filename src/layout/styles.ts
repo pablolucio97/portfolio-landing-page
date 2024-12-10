@@ -7,7 +7,7 @@ export const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.black300};
   & .headerScrolling {
     position: fixed;
-    background-color: transparent;
+    background-color: ${({theme}) => theme.colors.primary_dark};
     z-index: 999;
     padding: 0 12px;
     transition: all 0.8s ease;
@@ -20,7 +20,7 @@ export const Container = styled.div`
   & .animatedTopScroll {
     right: 24px;
     transition: all 0.3s ease;
-    background-color: ${({ theme }) => theme.colors.secondary};
+    background-color: ${({ theme }) => theme.colors.primary};
   }
   
   & .normalTopScroll {
