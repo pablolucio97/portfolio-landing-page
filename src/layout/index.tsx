@@ -90,12 +90,17 @@ export default function Layout({ children }: LayoutProps) {
               onClick={handleToggleDrawer}
             />
             <HeaderLink
-              content="Empresas assistidas"
+              content="Portfólio"
               url="#portfolio"
               onClick={handleToggleDrawer}
             />
             <HeaderLink
-              content="Conhecimentos"
+              content="Empresas assistidas"
+              url="#enterprises"
+              onClick={handleToggleDrawer}
+            />
+            <HeaderLink
+              content="Tecnologias"
               url="#skills"
               onClick={handleToggleDrawer}
             />
@@ -109,8 +114,9 @@ export default function Layout({ children }: LayoutProps) {
         <DrawerButton toggleDrawer={handleToggleDrawer} />
         <HeaderLinksContainer>
           <HeaderLink content="Quem sou eu" url="#whoami" />
-          <HeaderLink content="Empresas assistidas" url="#portfolio" />
-          <HeaderLink content="Conhecimentos" url="#skills" />
+          <HeaderLink content="Portfólio" url="#portfolio" />
+          <HeaderLink content="Empresas assistidas" url="#enterprises" />
+          <HeaderLink content="Tecnologias" url="#skills" />
           <HeaderLink content="Contato" url="#contact" />
         </HeaderLinksContainer>
       </Header>
@@ -123,8 +129,10 @@ export default function Layout({ children }: LayoutProps) {
         <FooterFirstSection>
           <FooterTitle content="Acesso rápido" />
           <FooterLink content="Quem sou eu" url="#whoami" />
-          <FooterLink content="Empresas assistidas" url="#portfolio" />
-          <FooterLink content="Conhecimentos" url="#skills" />
+          <FooterLink content="Portfólio" url="#portfolio" />
+          <FooterLink content="Empresas assistidas" url="#enterprises" />
+          <FooterLink content="Tecnologias" url="#skills" />
+          <FooterLink content="Contato" url="#contact" />
         </FooterFirstSection>
         <FooterSecondSection>
           <FooterTitle content="Redes sociais" />

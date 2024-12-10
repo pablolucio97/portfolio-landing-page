@@ -27,7 +27,7 @@ export const Container = styled.div`
 export const IntroductionSection = styled.section`
   display: flex;
   width: 100%;
-  min-height: 56vh;
+  min-height: 48vh;
   background: -webkit-linear-gradient(-141deg, #290ac2, #000000, #290ac2);
   background: linear-gradient(-141deg, #290ac2, #000000, #290ac2);
   /* background: green; */
@@ -57,12 +57,12 @@ export const IntroductionSectionContentContainer = styled.div`
     color: ${({ theme }) => theme.colors.white100};
     font-weight: 800;
   }
-
+  
   @media (max-width: 768px) {
     flex-direction: column;
     padding-top: 5%;
   }
-`;
+  `;
 
 export const IntroductionSectionContentInfoContainer = styled.div`
   display: flex;
@@ -70,34 +70,34 @@ export const IntroductionSectionContentInfoContainer = styled.div`
   justify-content: center;
   padding: 1rem 4rem;
   width: 100%;
-
+  
   & h3 {
     color: ${({ theme }) => theme.colors.white100};
   }
-
+  
   & p {
     color: ${({ theme }) => theme.colors.white500};
     font-weight: 200;
   }
-
+  
   @media (max-width: 992px) {
     align-items: center;
     padding: 0;
     width: 100%;
   }
-`;
+  `;
 
 export const ProfileRowContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
-
+  
   @media (max-width: 992px) {
     flex-direction: column;
     align-items: center;
   }
-`;
+  `;
 
 export const ProfileColumnContainer = styled.div`
   width: 100%;
@@ -110,14 +110,14 @@ export const ProfileColumnContainer = styled.div`
     padding: 0;
   }
   /* background: pink; */
-`;
+  `;
 
 export const SubtitleContentContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
   margin-bottom: 2rem;
-
+  
   @media (max-width: 992px) {
     flex-direction: column;
     align-items: center;
@@ -130,15 +130,15 @@ export const SubtitleContentContainer = styled.div`
     font-size: 1rem;
     margin: 0 2px;
   }
-`;
+  `;
 
 export const IntroductionSectionImageContainer = styled.div`
   display: flex;
   justify-content: flex-end;
-  align-items: flex-end;
-  margin-bottom: 16px;
+  align-items: center;
   width: 50%;
   @media (max-width: 992px) {
+    padding-bottom: 2rem;
     width: 80%;
   }
 `;
@@ -268,10 +268,10 @@ export const PortfolioSectionContainer = styled.div`
   align-items: center;
   width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 3rem 2rem;
   & h1 {
     color: ${({ theme }) => theme.colors.black100};
-    margin: 0 auto;
+    margin: 1rem auto 0;
     font-weight: 800;
   }
   & h3 {
@@ -497,7 +497,7 @@ export const ProjectsSectionContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   margin-bottom: 2rem;
-  padding: 0 2rem;
+  padding: 2rem;
 
   @media (max-width: 992px) {
     width: 100%;
@@ -584,22 +584,22 @@ export const ContactSectionListContainer = styled.div`
   flex-direction: column;
   align-items: center;
 
-  & h3 {
+  & span {
     width: 100%;
     text-align: center;
-
-    font-size: ${({ theme }) => theme.sizes.large};
+    font-size: ${({ theme }) => theme.sizes.medium};
     @media (max-width: 992px) {
-      font-size: ${({ theme }) => theme.sizes.medium};
+      font-size: ${({ theme }) => theme.sizes.normal};
     }
   }
 
   & ul{
-    margin: -2rem auto 1rem;
+    margin: 1rem auto;
   }
 
   & li{
     text-align: center;
+    font-size: ${({ theme }) => theme.sizes.normal};
     @media (max-width: 992px) {
       font-size: ${({ theme }) => theme.sizes.small};
     }
@@ -611,10 +611,6 @@ export const ContactSectionButtonsContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  @media (max-width: 992px) {
-    margin-top: 2rem;
-  }
 `;
 
 export const ContactSectionContainer = styled.div`

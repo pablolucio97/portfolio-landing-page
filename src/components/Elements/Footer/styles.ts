@@ -9,18 +9,10 @@ export const Container = styled.footer`
   justify-content: center;
   margin: 0 auto;
   padding: 32px;
-  @media (max-width: 1440px) {
-    display: grid;
-    grid-template-rows: 2fr;
-    grid-template-columns: repeat(2, 2fr);
-    grid-template-areas:
-      "First Second"
-      "Third Fourth";
-  }
+
   @media (max-width: 768px) {
-    grid-template-rows: repeat(1, 1fr);
-    grid-template-columns: 1fr;
-    grid-template-areas: "First" "Second" "Third" "Fourth";
+    display: flex;
+    flex-direction: column;
   }
 `;
 
@@ -29,8 +21,10 @@ export const FirstContainer = styled.div`
   min-width: 320px;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
   grid-area: First;
+  @media (max-width: 768px) {
+    align-items: center;
+  }
 `;
 
 export const SecondContainer = styled.div`

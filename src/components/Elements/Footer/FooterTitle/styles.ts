@@ -7,6 +7,7 @@ export const Container = styled.h3`
   width: 92%;
   max-width: 240px;
   word-wrap: break-word;
+  text-align: left;
   margin: 40px 0 4px;
   @media (max-width: 768px){
     margin: 40px auto 0;

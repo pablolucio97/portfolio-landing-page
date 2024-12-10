@@ -8,6 +8,7 @@ export const Container = styled.a`
   max-width: 240px;
   word-wrap: break-word;
   cursor: pointer;
+  text-align: left;
   margin: 4px;
   @media (max-width: 768px){
     margin: auto;
