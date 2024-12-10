@@ -973,6 +973,13 @@
   resolved "https://registry.npmjs.org/@next/swc-darwin-arm64/-/swc-darwin-arm64-13.5.7.tgz"
   integrity sha512-7SxmxMex45FvKtRoP18eftrDCMyL6WQVYJSEE/s7A1AW/fCkznxjEShKet2iVVzf89gWp8HbXGaL4hCaseux6g==
 
+"@next/third-parties@^15.0.4":
+  version "15.0.4"
+  resolved "https://registry.npmjs.org/@next/third-parties/-/third-parties-15.0.4.tgz"
+  integrity sha512-Pa0VWD5zROfJGyVIPXvGVE75fGOBWyIwTzsjCWCQ68KzapRRkEFPhyI0PFMsHXLsLhrqM5bx5wwxe7KP7e5tQw==
+  dependencies:
+    third-party-capital "1.0.20"
+
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
   resolved "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz"
@@ -2857,7 +2864,7 @@ next-progress@^2.2.0:
   dependencies:
     nprogress "^0.2.0"
 
-next@^13.5.7, next@>=6.0.0:
+"next@^13.0.0 || ^14.0.0 || ^15.0.0", next@^13.5.7, next@>=6.0.0:
   version "13.5.7"
   resolved "https://registry.npmjs.org/next/-/next-13.5.7.tgz"
   integrity sha512-W7KIRTE+hPcgGdq89P3mQLDX3m7pJ6nxSyC+YxYaUExE+cS4UledB+Ntk98tKoyhsv6fjb2TRAnD7VDvoqmeFg==
@@ -3291,7 +3298,7 @@ react-vertical-timeline-component@^3.5.2:
     prop-types "^15.7.2"
     react-intersection-observer "^8.26.2"
 
-react@*, "react@^0.14.0 || ^15.0.0 || ^16 || ^17 || ^18", "react@^0.14.0 || ^15.0.1 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^0.14.7 || ^15.0.0 || ^16.0.0", "react@^0.14.7 || ^15.0.0-0 || ^16.0.0 || ^17.0.0", "react@^15.0.0 || ^16.0.0 || ^17.0.0|| ^18.0.0", "react@^15.3.0 || ^16.0.0", "react@^15.3.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.12.0 || ^17.0.1", "react@^16.8.0 || ^17 || ^18", "react@^16.8.0 || ^17.0.0 || ^18.0.0", react@^17.0.2, react@^18.0.0, react@^18.2.0, react@^19.0.0, "react@>= 15.0.0", "react@>= 16.3.0", "react@>= 16.8.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", react@>=0.14.0, react@>=16.0.0, react@>=16.8.0, react@>=16.9.0, react@>=18, "react@~15 || ~16 || ~17":
+react@*, "react@^0.14.0 || ^15.0.0 || ^16 || ^17 || ^18", "react@^0.14.0 || ^15.0.1 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^0.14.7 || ^15.0.0 || ^16.0.0", "react@^0.14.7 || ^15.0.0-0 || ^16.0.0 || ^17.0.0", "react@^15.0.0 || ^16.0.0 || ^17.0.0|| ^18.0.0", "react@^15.3.0 || ^16.0.0", "react@^15.3.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.12.0 || ^17.0.1", "react@^16.8.0 || ^17 || ^18", "react@^16.8.0 || ^17.0.0 || ^18.0.0", react@^17.0.2, react@^18.0.0, react@^18.2.0, "react@^18.2.0 || 19.0.0-rc-66855b96-20241106 || ^19.0.0", react@^19.0.0, "react@>= 15.0.0", "react@>= 16.3.0", "react@>= 16.8.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", react@>=0.14.0, react@>=16.0.0, react@>=16.8.0, react@>=16.9.0, react@>=18, "react@~15 || ~16 || ~17":
   version "19.0.0"
   resolved "https://registry.npmjs.org/react/-/react-19.0.0.tgz"
   integrity sha512-V8AVnmPIICiWpGfm6GLzCR/W5FXLchHop40W4nXBmdlEceh16rCN8O8LNWm5bh5XUX91fh7KpA+W0TgMKmgTpQ==
@@ -3686,6 +3693,11 @@ text-table@^0.2.0:
   version "0.2.0"
   resolved "https://registry.npmjs.org/text-table/-/text-table-0.2.0.tgz"
   integrity sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==
+
+third-party-capital@1.0.20:
+  version "1.0.20"
+  resolved "https://registry.npmjs.org/third-party-capital/-/third-party-capital-1.0.20.tgz"
+  integrity sha512-oB7yIimd8SuGptespDAZnNkzIz+NWaJCu2RMsbs4Wmp9zSDUM8Nhi3s2OOcqYuv3mN4hitXc8DVx+LyUmbUDiA==
 
 tiny-invariant@^1.0.6:
   version "1.2.0"
