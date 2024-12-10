@@ -1,5 +1,5 @@
-import { GoogleTagManager } from "@next/third-parties/google";
 import Document, { Head, Html, Main, NextScript } from "next/document";
+import Script from "next/script";
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: any) {
@@ -10,7 +10,6 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <GoogleTagManager gtmId="GTM-NLZXNR77" />
           <meta charSet="UTF-8" />
           <meta
             name="description"
@@ -28,8 +27,41 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           ></link>
         </Head>
+        {/* Loading Google Tag Manager script script */}
+        <Script
+          id="load-google-tag-manager"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-NLZXNR77');
+          `,
+          }}
+        />
+        {/* Asynchronously load the Google Analytics gtag.js script */}
+        <Script
+          id="load-google-analytics"
+          src="https://www.googletagmanager.com/gtag/js?id=G-R1X93YMK83"
+          strategy="afterInteractive"
+          async
+        />
+        {/* Initialize Google Analytics */}
+        <Script
+          id="execute-google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-R1X93YMK83');
+          `,
+          }}
+        />
         <body>
-          <GoogleTagManager gtmId="GTM-NLZXNR77" />
           <Main />
           <NextScript />
         </body>
