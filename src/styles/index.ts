@@ -497,7 +497,7 @@ export const ProjectsSectionContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   margin-bottom: 2rem;
-  padding: 2rem;
+  padding-top: 2rem;
 
   @media (max-width: 992px) {
     width: 100%;

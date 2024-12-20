@@ -115,31 +115,31 @@ export default function Home() {
         <IntroductionSectionContainer>
           <IntroductionSectionContentContainer>
             <IntroductionSectionContentInfoContainer>
-                <ProfileRowContainer>
-                  <NextImage
-                    height={160}
-                    width={160}
-                    imgUrl="/profile.png"
-                    style={{ borderRadius: 16, opacity: 0.8 }}
-                  />
+              <ProfileRowContainer>
+                <NextImage
+                  height={160}
+                  width={160}
+                  imgUrl="/profile.png"
+                  style={{ borderRadius: 16, opacity: 0.8 }}
+                />
 
-                  <ProfileColumnContainer>
-                    <Title content="Pablo Silva" />
-                    <SubtitleContentContainer>
-                      <SubTitle content="Dsenvolvedor" />
-                      <GradientText
-                        content="full-stack"
-                        direction="top-to-bottom"
-                        initialColor="#0094FF"
-                        finalColor="#90c3eb"
-                      />
-                    </SubtitleContentContainer>
-                  </ProfileColumnContainer>
-                </ProfileRowContainer>
+                <ProfileColumnContainer>
+                  <Title content="Pablo Silva" />
+                  <SubtitleContentContainer>
+                    <SubTitle content="Dsenvolvedor" />
+                    <GradientText
+                      content="full-stack"
+                      direction="top-to-bottom"
+                      initialColor="#0094FF"
+                      finalColor="#90c3eb"
+                    />
+                  </SubtitleContentContainer>
+                </ProfileColumnContainer>
+              </ProfileRowContainer>
             </IntroductionSectionContentInfoContainer>
           </IntroductionSectionContentContainer>
           <IntroductionSectionImageContainer>
-              <NextImage height={400} width={640} imgUrl="/systems.png" />
+            <NextImage height={400} width={640} imgUrl="/systems.png" />
           </IntroductionSectionImageContainer>
         </IntroductionSectionContainer>
       </IntroductionSection>
@@ -189,18 +189,15 @@ export default function Home() {
           </ProjectsInfoContainer>
 
           <SlickContainer>
-            <ZoomAnimation>
-              <Slider {...slickSettings} centerMode lazyLoad="ondemand">
-                {projects.map((project) => (
-                  <ProjectCrd
-                    key={project.id}
-                    title={project.title}
-                    description={project.description}
-                    videoId={project.videoId}
-                  />
-                ))}
-              </Slider>
-            </ZoomAnimation>
+            {projects.map((project) => (
+              <ZoomAnimation key={project.id}>
+                <ProjectCrd
+                  title={project.title}
+                  description={project.description}
+                  videoId={project.videoId}
+                />
+              </ZoomAnimation>
+            ))}
           </SlickContainer>
         </ProjectsSectionContainer>
       </ProjectsSection>

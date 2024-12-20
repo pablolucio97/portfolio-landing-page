@@ -1,15 +1,14 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   border-radius: 8px;
-  padding: 16px;
+  padding: 1rem;
   background-color: none;
   margin-bottom: 1rem;
-  border-width: 2px;
-  border-color: ${({ theme }) => theme.colors.white300};
+  background-color: ${({ theme }) => theme.colors.primary_dark};
 `;
 
 export const SubContainer = styled.div`
@@ -32,7 +31,7 @@ export const Title = styled.h2`
 
 export const Text = styled.h2`
   font-size: ${({ theme }) => theme.sizes.normal};
-  margin: 0.5rem auto 1rem;
+  margin:  1rem 0;
   color: ${({ theme }) => theme.colors.white300};
   @media (max-width: 720px) {
     font-size: ${({ theme }) => theme.sizes.small};

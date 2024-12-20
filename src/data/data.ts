@@ -252,7 +252,7 @@ export const projects = [
   },
   {
     id: "5",
-    title: "Aplicativo Havaianas Go",
+    title: "Canal de atendimento no aplicativo Havaianas Go",
     description:
       "Fui responsável pela Implementação de novo canal de atendimento ao cliente no aplicativo Havaianas Go durante a  prestação de seviços à empresa BuyBye.",
     videoId: "1036732090",
