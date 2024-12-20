@@ -57,12 +57,12 @@ export const IntroductionSectionContentContainer = styled.div`
     color: ${({ theme }) => theme.colors.white100};
     font-weight: 800;
   }
-  
+
   @media (max-width: 768px) {
     flex-direction: column;
     padding-top: 5%;
   }
-  `;
+`;
 
 export const IntroductionSectionContentInfoContainer = styled.div`
   display: flex;
@@ -70,34 +70,34 @@ export const IntroductionSectionContentInfoContainer = styled.div`
   justify-content: center;
   padding: 1rem 4rem;
   width: 100%;
-  
+
   & h3 {
     color: ${({ theme }) => theme.colors.white100};
   }
-  
+
   & p {
     color: ${({ theme }) => theme.colors.white500};
     font-weight: 200;
   }
-  
+
   @media (max-width: 992px) {
     align-items: center;
     padding: 0;
     width: 100%;
   }
-  `;
+`;
 
 export const ProfileRowContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  
+
   @media (max-width: 992px) {
     flex-direction: column;
     align-items: center;
   }
-  `;
+`;
 
 export const ProfileColumnContainer = styled.div`
   width: 100%;
@@ -110,14 +110,14 @@ export const ProfileColumnContainer = styled.div`
     padding: 0;
   }
   /* background: pink; */
-  `;
+`;
 
 export const SubtitleContentContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
   margin-bottom: 2rem;
-  
+
   @media (max-width: 992px) {
     flex-direction: column;
     align-items: center;
@@ -130,7 +130,7 @@ export const SubtitleContentContainer = styled.div`
     font-size: 1rem;
     margin: 0 2px;
   }
-  `;
+`;
 
 export const IntroductionSectionImageContainer = styled.div`
   display: flex;
@@ -486,7 +486,7 @@ export const ProjectsSection = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  padding: 40px 0;
+  padding: 1rem 0;
   background: -webkit-linear-gradient(-141deg, #290ac2, #000000, #290ac2);
   background: linear-gradient(-141deg, #290ac2, #000000, #290ac2);
 `;
@@ -509,7 +509,7 @@ export const ProjectsInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 2rem;
+  padding: 1rem;
 
   @media (max-width: 992px) {
     width: 100%;
@@ -522,7 +522,7 @@ export const ProjectsInfoContainer = styled.div`
   & h3 {
     color: ${({ theme }) => theme.colors.white100};
     font-size: ${({ theme }) => theme.sizes.large};
-    margin: 16px 0;
+    margin: 1rem 0;
     @media (max-width: 992px) {
       width: 100%;
     }
@@ -534,6 +534,12 @@ export const SlickContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @media (max-width: 992px) {
+      width: 95%;
+      margin: 1rem auto;
+    }
+
 
   & h3 {
     color: ${({ theme }) => theme.colors.white300};
@@ -570,34 +576,36 @@ export const ContactSection = styled.section`
   display: flex;
   justify-content: center;
   width: 100%;
-  background: -webkit-linear-gradient(
-    139deg,
-    rgb(255, 255, 255),
-    rgb(230, 230, 230)
-  );
-  background: linear-gradient(139deg, rgb(255, 255, 255), rgb(230, 230, 230));
+  background: -webkit-linear-gradient(-111deg, #333333, #000000, #333333);
+  background: linear-gradient(-111deg, #333333, #000000, #333333);
+  padding: 1rem 0 2rem;
 `;
 
 export const ContactSectionListContainer = styled.div`
   width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
 
-  & span {
+  @media (max-width: 992px) {
+    font-size: ${({ theme }) => theme.sizes.normal};
+    flex-direction: column;
+  }
+
+  & span, p {
     width: 100%;
     text-align: center;
+    color: ${({ theme }) => theme.colors.white200};
     font-size: ${({ theme }) => theme.sizes.medium};
     @media (max-width: 992px) {
       font-size: ${({ theme }) => theme.sizes.normal};
     }
   }
 
-  & ul{
+  & ul {
     margin: 1rem auto;
   }
 
-  & li{
+  & li {
     text-align: center;
     font-size: ${({ theme }) => theme.sizes.normal};
     @media (max-width: 992px) {
@@ -611,10 +619,29 @@ export const ContactSectionButtonsContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (min-width: 992px) {
+    border-left-width: 2px;
+    border-left-color: ${({ theme }) => theme.colors.white200};
+    margin-left: 4rem;
+    margin-top: 2rem
+  }
+
+  @media (max-width: 992px) {
+    margin-top: 1rem
+  }
+`;
+export const ContactSectionServicesContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 2rem
 `;
 
 export const ContactSectionContainer = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   width: 1200px;
   margin: 0 auto;
@@ -626,13 +653,19 @@ export const ContactSectionContainer = styled.div`
     align-items: center;
   }
 
+  & span {
+    color: ${({ theme }) => theme.colors.white200};
+    margin: 0 auto 24px;
+    font-weight: 400;
+  }
+
   & h1 {
-    color: ${({ theme }) => theme.colors.black100};
+    color: ${({ theme }) => theme.colors.white200};
     margin: 0 auto 24px;
     font-weight: 800;
   }
   & h3 {
-    color: ${({ theme }) => theme.colors.black300};
+    color: ${({ theme }) => theme.colors.white200};
     font-size: ${({ theme }) => theme.sizes.large};
     width: 50%;
     margin: 8px auto 40px;

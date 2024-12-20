@@ -258,3 +258,21 @@ export const projects = [
     videoId: "1036732090",
   },
 ];
+
+export const services = [
+  {
+    id: "1",
+    title: "Desenvolvimento de Aplicativos iOS e Android",
+    icon: "mobile",
+  },
+  {
+    id: "2",
+    title: "Desenvolvimento de Websites e Landing Pages",
+    icon: "web",
+  },
+  {
+    id: "3",
+    title: "Desenvolvimento de Sistemas web completos",
+    icon: "system",
+  }
+]

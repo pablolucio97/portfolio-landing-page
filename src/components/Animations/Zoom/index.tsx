@@ -14,7 +14,7 @@ const ZoomAnimation: React.FC<ZoomAnimationProps> = ({ children }) => {
       ref={ref}
       initial={{ scale: 0 }}
       animate={isInView ? { scale: 1 } : {}}
-      transition={{ duration: 0.75, delay: 0.25 }}
+      transition={{ duration: 0.25, delay: 0.25 }}
     >
       {children}
     </motion.div>

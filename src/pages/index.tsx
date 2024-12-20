@@ -8,6 +8,7 @@ import FadeAnimation from "../components/Animations/Fade";
 import RotateAnimation from "../components/Animations/Rotate";
 import ZoomAnimation from "../components/Animations/Zoom";
 import { ProjectCrd } from "../components/Cards/ProjectCard";
+import { ServiceCard } from "../components/Cards/ServiceCard";
 import { SkillCardImage } from "../components/Cards/SkillCardImage";
 import { TestimonialCard } from "../components/Cards/TestimonialCard";
 import { PrimaryButton } from "../components/Elements/PrimaryButton";
@@ -16,13 +17,20 @@ import { GradientText } from "../components/Typography/GradientText";
 import { SubTitle } from "../components/Typography/SubTitle";
 import { Text } from "../components/Typography/Text";
 import { Title } from "../components/Typography/Title";
-import { enterprises, projects, skills, testimonials } from "../data/data";
+import {
+  enterprises,
+  projects,
+  services,
+  skills,
+  testimonials,
+} from "../data/data";
 import {
   CompaniesContainer,
   ContactSection,
   ContactSectionButtonsContainer,
   ContactSectionContainer,
   ContactSectionListContainer,
+  ContactSectionServicesContainer,
   Container,
   IntroductionSection,
   IntroductionSectionContainer,
@@ -186,9 +194,7 @@ export default function Home() {
             <SubTitle
               content={`Veja abaixo os meus projetos mais relevantes`}
             />
-          </ProjectsInfoContainer>
-
-          <SlickContainer>
+                <SlickContainer>
             {projects.map((project) => (
               <ZoomAnimation key={project.id}>
                 <ProjectCrd
@@ -199,6 +205,9 @@ export default function Home() {
               </ZoomAnimation>
             ))}
           </SlickContainer>
+          </ProjectsInfoContainer>
+
+      
         </ProjectsSectionContainer>
       </ProjectsSection>
 
@@ -294,20 +303,20 @@ export default function Home() {
 
       <ContactSection id="contact">
         <ContactSectionContainer>
+          <Title content="Contato" />
+          <span>Se você precisa de um profissional experiente para:</span>
           <ContactSectionListContainer>
-            <Title content="Contato" />
-            <span>Se você precisa de um profissional experiente para:</span>
-            <ul>
-              <li>• Desenvolver um aplicativo Android e iOS</li>
+            <ContactSectionServicesContainer>
+              {services.map((service) => (
+                <FadeAnimation key={service.id}>
+                  <ServiceCard
+                    title={service.title}
+                    icon={service.icon as never}
+                  />
+                </FadeAnimation>
+              ))}
+            </ContactSectionServicesContainer>
 
-              <li>• Desenvolver seu site pessoal</li>
-
-              <li>• Desenvolver uma landing page</li>
-
-              <li>• Criar um sistema robusto para sua empresa</li>
-
-              <li>• Desenvolver uma solução personalizada para seu negócio</li>
-            </ul>
             <ContactSectionButtonsContainer>
               <PrimaryButton
                 ariaLabel="button"
