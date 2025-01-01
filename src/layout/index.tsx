@@ -18,6 +18,7 @@ import { Container } from "./styles";
 
 import { WhatsappButton } from "../components/Elements/WhatsappButton";
 import { NextProgressComponent } from "../components/Next/NextProgress";
+import { getYear } from "../ultis/date";
 
 interface LayoutProps {
   children: ReactNode;
@@ -144,7 +145,7 @@ export default function Layout({ children }: LayoutProps) {
             iconsStyle={{ color: theme.colors.white500 }}
           />
           <Text
-            content="PabloSilvaDev - © Copyright  2024"
+            content={`PabloSilvaDev - © Copyright  ${getYear()}`}
             style={{
               color: theme.colors.white100,
               fontSize: theme.sizes.small,
