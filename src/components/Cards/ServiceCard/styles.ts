@@ -44,7 +44,7 @@ export const Container = styled.div`
 export const Title = styled.h2`
   font-size: ${({ theme }) => theme.sizes.medium};
   font-weight: 400;
-  color: ${({ theme }) => theme.colors.white100};
+  color: ${({ theme }) => theme.colors.black300};
   margin-left: 1rem;
   @media (max-width: 720px) {
     font-size: ${({ theme }) => theme.sizes.normal};

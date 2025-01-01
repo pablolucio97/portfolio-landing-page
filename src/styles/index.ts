@@ -27,7 +27,7 @@ export const Container = styled.div`
 export const IntroductionSection = styled.section`
   display: flex;
   width: 100%;
-  min-height: 48vh;
+  min-height: 64vh;
   background: -webkit-linear-gradient(-141deg, #290ac2, #000000, #290ac2);
   background: linear-gradient(-141deg, #290ac2, #000000, #290ac2);
   /* background: green; */
@@ -576,8 +576,7 @@ export const ContactSection = styled.section`
   display: flex;
   justify-content: center;
   width: 100%;
-  background: -webkit-linear-gradient(-111deg, #333333, #000000, #333333);
-  background: linear-gradient(-111deg, #333333, #000000, #333333);
+  background: #ffffff;
   padding: 1rem 0 2rem;
 `;
 
@@ -594,7 +593,7 @@ export const ContactSectionListContainer = styled.div`
   & span, p {
     width: 100%;
     text-align: center;
-    color: ${({ theme }) => theme.colors.white200};
+    color: ${({ theme }) => theme.colors.black300};
     font-size: ${({ theme }) => theme.sizes.medium};
     @media (max-width: 992px) {
       font-size: ${({ theme }) => theme.sizes.normal};
@@ -654,18 +653,18 @@ export const ContactSectionContainer = styled.div`
   }
 
   & span {
-    color: ${({ theme }) => theme.colors.white200};
+    color: ${({ theme }) => theme.colors.black100};
     margin: 0 auto 24px;
     font-weight: 400;
   }
 
   & h1 {
-    color: ${({ theme }) => theme.colors.white200};
+    color: ${({ theme }) => theme.colors.black100};
     margin: 0 auto 24px;
     font-weight: 800;
   }
   & h3 {
-    color: ${({ theme }) => theme.colors.white200};
+    color: ${({ theme }) => theme.colors.black100};
     font-size: ${({ theme }) => theme.sizes.large};
     width: 50%;
     margin: 8px auto 40px;

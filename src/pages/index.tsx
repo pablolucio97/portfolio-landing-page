@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Script from "next/script";
 import { useState } from "react";
 import { FaArrowLeft, FaArrowRight, FaWhatsapp } from "react-icons/fa";
@@ -153,6 +154,9 @@ export default function Home() {
           `,
         }}
       />
+      <Head>
+        <title>Pablo Silva Dev</title>
+      </Head>
       <IntroductionSection>
         <IntroductionSectionContainer>
           <IntroductionSectionContentContainer>
