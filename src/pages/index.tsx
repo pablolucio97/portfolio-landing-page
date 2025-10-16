@@ -196,7 +196,7 @@ export default function Home() {
             <WhoAmISectionContentContainer>
               <WhoAmIColumnContainer>
                 <Title content="Quem sou eu" />
-                <Text content="Meu nome é Pablo Silva e sou desenvolvedor full-stack com mais de 4 anos de de experiência. Ao longo da minha carreira, trabalhei em uma variedade de projetos em diferentes setores, incluindo healthtech, fintech e varejo." />
+                <Text content="Meu nome é Pablo Silva e sou desenvolvedor full-stack com mais de 5 anos de de experiência. Ao longo da minha carreira, trabalhei em uma variedade de projetos em diferentes setores, incluindo healthtech, fintech e varejo." />
                 <Text content="Como profissional, me dedico a criar soluções robustas e escaláveis, sempre priorizando boas práticas de desenvolvimento e entregando uma intuitiva e agradável experiência para o usuário final." />
                 <FadeAnimation>
                   <NextImage
@@ -321,7 +321,7 @@ export default function Home() {
           <CompaniesContainer>
             {enterprises.map((enterprise) => (
               <FadeAnimation key={enterprise.id}>
-                <a href={enterprise.website}>
+                <a href={enterprise.website} target="_blank">
                   <NextImage
                     width={enterprise.width}
                     height={enterprise.height}

@@ -194,7 +194,7 @@ export const enterprises = [
   {
     id: "1",
     img: "/hygia_logo.png",
-    website: "https://www.hygiasaude.com.br/",
+    website: "https://www.instagram.com/hygiasaude",
     width: 240,
     height: 78,
   },
@@ -216,6 +216,13 @@ export const enterprises = [
     id: "4",
     img: "/buybye_logo.png",
     website: "https://www.buybye.com.br",
+    width: 240,
+    height: 44,
+  },
+  {
+    id: "4",
+    img: "/agsistemas.png",
+    website: "https://www.agsistemasonline.com.br",
     width: 240,
     height: 44,
   },
