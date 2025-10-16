@@ -172,7 +172,7 @@ export default function Home() {
                 <ProfileColumnContainer>
                   <Title content="Pablo Silva" />
                   <SubtitleContentContainer>
-                    <SubTitle content="Dsenvolvedor" />
+                    <SubTitle content="Desenvolvedor" />
                     <GradientText
                       content="full-stack"
                       direction="top-to-bottom"
