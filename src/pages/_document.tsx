@@ -19,7 +19,7 @@ export default class MyDocument extends Document {
             name="keywords"
             content="pablosilvadev pablo silva psd landing pages"
           />
-          <meta name="author" content="Pablo Silva Dev" />
+          <meta name="author" content="Pablo Silva Dev | Desenvolvedor full-stack" />
           <meta name="theme-color" content="#0076E3" />
           <link rel="preload" as="font"></link>
           <link

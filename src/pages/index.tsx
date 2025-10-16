@@ -155,7 +155,7 @@ export default function Home() {
         }}
       />
       <Head>
-        <title>Pablo Silva Dev</title>
+        <title>Pablo Silva Dev | Desenvolvedor full-stack</title>
       </Head>
       <IntroductionSection>
         <IntroductionSectionContainer>
