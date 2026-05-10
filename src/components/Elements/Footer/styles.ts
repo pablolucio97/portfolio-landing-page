@@ -34,6 +34,14 @@ export const SecondContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
   grid-area: Second;
+
+  & span,
+  p {
+    margin-left: -2rem;
+    @media (max-width: 768px) {
+      margin: 1rem auto;
+    }
+  }
 `;
 
 export const ThirdContainer = styled.div`

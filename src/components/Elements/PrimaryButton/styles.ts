@@ -9,21 +9,13 @@ export const Container = styled.button<PrimaryButtonProps>`
   justify-content: center;
   align-items: center;
   padding: 4px;
-  width: ${({ size }) =>
-    size === "large"
-      ? "240px"
-      : size === "tiny"
-        ? "80px"
-        : size === "small"
-          ? "120px"
-          : "160px"};
   height: 40px;
   background-color: ${({ theme }) => theme.colors.primary};
   border-radius: 4px;
   color: ${({ theme }) => theme.colors.black400};
   font-size: ${({ theme }) => theme.sizes.medium};
   font-weight: 700;
-
+  
   &:disabled {
     background-color: ${({ theme }) => theme.colors.primary_light};
   }
@@ -31,11 +23,11 @@ export const Container = styled.button<PrimaryButtonProps>`
     font-size: ${({ theme }) => theme.sizes.normal};
     max-width: 280px;
   }
-`;
+  `;
 
 export const ContentContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  min-width: 100%;
+  gap: 1rem;
 `;

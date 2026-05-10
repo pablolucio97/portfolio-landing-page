@@ -1,23 +1,16 @@
 import { CSSProperties, ReactNode } from "react";
-import { Container, } from './styles';
+import { Container, SubContainer } from "./styles";
 
 interface HeaderProps {
-    children: ReactNode;
-    style?: CSSProperties;
-    className?: string;
+  children: ReactNode;
+  style?: CSSProperties;
+  className?: string;
 }
 
-export function Header({
-    children,
-    style,
-    className
-}: HeaderProps) {
-    return (
-        <Container
-            style={style}
-            className={className}
-        >
-            {children}
-        </Container>
-    )
+export function Header({ children, style, className }: HeaderProps) {
+  return (
+    <Container style={style} className={className}>
+      <SubContainer>{children}</SubContainer>
+    </Container>
+  );
 }

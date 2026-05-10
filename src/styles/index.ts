@@ -16,7 +16,7 @@ export const Container = styled.div`
       color: ${({ theme }) => theme.colors.white400}
     }
   } */
-  /* 
+  /*
   & .socialContainer{
     display: flex;
     justify-content: center;
@@ -25,18 +25,44 @@ export const Container = styled.div`
 `;
 
 export const IntroductionSection = styled.section`
+  position: relative;
   display: flex;
   width: 100%;
   min-height: 64vh;
   background: -webkit-linear-gradient(-141deg, #290ac2, #000000, #290ac2);
   background: linear-gradient(-141deg, #290ac2, #000000, #290ac2);
-  /* background: green; */
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(
+        circle at 72% 42%,
+        rgba(81, 203, 255, 0.14),
+        transparent 26%
+      ),
+      linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.84),
+        rgba(0, 0, 0, 0.42) 48%,
+        rgba(0, 0, 0, 0.72)
+      );
+  }
 `;
 
 export const IntroductionSectionContainer = styled.div`
+  position: relative;
+  z-index: 1;
   display: flex;
-  flex-direction: row;
-  width: 1200px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
   & h1 {
     color: ${({ theme }) => theme.colors.white100};
@@ -49,8 +75,9 @@ export const IntroductionSectionContainer = styled.div`
 `;
 export const IntroductionSectionContentContainer = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  padding-top: 10%;
+  align-items: center;
   width: 50%;
   height: 100%;
   & h1 {
@@ -66,8 +93,9 @@ export const IntroductionSectionContentContainer = styled.div`
 
 export const IntroductionSectionContentInfoContainer = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 1rem 4rem;
   width: 100%;
 
@@ -88,10 +116,13 @@ export const IntroductionSectionContentInfoContainer = styled.div`
 `;
 
 export const ProfileRowContainer = styled.div`
-  width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  border-radius: 8px;
 
   @media (max-width: 992px) {
     flex-direction: column;
@@ -103,20 +134,19 @@ export const ProfileColumnContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  padding-left: 2rem;
+  align-items: center;
   @media (max-width: 992px) {
     align-items: center;
     padding: 0;
   }
-  /* background: pink; */
 `;
 
 export const SubtitleContentContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
-  margin-bottom: 2rem;
+  justify-content: center;
+  text-align: center;
 
   @media (max-width: 992px) {
     flex-direction: column;
@@ -134,9 +164,9 @@ export const SubtitleContentContainer = styled.div`
 
 export const IntroductionSectionImageContainer = styled.div`
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
   align-items: center;
-  width: 50%;
+  width: 100%;
   @media (max-width: 992px) {
     padding-bottom: 2rem;
     width: 80%;
@@ -155,7 +185,7 @@ export const WhoAmISection = styled.section`
 `;
 
 export const WhoAmISectionContainer = styled.div`
-  width: 1200px;
+  max-width: 1200px;
   height: 100%;
   flex-direction: row;
   padding: 4rem 0;
@@ -172,7 +202,7 @@ export const WhoAmISectionContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 48%;
+  width: 100%;
   height: 100%;
 
   & h1 {
@@ -204,7 +234,7 @@ export const WhoAmISectionContentContainer = styled.div`
 
 export const WhoAmISectionContentInfoContainer = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
   & p {
     font-weight: 400;
@@ -219,29 +249,49 @@ export const WhoAmISectionContentInfoContainer = styled.div`
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
+    & > :nth-child(1) {
+      margin-top: 1rem;
+    }
   }
 `;
 
-export const WhoAmIColumnContainer = styled.div`
+export const WhoAmIRowContainer = styled.div<{ $reverseOnMobile?: boolean }>`
   width: 100%;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   padding-left: 2rem;
+  gap: 2rem;
 
   & div {
     margin-top: 1rem;
   }
 
+  & p {
+    width: 50%;
+    font-size: 1.4rem;
+  }
+
   @media (max-width: 992px) {
     align-items: center;
     padding: 0;
+    gap: 1rem;
+    flex-direction: ${({ $reverseOnMobile }) =>
+      $reverseOnMobile ? "column-reverse" : "column"};
+    & p {
+      width: 100%;
+      font-size: 1rem;
+    }
+    & div {
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
   }
 `;
 export const WhoAmISectionImageContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  width: 48%;
+  width: 100%;
 
   @media (max-width: 992px) {
     width: 100%;
@@ -266,7 +316,7 @@ export const PortfolioSectionContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 3rem 2rem;
   & h1 {
@@ -291,20 +341,8 @@ export const PortfolioSectionContainer = styled.div`
 `;
 
 export const CompaniesContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
   width: 100%;
-  align-self: auto;
-  flex-wrap: wrap;
-  & img {
-    border-radius: 12px;
-    margin: 8px;
-  }
-  @media (max-width: 1024px) {
-    flex-direction: column;
-  }
+  margin-top: 1rem;
 `;
 
 export const CardsContainer = styled.div`
@@ -333,7 +371,7 @@ export const SkillsSection = styled.section`
 export const SkillsSectionContainer = styled.div`
   display: flex;
   flex-direction: row;
-  width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
   & h1 {
@@ -354,11 +392,10 @@ export const SkillsSectionContainer = styled.div`
 `;
 
 export const SkillsInfoContainer = styled.div`
-  width: 48%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 2rem;
 
   & p {
     width: 72%;
@@ -374,19 +411,18 @@ export const SkillsInfoContainer = styled.div`
 `;
 
 export const SkillsCardsContainer = styled.div`
-  width: 48%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  padding: 0 2rem;
 
   @media (max-width: 992px) {
-    width: 80%;
     flex-wrap: wrap;
   }
 
   @media (max-width: 768px) {
-    width: 100%;
     flex-wrap: wrap;
   }
 
@@ -421,7 +457,7 @@ export const TestimonialsSectionContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
   @media (max-width: 1200px) {
@@ -480,7 +516,17 @@ export const TestimonialsCardsContainer = styled.div`
   }
 `;
 
+export const TestimonialsCarouselContainer = styled.div`
+  width: 100%;
+  padding: 0 1rem;
+
+  @media (max-width: 992px) {
+    padding: 0;
+  }
+`;
+
 export const ProjectsSection = styled.div`
+  position: relative;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -489,15 +535,18 @@ export const ProjectsSection = styled.div`
   padding: 1rem 0;
   background: -webkit-linear-gradient(-141deg, #290ac2, #000000, #290ac2);
   background: linear-gradient(-141deg, #290ac2, #000000, #290ac2);
+  overflow: hidden;
 `;
 
 export const ProjectsSectionContainer = styled.div`
-  width: 1200px;
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-bottom: 2rem;
-  padding-top: 2rem;
+  padding: 1rem;
 
   @media (max-width: 992px) {
     width: 100%;
@@ -531,15 +580,15 @@ export const ProjectsInfoContainer = styled.div`
 
 export const SlickContainer = styled.div`
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
 
   @media (max-width: 992px) {
-      width: 95%;
-      margin: 1rem auto;
-    }
-
+    width: 95%;
+    margin: 1rem auto;
+    grid-template-columns: repeat(1, 1fr);
+  }
 
   & h3 {
     color: ${({ theme }) => theme.colors.white300};
@@ -590,7 +639,8 @@ export const ContactSectionListContainer = styled.div`
     flex-direction: column;
   }
 
-  & span, p {
+  & span,
+  & p {
     width: 100%;
     text-align: center;
     color: ${({ theme }) => theme.colors.black300};
@@ -622,12 +672,10 @@ export const ContactSectionButtonsContainer = styled.div`
   @media (min-width: 992px) {
     border-left-width: 2px;
     border-left-color: ${({ theme }) => theme.colors.white200};
-    margin-left: 4rem;
-    margin-top: 2rem
   }
 
   @media (max-width: 992px) {
-    margin-top: 1rem
+    margin-top: 1rem;
   }
 `;
 export const ContactSectionServicesContainer = styled.div`
@@ -635,14 +683,13 @@ export const ContactSectionServicesContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-left: 2rem
 `;
 
 export const ContactSectionContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
 
@@ -650,12 +697,20 @@ export const ContactSectionContainer = styled.div`
     width: 100%;
     flex-direction: column;
     align-items: center;
+    & span {
+      color: ${({ theme }) => theme.colors.black100};
+      font-weight: 400;
+      min-width: 80vw;
+      text-align: center;
+    }
   }
 
   & span {
     color: ${({ theme }) => theme.colors.black100};
     margin: 0 auto 24px;
     font-weight: 400;
+    max-width: 50%;
+    text-align: center;
   }
 
   & h1 {

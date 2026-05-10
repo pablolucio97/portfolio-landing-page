@@ -149,6 +149,7 @@ export default function Layout({ children }: LayoutProps) {
             style={{
               color: theme.colors.white100,
               fontSize: theme.sizes.small,
+              textAlign: 'center',
             }}
           />
         </FooterSecondSection>

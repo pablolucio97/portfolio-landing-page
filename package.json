@@ -19,6 +19,7 @@
     "motion": "^11.13.4",
     "next": "^13.5.7",
     "next-progress": "^2.2.0",
+    "ogl": "^1.0.11",
     "polished": "^4.2.2",
     "rc-checkbox": "^2.3.2",
     "rc-progress": "^3.3.3",
@@ -43,6 +44,7 @@
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.5",
     "supercons": "^0.0.1",
+    "three": "^0.167.1",
     "yup": "^0.32.11"
   },
   "devDependencies": {

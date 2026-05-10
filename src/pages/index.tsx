@@ -2,15 +2,16 @@ import Head from "next/head";
 import Script from "next/script";
 import { useState } from "react";
 import { FaArrowLeft, FaArrowRight, FaWhatsapp } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import FadeAnimation from "../components/Animations/Fade";
+import { LogoLoop } from "../components/Animations/LogoLoop";
 import RotateAnimation from "../components/Animations/Rotate";
 import ZoomAnimation from "../components/Animations/Zoom";
+import { DotGrid } from "../components/Backgrounds/DotGrid";
+import { LetterGlitch } from "../components/Backgrounds/LetterGlitch";
 import { ProjectCrd } from "../components/Cards/ProjectCard";
-import { ServiceCard } from "../components/Cards/ServiceCard";
 import { SkillCardImage } from "../components/Cards/SkillCardImage";
 import { TestimonialCard } from "../components/Cards/TestimonialCard";
 import { PrimaryButton } from "../components/Elements/PrimaryButton";
@@ -19,26 +20,17 @@ import { GradientText } from "../components/Typography/GradientText";
 import { SubTitle } from "../components/Typography/SubTitle";
 import { Text } from "../components/Typography/Text";
 import { Title } from "../components/Typography/Title";
-import {
-  enterprises,
-  projects,
-  services,
-  skills,
-  testimonials,
-} from "../data/data";
+import { enterprises, projects, skills, testimonials } from "../data/data";
 import {
   CompaniesContainer,
   ContactSection,
   ContactSectionButtonsContainer,
   ContactSectionContainer,
-  ContactSectionListContainer,
-  ContactSectionServicesContainer,
   Container,
   IntroductionSection,
   IntroductionSectionContainer,
   IntroductionSectionContentContainer,
   IntroductionSectionContentInfoContainer,
-  IntroductionSectionImageContainer,
   PortfolioSection,
   PortfolioSectionContainer,
   ProfileColumnContainer,
@@ -52,18 +44,28 @@ import {
   SkillsSectionContainer,
   SlickContainer,
   SubtitleContentContainer,
+  TestimonialsCarouselContainer,
   TestimonialsInfoContainer,
   TestimonialsSection,
   TestimonialsSectionContainer,
-  WhoAmIColumnContainer,
+  WhoAmIRowContainer,
   WhoAmISection,
   WhoAmISectionContainer,
-  WhoAmISectionContentContainer,
   WhoAmISectionContentInfoContainer,
-  WhoAmISectionImageContainer,
 } from "../styles/";
 import { theme } from "../themes/theme";
 import { sendWhatsAppMessage } from "../ultis/sendWhatsAppMessage";
+
+const companyLogos = enterprises.map((enterprise, index) => ({
+  src: enterprise.img,
+  href: enterprise.website,
+  alt: `Empresa assistida ${index + 1}`,
+  title: enterprise.website,
+  width: enterprise.width,
+  height: enterprise.height,
+}));
+
+const contactTerminalGridMul: [number, number] = [2.2, 1];
 
 export default function Home() {
   const [skill, setSkill] = useState({
@@ -158,6 +160,7 @@ export default function Home() {
         <title>Pablo Silva Dev | Desenvolvedor full-stack</title>
       </Head>
       <IntroductionSection>
+        <LetterGlitch glitchColors={["#290ac2", "#4d2db5", "#61b3dc"]} outerVignette />
         <IntroductionSectionContainer>
           <IntroductionSectionContentContainer>
             <IntroductionSectionContentInfoContainer>
@@ -165,7 +168,7 @@ export default function Home() {
                 <NextImage
                   height={160}
                   width={160}
-                  imgUrl="/profile.png"
+                  imgUrl="/profile_1_square.png"
                   style={{ borderRadius: 16, opacity: 0.8 }}
                 />
 
@@ -179,39 +182,43 @@ export default function Home() {
                       initialColor="#0094FF"
                       finalColor="#90c3eb"
                     />
+                    <SubTitle content="- IA Engineer" />
                   </SubtitleContentContainer>
                 </ProfileColumnContainer>
               </ProfileRowContainer>
             </IntroductionSectionContentInfoContainer>
           </IntroductionSectionContentContainer>
-          <IntroductionSectionImageContainer>
-            <NextImage height={400} width={640} imgUrl="/systems.png" />
-          </IntroductionSectionImageContainer>
         </IntroductionSectionContainer>
       </IntroductionSection>
 
       <WhoAmISection id="whoami">
         <WhoAmISectionContainer>
+          <Title content="Quem sou eu" />
           <WhoAmISectionContentInfoContainer>
-            <WhoAmISectionContentContainer>
-              <WhoAmIColumnContainer>
-                <Title content="Quem sou eu" />
-                <Text content="Meu nome é Pablo Silva e sou desenvolvedor full-stack com mais de 5 anos de de experiência. Ao longo da minha carreira, trabalhei em uma variedade de projetos em diferentes setores, incluindo healthtech, fintech e varejo." />
-                <Text content="Como profissional, me dedico a criar soluções robustas e escaláveis, sempre priorizando boas práticas de desenvolvimento e entregando uma intuitiva e agradável experiência para o usuário final." />
-                <FadeAnimation>
-                  <NextImage
-                    height={131}
-                    width={697}
-                    imgUrl="/gb_contribuition.svg"
-                    style={{
-                      filter: "grayscale(100%) sepia(100%) hue-rotate(210deg)",
-                      borderRadius: 8,
-                    }}
-                  />
-                </FadeAnimation>
-              </WhoAmIColumnContainer>
-            </WhoAmISectionContentContainer>
-            <WhoAmISectionImageContainer>
+            <WhoAmIRowContainer>
+              <Text content="Meu nome é Pablo Silva e sou desenvolvedor full-stack com mais de 6 anos de de experiência." />
+              <FadeAnimation>
+                <NextImage
+                  height={131}
+                  width={480}
+                  imgUrl="/gb_contributions.png"
+                  style={{
+                    // filter: "grayscale(100%) sepia(100%) hue-rotate(210deg)",
+                    borderRadius: 8,
+                  }}
+                />
+              </FadeAnimation>
+            </WhoAmIRowContainer>
+
+            <WhoAmIRowContainer $reverseOnMobile>
+              <FadeAnimation>
+                <NextImage height={400} width={640} imgUrl="/systems.png" />
+              </FadeAnimation>
+              <Text content=" Ao longo da minha carreira, trabalhei em uma variedade de projetos em diferentes setores, incluindo healthtech, fintech e varejo." />
+            </WhoAmIRowContainer>
+
+            <WhoAmIRowContainer>
+              <Text content="Como profissional, me dedico a criar soluções robustas e escaláveis entregando uma intuitiva e agradável experiência para o usuário final." />
               <FadeAnimation>
                 <NextImage
                   height={260}
@@ -220,12 +227,34 @@ export default function Home() {
                   style={{ filter: "contrast(100%) brightness(100%)" }}
                 />
               </FadeAnimation>
-            </WhoAmISectionImageContainer>
+            </WhoAmIRowContainer>
+
+            <WhoAmIRowContainer $reverseOnMobile>
+              <FadeAnimation>
+                <NextImage
+                  height={400}
+                  width={640}
+                  imgUrl="/monitors.png"
+                  style={{ borderRadius: "1rem" }}
+                />
+              </FadeAnimation>
+              <Text content=" Alinhado com o mercado, integro soluções de inteligência artificial e automação em meus projetos." />
+            </WhoAmIRowContainer>
           </WhoAmISectionContentInfoContainer>
         </WhoAmISectionContainer>
       </WhoAmISection>
 
       <ProjectsSection id="portfolio">
+        <DotGrid
+          dotSize={3}
+          gap={26}
+          baseColor={theme.colors.primary_light}
+          activeColor={theme.colors.white100}
+          proximity={150}
+          shockRadius={220}
+          shockStrength={0.08}
+          style={{ opacity: 0.32 }}
+        />
         <ProjectsSectionContainer>
           <ProjectsInfoContainer>
             <Title content="Portfólio" />
@@ -294,8 +323,7 @@ export default function Home() {
               content={`Veja o que pessoas que já trabalharam comigo \n dizem`}
             />
           </TestimonialsInfoContainer>
-          {/* <TestimonialsCardsContainer> */}
-          <SlickContainer>
+          <TestimonialsCarouselContainer>
             <FadeAnimation>
               <Slider {...slickSettings} centerMode lazyLoad="ondemand">
                 {testimonials.map((testimonial) => (
@@ -309,8 +337,7 @@ export default function Home() {
                 ))}
               </Slider>
             </FadeAnimation>
-          </SlickContainer>
-          {/* </TestimonialsCardsContainer> */}
+          </TestimonialsCarouselContainer>
         </TestimonialsSectionContainer>
       </TestimonialsSection>
 
@@ -319,20 +346,17 @@ export default function Home() {
           <Title content="Empresas assistidas" />
           <Text content="Empresas em que já trabalhei diretamente ou prestei serviços como freelancer" />
           <CompaniesContainer>
-            {enterprises.map((enterprise) => (
-              <FadeAnimation key={enterprise.id}>
-                <a href={enterprise.website} target="_blank">
-                  <NextImage
-                    width={enterprise.width}
-                    height={enterprise.height}
-                    imgUrl={enterprise.img}
-                    style={{
-                      filter: "grayscale(100%) sepia(100%) hue-rotate(200deg)",
-                    }}
-                  />
-                </a>
-              </FadeAnimation>
-            ))}
+            <LogoLoop
+              logos={companyLogos}
+              speed={52}
+              gap={40}
+              logoHeight={44}
+              pauseOnHover
+              scaleOnHover
+              fadeOut
+              fadeOutColor={theme.colors.background_secondary}
+              ariaLabel="Empresas assistidas"
+            />
           </CompaniesContainer>
         </PortfolioSectionContainer>
       </PortfolioSection>
@@ -340,42 +364,24 @@ export default function Home() {
       <ContactSection id="contact">
         <ContactSectionContainer>
           <Title content="Contato" />
-          <span>Se você precisa de um profissional experiente para:</span>
-          <ContactSectionListContainer>
-            <ContactSectionServicesContainer>
-              {services.map((service) => (
-                <FadeAnimation key={service.id}>
-                  <ServiceCard
-                    title={service.title}
-                    icon={service.icon as never}
-                  />
-                </FadeAnimation>
-              ))}
-            </ContactSectionServicesContainer>
+          <span>
+            Se você precisa de um profissional experiente para desenvolver seu
+            projeto ou integrar soluções com{" "}
+            <span style={{ fontWeight: "bold" }}>Inteligência Artificial</span>
+          </span>
 
-            <ContactSectionButtonsContainer>
-              <PrimaryButton
-                ariaLabel="button"
-                onClick={handleSendEmail}
-                title="Me envie um email"
-                size="large"
-                icon={<MdEmail size={20} />}
-                style={{ marginTop: "1rem" }}
-              />
-              <p>ou</p>
-              <PrimaryButton
-                ariaLabel="button"
-                onClick={sendWhatsAppMessage}
-                title="Me chame no Whatsapp"
-                size="large"
-                style={{
-                  backgroundColor: theme.colors.success,
-                  marginTop: "1rem",
-                }}
-                icon={<FaWhatsapp size={20} />}
-              />
-            </ContactSectionButtonsContainer>
-          </ContactSectionListContainer>
+          <ContactSectionButtonsContainer>
+            <PrimaryButton
+              ariaLabel="Me chame no Whatsapp"
+              onClick={sendWhatsAppMessage}
+              title="Me chame no Whatsapp"
+              size="large"
+              style={{
+                backgroundColor: theme.colors.success,
+              }}
+              icon={<FaWhatsapp size={20} />}
+            />
+          </ContactSectionButtonsContainer>
         </ContactSectionContainer>
       </ContactSection>
     </Container>

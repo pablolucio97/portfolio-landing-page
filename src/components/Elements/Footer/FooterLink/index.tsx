@@ -11,7 +11,7 @@ interface FooterLinkProps {
 
 export function FooterLink({ content, url, style, className }: FooterLinkProps) {
   return (
-    <Link href={url} passHref>
+    <Link href={url} passHref legacyBehavior>
       <Container
         style={style}
         className={className}

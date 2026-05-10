@@ -18,7 +18,7 @@ export function NextLink({
     className
 }: NextLinkProps) {
     return (
-        <Link href={url} passHref >
+        <Link href={url} passHref legacyBehavior>
             <TextLink
                 className={className}
                 style={style}

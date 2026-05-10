@@ -12,7 +12,7 @@ interface HeaderLinkProps {
 
 export function HeaderLink({ content, url, onClick, style, className }: HeaderLinkProps) {
   return (
-    <Link href={url} passHref>
+    <Link href={url} passHref legacyBehavior>
       <Container
         style={style}
         className={className}
