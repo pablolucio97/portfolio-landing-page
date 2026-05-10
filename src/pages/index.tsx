@@ -21,6 +21,8 @@ import { SubTitle } from "../components/Typography/SubTitle";
 import { Text } from "../components/Typography/Text";
 import { Title } from "../components/Typography/Title";
 import { enterprises, projects, skills, testimonials } from "../data/data";
+import { useI18n } from "../i18n";
+import { SkillTranslation } from "../i18n";
 import {
   CompaniesContainer,
   ContactSection,
@@ -56,22 +58,24 @@ import {
 import { theme } from "../themes/theme";
 import { sendWhatsAppMessage } from "../ultis/sendWhatsAppMessage";
 
-const companyLogos = enterprises.map((enterprise, index) => ({
-  src: enterprise.img,
-  href: enterprise.website,
-  alt: `Empresa assistida ${index + 1}`,
-  title: enterprise.website,
-  width: enterprise.width,
-  height: enterprise.height,
-}));
-
 const contactTerminalGridMul: [number, number] = [2.2, 1];
 
 export default function Home() {
-  const [skill, setSkill] = useState({
-    title: "",
-    content: "",
-  });
+  const { t } = useI18n();
+  const [hoveredSkillAlt, setHoveredSkillAlt] = useState<string | null>(null);
+
+  const hoveredSkill = hoveredSkillAlt
+    ? (t.skills as Record<string, SkillTranslation>)[hoveredSkillAlt]
+    : null;
+
+  const companyLogos = enterprises.map((enterprise, index) => ({
+    src: enterprise.img,
+    href: enterprise.website,
+    alt: `${t.enterprises.logoAlt} ${index + 1}`,
+    title: enterprise.website,
+    width: enterprise.width,
+    height: enterprise.height,
+  }));
 
   function handleSendEmail() {
     const email = "pablolucio_@hotmail.com";
@@ -136,14 +140,12 @@ export default function Home() {
           `,
         }}
       />
-      {/* Asynchronously load the Google Analytics gtag.js script */}
       <Script
         id="load-google-analytics"
         src="https://www.googletagmanager.com/gtag/js?id=G-R1X93YMK83"
         strategy="afterInteractive"
         async
       />
-      {/* Initialize Google Analytics */}
       <Script
         id="execute-google-analytics"
         strategy="afterInteractive"
@@ -157,8 +159,9 @@ export default function Home() {
         }}
       />
       <Head>
-        <title>Pablo Silva Dev | Desenvolvedor full-stack</title>
+        <title>{t.meta.title}</title>
       </Head>
+
       <IntroductionSection>
         <LetterGlitch glitchColors={["#290ac2", "#4d2db5", "#61b3dc"]} outerVignette />
         <IntroductionSectionContainer>
@@ -171,18 +174,17 @@ export default function Home() {
                   imgUrl="/profile_1_square.png"
                   style={{ borderRadius: 16, opacity: 0.8 }}
                 />
-
                 <ProfileColumnContainer>
                   <Title content="Pablo Silva" />
                   <SubtitleContentContainer>
-                    <SubTitle content="Desenvolvedor" />
+                    <SubTitle content={t.intro.developer} />
                     <GradientText
                       content="full-stack"
                       direction="top-to-bottom"
                       initialColor="#0094FF"
                       finalColor="#90c3eb"
                     />
-                    <SubTitle content="- IA Engineer" />
+                    <SubTitle content={t.intro.role} />
                   </SubtitleContentContainer>
                 </ProfileColumnContainer>
               </ProfileRowContainer>
@@ -193,19 +195,16 @@ export default function Home() {
 
       <WhoAmISection id="whoami">
         <WhoAmISectionContainer>
-          <Title content="Quem sou eu" />
+          <Title content={t.whoami.title} />
           <WhoAmISectionContentInfoContainer>
             <WhoAmIRowContainer>
-              <Text content="Meu nome é Pablo Silva e sou desenvolvedor full-stack com mais de 6 anos de de experiência." />
+              <Text content={t.whoami.text1} />
               <FadeAnimation>
                 <NextImage
                   height={131}
                   width={480}
                   imgUrl="/gb_contributions.png"
-                  style={{
-                    // filter: "grayscale(100%) sepia(100%) hue-rotate(210deg)",
-                    borderRadius: 8,
-                  }}
+                  style={{ borderRadius: 8 }}
                 />
               </FadeAnimation>
             </WhoAmIRowContainer>
@@ -214,11 +213,11 @@ export default function Home() {
               <FadeAnimation>
                 <NextImage height={400} width={640} imgUrl="/systems.png" />
               </FadeAnimation>
-              <Text content=" Ao longo da minha carreira, trabalhei em uma variedade de projetos em diferentes setores, incluindo healthtech, fintech e varejo." />
+              <Text content={t.whoami.text2} />
             </WhoAmIRowContainer>
 
             <WhoAmIRowContainer>
-              <Text content="Como profissional, me dedico a criar soluções robustas e escaláveis entregando uma intuitiva e agradável experiência para o usuário final." />
+              <Text content={t.whoami.text3} />
               <FadeAnimation>
                 <NextImage
                   height={260}
@@ -238,7 +237,7 @@ export default function Home() {
                   style={{ borderRadius: "1rem" }}
                 />
               </FadeAnimation>
-              <Text content=" Alinhado com o mercado, integro soluções de inteligência artificial e automação em meus projetos." />
+              <Text content={t.whoami.text4} />
             </WhoAmIRowContainer>
           </WhoAmISectionContentInfoContainer>
         </WhoAmISectionContainer>
@@ -257,16 +256,14 @@ export default function Home() {
         />
         <ProjectsSectionContainer>
           <ProjectsInfoContainer>
-            <Title content="Portfólio" />
-            <SubTitle
-              content={`Veja abaixo os meus projetos mais relevantes`}
-            />
+            <Title content={t.portfolio.title} />
+            <SubTitle content={t.portfolio.subtitle} />
             <SlickContainer>
               {projects.map((project) => (
                 <ZoomAnimation key={project.id}>
                   <ProjectCrd
-                    title={project.title}
-                    description={project.description}
+                    title={t.projects[project.id]?.title ?? project.title}
+                    description={t.projects[project.id]?.description ?? project.description}
                     videoId={project.videoId}
                   />
                 </ZoomAnimation>
@@ -279,12 +276,14 @@ export default function Home() {
       <SkillsSection id="skills">
         <SkillsSectionContainer>
           <SkillsInfoContainer>
-            <Title content={skill.title ? skill.title : "Tecnologias"} />
+            <Title
+              content={hoveredSkill ? hoveredSkill.title : t.skills.title as string}
+            />
             <Text
               content={
-                skill.content
-                  ? skill.content
-                  : "Passe o mouse sobre a tecnologia para entender como a utilizo em uma aplicação do mundo real."
+                hoveredSkill
+                  ? hoveredSkill.content
+                  : t.skills.defaultContent as string
               }
             />
           </SkillsInfoContainer>
@@ -296,18 +295,8 @@ export default function Home() {
                   imgAlt={skill.alt}
                   imgUrl={skill.image}
                   className="skillCard"
-                  onMouseEnter={() =>
-                    setSkill({
-                      title: skill.title,
-                      content: skill.content,
-                    })
-                  }
-                  onMouseLeave={() =>
-                    setSkill({
-                      title: "",
-                      content: "",
-                    })
-                  }
+                  onMouseEnter={() => setHoveredSkillAlt(skill.alt)}
+                  onMouseLeave={() => setHoveredSkillAlt(null)}
                 />
               </RotateAnimation>
             ))}
@@ -318,21 +307,19 @@ export default function Home() {
       <TestimonialsSection>
         <TestimonialsSectionContainer>
           <TestimonialsInfoContainer>
-            <Title content="Depoimentos" />
-            <SubTitle
-              content={`Veja o que pessoas que já trabalharam comigo \n dizem`}
-            />
+            <Title content={t.testimonials.title} />
+            <SubTitle content={t.testimonials.subtitle} />
           </TestimonialsInfoContainer>
           <TestimonialsCarouselContainer>
             <FadeAnimation>
               <Slider {...slickSettings} centerMode lazyLoad="ondemand">
-                {testimonials.map((testimonial) => (
+                {testimonials.map((testimonial, index) => (
                   <TestimonialCard
                     key={testimonial.name}
                     personName={testimonial.name}
                     personPhotoUrl={testimonial.image}
-                    personRole={testimonial.role}
-                    testimonial={testimonial.testimonial}
+                    personRole={t.testimonials.items[index]?.role ?? testimonial.role}
+                    testimonial={t.testimonials.items[index]?.testimonial ?? testimonial.testimonial}
                   />
                 ))}
               </Slider>
@@ -343,8 +330,8 @@ export default function Home() {
 
       <PortfolioSection>
         <PortfolioSectionContainer id="enterprises">
-          <Title content="Empresas assistidas" />
-          <Text content="Empresas em que já trabalhei diretamente ou prestei serviços como freelancer" />
+          <Title content={t.enterprises.title} />
+          <Text content={t.enterprises.text} />
           <CompaniesContainer>
             <LogoLoop
               logos={companyLogos}
@@ -355,7 +342,7 @@ export default function Home() {
               scaleOnHover
               fadeOut
               fadeOutColor={theme.colors.background_secondary}
-              ariaLabel="Empresas assistidas"
+              ariaLabel={t.enterprises.ariaLabel}
             />
           </CompaniesContainer>
         </PortfolioSectionContainer>
@@ -363,18 +350,16 @@ export default function Home() {
 
       <ContactSection id="contact">
         <ContactSectionContainer>
-          <Title content="Contato" />
+          <Title content={t.contact.title} />
           <span>
-            Se você precisa de um profissional experiente para desenvolver seu
-            projeto ou integrar soluções com{" "}
-            <span style={{ fontWeight: "bold" }}>Inteligência Artificial</span>
+            {t.contact.text}{" "}
+            <span style={{ fontWeight: "bold" }}>{t.contact.ai}</span>
           </span>
-
           <ContactSectionButtonsContainer>
             <PrimaryButton
-              ariaLabel="Me chame no Whatsapp"
+              ariaLabel={t.contact.button}
               onClick={sendWhatsAppMessage}
-              title="Me chame no Whatsapp"
+              title={t.contact.button}
               size="large"
               style={{
                 backgroundColor: theme.colors.success,

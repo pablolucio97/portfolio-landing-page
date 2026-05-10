@@ -11,6 +11,7 @@ import { FooterTitle } from "../components/Elements/Footer/FooterTitle";
 import { Header } from "../components/Elements/Header";
 import { HeaderLink } from "../components/Elements/Header/HeaderLink";
 import { HeaderLinksContainer } from "../components/Elements/Header/HeaderLinksContainer";
+import { LanguageSelector } from "../components/Elements/Header/LanguageSelector";
 import { SocialIcons } from "../components/Elements/SocialIcons";
 import { TopScrollButton } from "../components/Elements/TopScrollButton";
 import { Text } from "../components/Typography/Text";
@@ -18,6 +19,7 @@ import { Container } from "./styles";
 
 import { WhatsappButton } from "../components/Elements/WhatsappButton";
 import { NextProgressComponent } from "../components/Next/NextProgress";
+import { useI18n } from "../i18n";
 import { getYear } from "../ultis/date";
 
 interface LayoutProps {
@@ -26,6 +28,7 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   const theme = useTheme();
+  const { t } = useI18n();
 
   const [toggleDrawer, setToggleDrawer] = useState(false);
   const [headerAnimation, setHeaderAnimation] = useState(false);
@@ -36,7 +39,6 @@ export default function Layout({ children }: LayoutProps) {
   }
 
   function scrollHeaderAnimation() {
-    //@ts-ignore
     const topPos = window.scrollY;
     if (topPos > 20) {
       setHeaderAnimation(true);
@@ -46,7 +48,6 @@ export default function Layout({ children }: LayoutProps) {
   }
 
   function scrollTopScrollButtonAnimation() {
-    //@ts-ignore
     const topPos = window.scrollY;
     if (topPos > 500) {
       setScrollTopAnimation(true);
@@ -70,13 +71,13 @@ export default function Layout({ children }: LayoutProps) {
     <Container id="top">
       <NextProgressComponent color={theme.colors.white100} />
       <TopScrollButton
-        ariaLabel="Voltar para o topo"
+        ariaLabel={t.nav.whoami}
         className={scrollTopAnimation ? "animatedTopScroll" : "normalTopScroll"}
         icon={<MdArrowUpward />}
         elementReferenceId="top"
       />
       <WhatsappButton
-        ariaLabel="Voltar para o topo"
+        ariaLabel="WhatsApp"
         className={scrollTopAnimation ? "animatedTopScroll" : "normalTopScroll"}
         whatsappContact={process.env.NEXT_PUBLIC_PHONE}
       />
@@ -86,27 +87,27 @@ export default function Layout({ children }: LayoutProps) {
         {toggleDrawer && (
           <Drawer toggleDrawer={handleToggleDrawer} direction="top">
             <HeaderLink
-              content="Quem sou eu"
+              content={t.nav.whoami}
               url="#whoami"
               onClick={handleToggleDrawer}
             />
             <HeaderLink
-              content="Portfólio"
+              content={t.nav.portfolio}
               url="#portfolio"
               onClick={handleToggleDrawer}
             />
             <HeaderLink
-              content="Empresas assistidas"
+              content={t.nav.enterprises}
               url="#enterprises"
               onClick={handleToggleDrawer}
             />
             <HeaderLink
-              content="Tecnologias"
+              content={t.nav.skills}
               url="#skills"
               onClick={handleToggleDrawer}
             />
             <HeaderLink
-              content="Contato"
+              content={t.nav.contact}
               url="#contact"
               onClick={handleToggleDrawer}
             />
@@ -114,12 +115,13 @@ export default function Layout({ children }: LayoutProps) {
         )}
         <DrawerButton toggleDrawer={handleToggleDrawer} />
         <HeaderLinksContainer>
-          <HeaderLink content="Quem sou eu" url="#whoami" />
-          <HeaderLink content="Portfólio" url="#portfolio" />
-          <HeaderLink content="Empresas assistidas" url="#enterprises" />
-          <HeaderLink content="Tecnologias" url="#skills" />
-          <HeaderLink content="Contato" url="#contact" />
+          <HeaderLink content={t.nav.whoami} url="#whoami" />
+          <HeaderLink content={t.nav.portfolio} url="#portfolio" />
+          <HeaderLink content={t.nav.enterprises} url="#enterprises" />
+          <HeaderLink content={t.nav.skills} url="#skills" />
+          <HeaderLink content={t.nav.contact} url="#contact" />
         </HeaderLinksContainer>
+        <LanguageSelector />
       </Header>
       <main>{children}</main>
       <Footer
@@ -128,15 +130,15 @@ export default function Layout({ children }: LayoutProps) {
         }}
       >
         <FooterFirstSection>
-          <FooterTitle content="Acesso rápido" />
-          <FooterLink content="Quem sou eu" url="#whoami" />
-          <FooterLink content="Portfólio" url="#portfolio" />
-          <FooterLink content="Empresas assistidas" url="#enterprises" />
-          <FooterLink content="Tecnologias" url="#skills" />
-          <FooterLink content="Contato" url="#contact" />
+          <FooterTitle content={t.footer.quickAccess} />
+          <FooterLink content={t.nav.whoami} url="#whoami" />
+          <FooterLink content={t.nav.portfolio} url="#portfolio" />
+          <FooterLink content={t.nav.enterprises} url="#enterprises" />
+          <FooterLink content={t.nav.skills} url="#skills" />
+          <FooterLink content={t.nav.contact} url="#contact" />
         </FooterFirstSection>
         <FooterSecondSection>
-          <FooterTitle content="Redes sociais" />
+          <FooterTitle content={t.footer.socialNetworks} />
           <SocialIcons
             linkedinUrl="https://www.linkedin.com/in/pablo-silva-dev"
             githubUrl="https://github.com/pablolucio97"
@@ -149,7 +151,7 @@ export default function Layout({ children }: LayoutProps) {
             style={{
               color: theme.colors.white100,
               fontSize: theme.sizes.small,
-              textAlign: 'center',
+              textAlign: "center",
             }}
           />
         </FooterSecondSection>
