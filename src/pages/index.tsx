@@ -6,7 +6,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import FadeAnimation from "../components/Animations/Fade";
-import { LogoLoop } from "../components/Animations/LogoLoop";
 import RotateAnimation from "../components/Animations/Rotate";
 import ZoomAnimation from "../components/Animations/Zoom";
 import { DotGrid } from "../components/Backgrounds/DotGrid";
@@ -21,8 +20,7 @@ import { SubTitle } from "../components/Typography/SubTitle";
 import { Text } from "../components/Typography/Text";
 import { Title } from "../components/Typography/Title";
 import { enterprises, projects, skills, testimonials } from "../data/data";
-import { useI18n } from "../i18n";
-import { SkillTranslation } from "../i18n";
+import { SkillTranslation, useI18n } from "../i18n";
 import {
   CompaniesContainer,
   ContactSection,
@@ -163,7 +161,10 @@ export default function Home() {
       </Head>
 
       <IntroductionSection>
-        <LetterGlitch glitchColors={["#290ac2", "#4d2db5", "#61b3dc"]} outerVignette />
+        <LetterGlitch
+          glitchColors={["#290ac2", "#4d2db5", "#61b3dc"]}
+          outerVignette
+        />
         <IntroductionSectionContainer>
           <IntroductionSectionContentContainer>
             <IntroductionSectionContentInfoContainer>
@@ -263,7 +264,9 @@ export default function Home() {
                 <ZoomAnimation key={project.id}>
                   <ProjectCrd
                     title={t.projects[project.id]?.title ?? project.title}
-                    description={t.projects[project.id]?.description ?? project.description}
+                    description={
+                      t.projects[project.id]?.description ?? project.description
+                    }
                     videoId={project.videoId}
                   />
                 </ZoomAnimation>
@@ -277,13 +280,15 @@ export default function Home() {
         <SkillsSectionContainer>
           <SkillsInfoContainer>
             <Title
-              content={hoveredSkill ? hoveredSkill.title : t.skills.title as string}
+              content={
+                hoveredSkill ? hoveredSkill.title : (t.skills.title as string)
+              }
             />
             <Text
               content={
                 hoveredSkill
                   ? hoveredSkill.content
-                  : t.skills.defaultContent as string
+                  : (t.skills.defaultContent as string)
               }
             />
           </SkillsInfoContainer>
@@ -318,8 +323,13 @@ export default function Home() {
                     key={testimonial.name}
                     personName={testimonial.name}
                     personPhotoUrl={testimonial.image}
-                    personRole={t.testimonials.items[index]?.role ?? testimonial.role}
-                    testimonial={t.testimonials.items[index]?.testimonial ?? testimonial.testimonial}
+                    personRole={
+                      t.testimonials.items[index]?.role ?? testimonial.role
+                    }
+                    testimonial={
+                      t.testimonials.items[index]?.testimonial ??
+                      testimonial.testimonial
+                    }
                   />
                 ))}
               </Slider>
@@ -331,9 +341,9 @@ export default function Home() {
       <PortfolioSection>
         <PortfolioSectionContainer id="enterprises">
           <Title content={t.enterprises.title} />
-          <Text content={t.enterprises.text} />
+          <Text content={t.enterprises.text} style={{textAlign: "center"}} />
           <CompaniesContainer>
-            <LogoLoop
+            {/* <LogoLoop
               logos={companyLogos}
               speed={52}
               gap={40}
@@ -343,7 +353,27 @@ export default function Home() {
               fadeOut
               fadeOutColor={theme.colors.background_secondary}
               ariaLabel={t.enterprises.ariaLabel}
-            />
+            /> */}
+            {companyLogos.map((logo, index) => (
+              <a
+                key={index}
+                href={logo.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={logo.title}
+              >
+                <NextImage
+                  imgUrl={logo.src}
+                  width={logo.width}
+                  height={logo.height}
+                  style={{
+                    filter: "grayscale(100%)",
+                    opacity: 0.8,
+                    transition: "all 0.3s",
+                  }}
+                />
+              </a>
+            ))}
           </CompaniesContainer>
         </PortfolioSectionContainer>
       </PortfolioSection>

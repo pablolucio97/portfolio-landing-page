@@ -343,6 +343,11 @@ export const PortfolioSectionContainer = styled.div`
 export const CompaniesContainer = styled.div`
   width: 100%;
   margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 `;
 
 export const CardsContainer = styled.div`
